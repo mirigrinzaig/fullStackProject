@@ -1,0 +1,60 @@
+.users-list {
+    border-color: var(--bgSoft);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.users-list-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.users-list-add-btn {
+    padding: 10px;
+    background-color: #40aca7;
+    color: rgb(176, 175, 175);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.users-list-table {
+    width: 100%;
+}
+
+.users-list-table td {
+    padding: 10px;
+}
+
+.users-list-user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.users-list-user-image {
+    border-radius: 50%;
+    gap: 10px;
+    object-fit: cover;
+}
+
+.users-list-btn {
+padding: 5px 10px;
+border-radius: 5px;
+color: var(--text);
+border: none;
+cursor: pointer;
+font-size: 14px;
+}
+.users-list-view {
+    background-color: teal;
+}
+.users-list-delete{
+    background-color: crimson;
+}
+.users-list-btns{
+    display: flex;
+    gap: 10px;
+}

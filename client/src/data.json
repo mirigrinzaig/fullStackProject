@@ -1,0 +1,37 @@
+{
+    "products": [
+      {
+        "code": "1111",
+        "name": "milk",
+        "price": 5.17,
+        "category": "milk"
+      },
+      {
+        "code": "1221",
+        "name": "milky chocolate",
+        "price": 5.17,
+        "category": "chocolate"
+      },
+      {
+        "code": "1234",
+        "name": "yugort",
+        "price": 2.5,
+        "category": "milk"
+      },
+      {
+        "code": "1177",
+        "name": "bread",
+        "price": 8.9,
+        "category": "bread"
+      },
+      {
+        "code": "1239",
+        "name": "tomato",
+        "price": 5.7,
+        "category": "vegetables"
+      }
+    ]
+  }
+  
+  
+ 

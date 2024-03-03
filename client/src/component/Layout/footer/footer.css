@@ -1,0 +1,15 @@
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+    color:var(--text);
+    font-family: cursive;
+}
+.footer-logo{
+    font-weight: bold;
+}
+
+.footer-text{
+    font-size: 12px;
+}
