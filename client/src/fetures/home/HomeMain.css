@@ -1,0 +1,14 @@
+body{
+    text-align: center;
+}
+
+.HomeOpenImage{
+max-width: 95%;
+}
+.categoryIcon{
+    max-width: 2vw;
+    max-height: 2vh;
+}
+img{
+    max-width: 5vw;
+}

@@ -12,13 +12,39 @@ import RequireAuth from "./fetures/auth/RequireAuth"
 import PersistsLogin from "./fetures/auth/PersistLogin"
 import HomePage from "./fetures/home/HomePage"
 import SingleProductPublic from "./fetures/products/view/singleProductPublic"
-
+import RegistPage from "./fetures/auth/regist/RegistPage"
+import Accessories from "./fetures/products/categories/Accessories"
+import Bath from "./fetures/products/categories/Bath"
+import Clothing from "./fetures/products/categories/Clothing"
+import Feed from "./fetures/products/categories/Feed"
+import Hygine from "./fetures/products/categories/Hygine"
+import Play from "./fetures/products/categories/Play"
+import Presents from "./fetures/products/categories/Presents"
+import Safe from "./fetures/products/categories/Safe"
+import Sleep from "./fetures/products/categories/Sleep"
+import PlumaBrand from "./fetures/products/categories/PlumaBrand"
+import Walk from "./fetures/products/categories/Walk"
+import Promoties from "./fetures/products/categories/Promotions"
 const App = () => {
     return <Router>
         <Routes>
             <Route path="/" element={<SiteLayout />} >
-                <Route index element={<HomePage/>} />
+                <Route index element={<HomePage />} />
+                <Route path="/categories/accessories" element={<Accessories />} />
+                <Route path="/categories/bath" element={<Bath />} />
+                <Route path="/categories/clothing" element={<Clothing />} />
+                <Route path="/categories/feed" element={<Feed />} />
+                <Route path="/categories/hygine" element={<Hygine />} />
+                <Route path="/categories/play" element={<Play />} />
+                <Route path="/categories/presents" element={<Presents />} />
+                <Route path="/categories/safe" element={<Safe />} />
+                <Route path="/categories/sleep" element={<Sleep />} />
+                <Route path="/categories/walk" element={<Walk />} />
+                <Route path="/categories/plumabrand" element={<PlumaBrand />} />
+                <Route path="/categories/promotions" element={<Promoties />} />
                 <Route path="login" element={<LoginPage />} />
+                <Route path="regist" element={<RegistPage />} />
+                <Route path="public/:productBarcod" element={<SingleProductPublic />} />
                 <Route element={<PersistsLogin />}>
                     <Route element={<RequireAuth allowRoles={['admin', 'user']} />}>
                         <Route path="/dash" element={<DashLayout />}>
@@ -35,7 +61,6 @@ const App = () => {
                                     <Route index element={<ProductsList />} />
                                     <Route path="add" element={<AddProduct />} />
                                     <Route path=":productBarcod" element={<SingleProduct />} />
-                                    <Route path="public/:productBarcod" element={<SingleProductPublic/>} />
                                 </Route>
                             </Route>
                         </Route>

@@ -7,7 +7,7 @@ import useGetFilePath from "../../hooks/useGetFilePath"
 
 const HomePage = () => {
     const {data:products,isError,error,isLoading}=useGetAllProductsPublicQuery()
-    const {data:product,isError:isErrorGet1,error:errorProduct,isLoading:isProductLoading}=useGetProductByIdQuery()
+    //const {data:product,isError:isErrorGet1,error:errorProduct,isLoading:isProductLoading}=useGetProductByIdQuery()
     const [deleteProduct,{isSuccess:isDeleteSuccess}]=useDeleteProductMutation()
 
     const deleteClick=(product)=>{
@@ -31,6 +31,9 @@ const HomePage = () => {
                 <Search placeholder={"חיפוש לפי שם מוצר"} />
                 <Link to="/login" className="products-list-add-btn">
                     כניסת משתמשים
+                </Link>
+                <Link to="/regist" className="products-list-add-btn">
+                    הרשמה
                 </Link>
             </div>
             <table className="products-list-table">
@@ -61,7 +64,7 @@ const HomePage = () => {
                             </td>
                             <td>
                                 <div className="products-list-btns">
-                                <Link to={`/dash/products/public/${product.barcod}`} className="products-list-btn products-list-view">view</Link>
+                                <Link to={`/public/${product.barcod}`} className="products-list-btn products-list-view">view</Link>
                                 </div>
                             </td>
                         </tr>

@@ -21,6 +21,24 @@ const authApiSlice=apiSlice.injectEndpoints({
                 }
             },
         }),
+        regist:build.mutation({
+            query:(userData)=>({
+                url:"/api/auth/register",
+                method:"POST",
+                body:userData
+            }),
+            async onQueryStarted(arg,{dispatch,queryFulfilled }){
+                try{
+                    const {data}=await queryFulfilled
+                    console.log(data);
+                    if(data.accessToken){
+                        dispatch(setToken({accessToken:data.accessToken}))
+                    }
+                }catch(err){
+                    console.log(err);
+                }
+            },
+        }),
         sendLogout:build.mutation({
             query:()=>({
                 url:"/api/auth/logout",
@@ -62,4 +80,4 @@ const authApiSlice=apiSlice.injectEndpoints({
     })
 })
 
-export const {useLoginMutation,useSendLogoutMutation,useRefreshMutation}=authApiSlice
+export const {useLoginMutation,useRegistMutation,useSendLogoutMutation,useRefreshMutation}=authApiSlice

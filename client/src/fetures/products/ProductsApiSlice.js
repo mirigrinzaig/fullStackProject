@@ -14,9 +14,9 @@ const productsApiSlice=apiSlice.injectEndpoints({
             }),
             providesTags:["Products"]
         }),
-        getProductById:build.query({
-            query:(product)=>({
-                url:"/api/products"+product.barcod
+        getProductById:build.mutation({
+            query:(barcod)=>({
+                url:"/api/products"+barcod
             }),
             providesTags:["Products"]
         }),
@@ -48,4 +48,4 @@ const productsApiSlice=apiSlice.injectEndpoints({
     })
 })
 
-export const{useGetAllProductsQuery,useGetAllProductsPublicQuery,useGetProductByIdQuery,useAddProductMutation,useUpdateProductMutation,useDeleteProductMutation}=productsApiSlice
+export const{useGetAllProductsQuery,useGetAllProductsPublicQuery,useGetProductByIdMutation,useAddProductMutation,useUpdateProductMutation,useDeleteProductMutation}=productsApiSlice

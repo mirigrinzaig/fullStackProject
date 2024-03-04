@@ -1,15 +1,15 @@
 import { useNavigate,useParams } from "react-router-dom"
 import "./singleProduct.css"
-import {useGetAllProductsPublicQuery, useGetProductByIdQuery} from "../ProductsApiSlice"
+import {useGetProductByIdMutation} from "../ProductsApiSlice"
 import useGetFilePath from "../../../hooks/useGetFilePath"
 //שאלה ענקית על כל הדף הזה!
 //?האם זה דף למנהל כדי שיוכל לשנות את פרטי המוצר או שזה דף למשתמש כדי שיראה אותו בנפרד
 const SingleProductPublic = () => {
     const {productBarcod}=useParams()
     console.log(productBarcod);
-    const{data:products,isLoading,isError,error,isSuccess}=useGetAllProductsPublicQuery()
-    const{data:product,isLoading:isLoadingP,isError:isErrorP,error:errorP,isSuccess:isSuccessP}=useGetProductByIdQuery()
-    const navigate = useNavigate()
+    const{getProduct,isLoading:isLoading,isError:isError,error:error}=useGetProductByIdMutation()
+    const product=getProduct(productBarcod)
+    //const navigate = useNavigate()
 
     const {getFilePath}=useGetFilePath()
 
