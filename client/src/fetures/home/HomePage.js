@@ -1,21 +1,15 @@
 import "./homePage.css"
 import Search from "../../component/search/Search"
-import { useDeleteProductMutation,useGetAllProductsPublicQuery,useGetProductByIdQuery} from "../products/ProductsApiSlice"
+import { useGetAllProductsPublicQuery,useGetProductByIdQuery} from "../products/ProductsApiSlice"
 import { Link,useSearchParams} from "react-router-dom"
 import useGetFilePath from "../../hooks/useGetFilePath"
+import "../products/List/productsList.css"
 
 
 const HomePage = () => {
     const {data:products,isError,error,isLoading}=useGetAllProductsPublicQuery()
     //const {data:product,isError:isErrorGet1,error:errorProduct,isLoading:isProductLoading}=useGetProductByIdQuery()
-    const [deleteProduct,{isSuccess:isDeleteSuccess}]=useDeleteProductMutation()
 
-    const deleteClick=(product)=>{
-        console.log("product barcod:",product.barcod);
-        if(window.confirm("בטוח שברצונך למחוק את המוצר?")){
-            deleteProduct({barcod:product.barcod})
-        }
-    }
     const [searchParams]=useSearchParams()
     const q=searchParams.get("q")
     const {getFilePath}=useGetFilePath()
@@ -38,21 +32,22 @@ const HomePage = () => {
             </div>
             <table className="products-list-table">
                 <thead>
-                    <tr>
+                    {/* <tr>
                         <td>תמונה</td>
                         <td>שם מוצר</td>
                         <td>חברה</td>
                         <td>מחיר</td>
-                    </tr>
+                    </tr> */}
                 </thead>
-                <tbody>
+                <tbody className="products">
                     {filteredData.map(product => (
-                        <tr key={product._id}>
+                        <tr className="single" key={product._id}>
                             <td>
                                 <div className="products-list-product">
                                     <img src={getFilePath(product.image)} alt="" width={40} height={40} className="products-list-product-image" />
                                 </div>
                             </td>
+                            <div className="details">
                             <td>
                                 {product.name}
                             </td>
@@ -67,6 +62,7 @@ const HomePage = () => {
                                 <Link to={`/public/${product.barcod}`} className="products-list-btn products-list-view">view</Link>
                                 </div>
                             </td>
+                            </div>
                         </tr>
                     ))}
                 </tbody>

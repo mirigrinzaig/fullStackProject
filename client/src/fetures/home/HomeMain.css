@@ -10,5 +10,14 @@ max-width: 95%;
     max-height: 2vh;
 }
 img{
-    max-width: 5vw;
+    max-width: 500px;
+    max-height:50px;
+}
+.HomeCategorys{
+     max-width: 90vw;
+    /* background-color: #fff; */ 
+}
+.carouselImg{
+    min-width: 20vw;
+    min-height: 25vw;
 }

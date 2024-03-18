@@ -13,11 +13,11 @@ const DashLayout=()=>{
                 <SideBar/>
             </div>
             <div className="content">
-            <div className="navbar-search">
+            {/* <div className="navbar-search">
                     <MdSearch/>
                     <input type="text" placeholder="Search..." className="navbar-input"/>
                 </div>
-                <HomeMain/>
+                <HomeMain/> */}
                 <Outlet/>
                 <Footer/>
             </div>

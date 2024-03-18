@@ -25,11 +25,13 @@ import Sleep from "./fetures/products/categories/Sleep"
 import PlumaBrand from "./fetures/products/categories/PlumaBrand"
 import Walk from "./fetures/products/categories/Walk"
 import Promoties from "./fetures/products/categories/Promotions"
+import HomeMain from "./fetures/home/HomeMain"
 const App = () => {
     return <Router>
         <Routes>
             <Route path="/" element={<SiteLayout />} >
-                <Route index element={<HomePage />} />
+                <Route index element={<HomePage/>} />
+                {/* <Route index element={<HomeMain/>} /> */}
                 <Route path="/categories/accessories" element={<Accessories />} />
                 <Route path="/categories/bath" element={<Bath />} />
                 <Route path="/categories/clothing" element={<Clothing />} />
@@ -48,7 +50,7 @@ const App = () => {
                 <Route element={<PersistsLogin />}>
                     <Route element={<RequireAuth allowRoles={['admin', 'user']} />}>
                         <Route path="/dash" element={<DashLayout />}>
-                            <Route index element={<h1>DashBoard</h1>} />
+                            <Route index element={<HomeMain/>} />
                             <Route element={<RequireAuth allowRoles={['admin']} />}>
                                 <Route path="users" element={<Outlet />}>
                                     <Route index element={<UsersList />} />
@@ -67,6 +69,7 @@ const App = () => {
                     </Route>
                 </Route>
             </Route>
+            
         </Routes>
     </Router>
 }

@@ -3,6 +3,7 @@
     padding: 20px;
     border-radius: 10px;
     margin-top: 20px;
+   
 }
 
 .products-list-top {
@@ -21,7 +22,7 @@
 }
 
 .products-list-table {
-    width: 100%;
+    width: 100vw;
 }
 
 .products-list-table td {
@@ -38,6 +39,9 @@
     border-radius: 50%;
     gap: 10px;
     object-fit: cover;
+    min-height: 25vh;
+    min-width: 25vh;
+    max-width: 25vh;
 }
 
 .products-list-btn {
@@ -57,4 +61,31 @@ font-size: 14px;
 .products-list-btns{
     display: flex;
     gap: 10px;
+}
+.products{
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 70vw;
+
+}
+.single{
+    
+    background-color: rgb(126, 215, 212);
+    border-radius: 1000px;
+    min-height: 5vh;
+    max-width: 6vh;
+    max-width: 10vw;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+   
+}
+.details{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: smaller;
+    max-width: 15vw;
 }
