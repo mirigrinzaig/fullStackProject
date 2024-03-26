@@ -1,21 +1,23 @@
 import { useNavigate,useParams } from "react-router-dom"
 import "./singleProduct.css"
-import {useGetProductByIdMutation} from "../ProductsApiSlice"
+import {useGetProductByIdMutation, useGetProductByIdQuery} from "../ProductsApiSlice"
 import useGetFilePath from "../../../hooks/useGetFilePath"
 //שאלה ענקית על כל הדף הזה!
 //?האם זה דף למנהל כדי שיוכל לשנות את פרטי המוצר או שזה דף למשתמש כדי שיראה אותו בנפרד
 const SingleProductPublic = () => {
     const {productBarcod}=useParams()
     console.log(productBarcod);
-    const{getProduct,isLoading:isLoading,isError:isError,error:error}=useGetProductByIdMutation()
-    const product=getProduct(productBarcod)
-    //const navigate = useNavigate()
+     const{data:product,isLoading:isLoading,isError:isError,error:error}=useGetProductByIdQuery(productBarcod)
+     console.log("data",product);
+     console.log("isError",isError);
+    // const product=getProduct(productBarcod)
+    // //const navigate = useNavigate()
 
-    const {getFilePath}=useGetFilePath()
+     const {getFilePath}=useGetFilePath()
 
-    if(isLoading)return<h1>loading...</h1>
-    if(isError)return<h1>{JSON.stringify(error)}</h1>
-    if(!product)
+     if(isLoading)return<h1>loading...</h1>
+     if(isError)return<h1>{JSON.stringify(error)}</h1>
+     if(!product)
         return<h1>not found!!!</h1>
     return (
         <div className="single-product-container">
@@ -51,7 +53,7 @@ const SingleProductPublic = () => {
 
             </div>
         </div>
-    )
+   )
 }
 
 export default SingleProductPublic
