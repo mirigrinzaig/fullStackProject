@@ -26,7 +26,11 @@ const productsSlice = createSlice({
     error: null,
   },
   reducers: {
-    getProducts: (state, action) => {
+    //reset in all the products
+    resetProducts:(state,action)=>{
+      state.products=action.payload
+    },
+    getProducts: (state) => {
       state.loading = true;
       state.error = null;
     },
@@ -48,15 +52,5 @@ const productsSlice = createSlice({
 
 
 // export default productsSlice.reducer;
-// export const { getProducts, getProductsSuccess, getProductsFailure, filterProducts } = productsSlice.actions;
-export const getProducts = () => ({ type: "products/getProducts" });
-export const getProductsSuccess = (data) => ({ type: "products/getProductsSuccess", payload: data });
-
-const fetchProducts = async (dispatch) => {
-  dispatch(getProducts());
-  const response = await fetch("/api/products");
-  const data = await response.json();
-  dispatch(getProductsSuccess(data));
-};
-
+ export const {resetProducts, getProducts, getProductsSuccess, getProductsFailure, filterProducts } = productsSlice.actions;
 export default productsSlice.reducer;

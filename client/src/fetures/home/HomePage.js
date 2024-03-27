@@ -4,18 +4,32 @@ import { useGetAllProductsPublicQuery,useGetProductByIdQuery} from "../products/
 import { Link,useSearchParams} from "react-router-dom"
 import useGetFilePath from "../../hooks/useGetFilePath"
 import "../products/List/productsList.css"
+import { useEffect } from "react"
+import { UseSelector,useDispatch} from "react-redux"
+import { resetProducts } from "../products/productsSlice"
 
 
 const HomePage = () => {
-    const {data:products,isError,error,isLoading}=useGetAllProductsPublicQuery()
+    const {data:products,isError,error,isLoading,isSuccess}=useGetAllProductsPublicQuery()
     //const {data:product,isError:isErrorGet1,error:errorProduct,isLoading:isProductLoading}=useGetProductByIdQuery()
 
     const [searchParams]=useSearchParams()
     const q=searchParams.get("q")
     const {getFilePath}=useGetFilePath()
 
+    const dispatch=useDispatch()
+
+    useEffect(()=>{
+        if(isSuccess){
+            dispatch(resetProducts(products))
+        }
+
+    },[isSuccess])
+
+
     if(isLoading)return<h1>loading...</h1>
     if(isError)return<h1>{JSON.stringify(error)}</h1>
+
     
     const filteredData=!q?[...products]:products.filter(p=>p.name.indexOf(q)>-1)
 
