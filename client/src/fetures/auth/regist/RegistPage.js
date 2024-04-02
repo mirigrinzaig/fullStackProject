@@ -80,7 +80,7 @@ export const RegistPage = () => {
         <input type='password' required name='password' id='password' placeholder='ססמא' />
         <input type='text' required name='phone' id='phone' placeholder="טלפון" />
         <div className="logoPS">
-        <img src="/logo.png"/>
+        <img src="/logo.png" className="logoP"/>
         </div>
         <button type='submit'>כניסה</button>
         {error && error.data?.message}

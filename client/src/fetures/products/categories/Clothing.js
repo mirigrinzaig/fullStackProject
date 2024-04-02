@@ -35,45 +35,23 @@ const Clothing = () => {
                     הרשמה
                 </Link>
             </div>
-            <table className="products-list-table">
-                <thead>
-                    <tr>
-                        <td>תמונה</td>
-                        <td>שם מוצר</td>
-                        <td>חברה</td>
-                        <td>category</td>
-                        <td>מחיר</td>
-                    </tr>
-                </thead>
-                <tbody>
+            <div className="products-list-table">
+                <div className="products">
                     {filteredData.map(product => (
-                        <tr key={product._id}>
-                            <td>
-                                <div className="products-list-product">
-                                    <img src={getFilePath(product.image)} alt="" width={40} height={40} className="products-list-product-image" />
-                                </div>
-                            </td>
-                            <td>
+                        <div className="single" key={product._id}>
+                            <div className="products-list-product">
+                                {/* <img src={getFilePath(product.image)} alt="" width={40} height={40} className="products-list-product-image" /> */}
+                            </div>
+                            <Link to={`/public/${product.barcod}`} className="products-list-btn products-list-view"><img src={getFilePath(product.image)} alt="" className="products-list-product-image" /></Link>
+                            <div className="details">
                                 {product.name}
-                            </td>
-                            <td>
                                 {product.company}
-                            </td>
-                            <td>
-                                {product.category}
-                            </td>
-                            <td>
                                 {product.sellingPrice}
-                            </td>
-                            <td>
-                                <div className="products-list-btns">
-                                <Link to={`/public/${product.barcod}`} className="products-list-btn products-list-view">view</Link>
-                                </div>
-                            </td>
-                        </tr>
+                            </div>
+                        </div>
                     ))}
-                </tbody>
-            </table>
+                </div>
+            </div>
         </div>
     )
 }

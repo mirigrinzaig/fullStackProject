@@ -3,7 +3,9 @@ import {
     MdOutlineChat,
     MdPublic,
     MdNotifications,
-    MdSearch
+    MdSearch,
+    MdHome,
+    MdHomeFilled
 } from "react-icons/md"
 import { NavLink } from "react-router-dom"
 import MenuLink from "../sidebar/MenuLink"
@@ -21,17 +23,17 @@ const NavBar = () => {
     // }
     return (
         <div className="navbar">
+             <img src="/logo.png" className="logoP"/>
             <div className="navbar-title">
-                <h2 className="title">חנות בוטיק קסומה לתינוקות</h2>
-                <div className="navbar-icons">
+                {/* <h2 className="title">חנות בוטיק קסומה לתינוקות</h2> */}
+                {/* <div className="navbar-icons">
                     <MdOutlineChat size={20}></MdOutlineChat>
                     <MdNotifications size={20} />
                     <MdPublic size={20} />
-                </div>
+                </div> */}
             </div>
             <div className="navbar-menu">
-                <NavLink to='/'>
-                <img src="/logo.png"/></NavLink>
+                <NavLink to='/'><MdHome size={20} />home</NavLink>
                 {/* <MenuLink item={item}></MenuLink> */}
                 <NavLink to='/categories/clothing'><img src="/categories/clothing.png"/></NavLink>
                 <NavLink to='/categories/accessories'><img src="/categories/accessories.png"/></NavLink>

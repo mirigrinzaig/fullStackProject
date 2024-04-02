@@ -4,7 +4,7 @@
     padding-top: 2px;
     margin: 2px;
     gap:10px;
-    min-width:200%;
+    min-width:100%;
 }
 .products-list-top{
     display: flex;
@@ -22,22 +22,38 @@
 
 .products{
     display: flex;
-    max-width: 80vw;
+    /* max-width: 90vw; */
+    min-width: 100vw;
     flex-wrap: wrap;
-    gap:5vw;
+    gap:2vw;
 }
 .single{
     min-width: 15vw;
     max-width: 15vw;
     min-height: 20vh;
     max-height: 27vh;
-    background-color: rgb(250, 187, 209);
+    background-color: rgb(252, 250, 251);
     /* border-radius: 100px; */
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    border-style: double;
+    border-color: rgb(255, 104, 174);
+    cursor: pointer;
+    
     
 }
+.single img{
+    border-radius: 50%;
+    gap: 10px;
+    object-fit: cover;
+    min-height: 25vh;
+    max-height: 25vh;
+    min-width: 25vh;
+    max-width: 25vh;
+    cursor: pointer;
+}
+
 
 .products-list-product-image{
     border-radius: 50%;

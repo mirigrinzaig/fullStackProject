@@ -88,13 +88,14 @@
 
 
 // export default Accessories
-import { useSelector, useDispatch } from "react-redux";
+//import { useSelector, useDispatch } from "react-redux";
 import { Link, useSearchParams } from "react-router-dom";
 import Search from "../../../component/search/Search";
 import useGetFilePath from "../../../hooks/useGetFilePath";
-import { useGetAllProductsPublicQuery} from "../ProductsApiSlice"
-import { useEffect } from "react"
-import "./categories.css";
+import { useGetAllProductsPublicQuery } from "../ProductsApiSlice"
+//import { useEffect} from "react"
+import { useNavigate} from "react-router-dom"
+import "../List/productsList.css";
 
 const Accessories = () => {
     //products from the locsal store
@@ -107,17 +108,18 @@ const Accessories = () => {
     // if(!products){
     //     const { data: newProducts, isError, error, isLoading, isSuccess } = useGetAllProductsPublicQuery();
     // }
-    const {data:products,isError,error,isLoading,isSuccess}=useGetAllProductsPublicQuery()
+    const { data: products, isError, error, isLoading, isSuccess } = useGetAllProductsPublicQuery()
     //const {data:product,isError:isErrorGet1,error:errorProduct,isLoading:isProductLoading}=useGetProductByIdQuery()
-    const [searchParams]=useSearchParams()
-    const q=searchParams.get("q")
-    const {getFilePath}=useGetFilePath()
+    const [searchParams] = useSearchParams()
+    const q = searchParams.get("q")
+    const { getFilePath } = useGetFilePath()
+    const navigate = useNavigate()
 
-    if(isLoading)return<h1>loading...</h1>
-    if(isError)return<h1>{JSON.stringify(error)}</h1>
-    let filteredData=products.filter(p=>p.category==="accessories")
+    if (isLoading) return <h1>loading...</h1>
+    if (isError) return <h1>{JSON.stringify(error)}</h1>
+    let filteredData = products.filter(p => p.category === "accessories")
     console.log(filteredData);
-    filteredData=!q?[...filteredData]:filteredData.filter(p=>p.name.indexOf(q)>-1&&p.category==="accessories")
+    filteredData = !q ? [...filteredData] : filteredData.filter(p => p.name.indexOf(q) > -1 && p.category === "accessories")
 
     // useEffect(()=>{
     //     if(isSuccess){
@@ -126,7 +128,7 @@ const Accessories = () => {
     //     }
     //   },[isSuccess])
 
- return (
+    return (
         <div className="products-list">
             <div className="products-list-top">
                 <Search placeholder={"חיפוש לפי שם מוצר"} />
@@ -137,45 +139,23 @@ const Accessories = () => {
                     הרשמה
                 </Link>
             </div>
-            <table className="products-list-table">
-                <thead>
-                    <tr>
-                        <td>תמונה</td>
-                        <td>שם מוצר</td>
-                        <td>חברה</td>
-                        <td>category</td>
-                        <td>מחיר</td>
-                    </tr>
-                </thead>
-                <tbody>
+            <div className="products-list-table">
+                <div className="products">
                     {filteredData.map(product => (
-                        <tr key={product._id}>
-                            <td>
-                                <div className="products-list-product">
-                                    <img src={getFilePath(product.image)} alt="" width={40} height={40} className="products-list-product-image" />
-                                </div>
-                            </td>
-                            <td>
+                        <div className="single" onClick={()=>{navigate(`/public/${product.barcod}`)}} style={{ backgroundImage: `url(${getFilePath(product.image)})`}} key={product._id}>
+                            <div className="products-list-product">
+                                {/* <img src={getFilePath(product.image)} alt="" width={40} height={40} className="products-list-product-image" /> */}
+                            </div>
+                            {/* <Link to={`/public/${product.barcod}`} className="products-list-btn products-list-view"><img src={getFilePath(product.image)} alt="" className="products-list-product-image" /></Link> */}
+                            <div className="details">
                                 {product.name}
-                            </td>
-                            <td>
                                 {product.company}
-                            </td>
-                            <td>
-                                {product.category}
-                            </td>
-                            <td>
                                 {product.sellingPrice}
-                            </td>
-                            <td>
-                                <div className="products-list-btns">
-                                <Link to={`/public/${product.barcod}`} className="products-list-btn products-list-view">view</Link>
-                                </div>
-                            </td>
-                        </tr>
+                            </div>
+                        </div>
                     ))}
-                </tbody>
-            </table>
+                </div>
+            </div>
         </div>
     )
 }

@@ -129,14 +129,14 @@ import ScrollCarousel from 'scroll-carousel-react';
 
 const images = [
    {
-      url: "http://localhost:1234/uploads/1709061649474-68112193-IMG_3631.JPG",
+      url: "http://localhost:1234/uploads/baby.jpg",
       width: 320,
       height: 174,
       isSelected: true,
       caption: "After Rain (Jeshu John - designerspics.com)",
    },
    {
-      url: "http://localhost:1234/uploads/1709063412802-198059871-IMG_3641.jpg",
+      url: "http://localhost:1234/uploads/sea.jpg",
       width: 320,
       height: 174,
       isSelected: true,
@@ -189,16 +189,16 @@ const HomeMain = () => {
             ))}
          </ScrollCarousel>
          <div className="HomeCategorys">
-            <NavLink to='/categories/clothing'><img className="categoryIcon" src={"/logo512.png"} />הלבשה</NavLink>
-            <NavLink to='/categories/accessories'><img className="categoryIcon" src="/logo.png" />אקססוריז</NavLink>
-            <NavLink to='/categories/feed'><img className="categoryIcon" src="/logo.png" />האכלה</NavLink>
-            <NavLink to='/categories/bath'><img className="categoryIcon" src="/logo.png" />רחצה</NavLink>
-            <NavLink to='/categories/sleep'><img className="categoryIcon" src="/logo.png" />שינה</NavLink>
-            <NavLink to='/categories/walk'><img className="categoryIcon" src="/logo.png" />טיול</NavLink>
-            <NavLink to='/categories/play'><img className="categoryIcon" src="/logo.png" />משחק</NavLink>
-            <NavLink to='/categories/safe'><img className="categoryIcon" src="/logo.png" />בטיחות</NavLink>
-            <NavLink to='/categories/hygine'><img className="categoryIcon" src="/logo.png" />הגיינה וטיפוח</NavLink>
-            <NavLink to='/categories/presents'><img className="categoryIcon" src="/logo.png" />פינוק ומתנות</NavLink>
+            <NavLink to='/categories/clothing'><img className="categoryIcon" src={"/categories/clothing.png"} /></NavLink>
+            <NavLink to='/categories/accessories'><img className="categoryIcon" src="/categories/accessories.png" /></NavLink>
+            <NavLink to='/categories/feed'><img className="categoryIcon" src="/categories/feed.png" /></NavLink>
+            <NavLink to='/categories/bath'><img className="categoryIcon" src="/categories/bath.png" /></NavLink>
+            <NavLink to='/categories/sleep'><img className="categoryIcon" src="/categories/sleep.png" /></NavLink>
+            <NavLink to='/categories/walk'><img className="categoryIcon" src="/categories/walk.png" /></NavLink>
+            <NavLink to='/categories/play'><img className="categoryIcon" src="/categories/play.png" /></NavLink>
+            <NavLink to='/categories/safe'><img className="categoryIcon" src="/categories/safe.png" /></NavLink>
+            <NavLink to='/categories/hygine'><img className="categoryIcon" src="/categories/hygine.png" /></NavLink>
+            <NavLink to='/categories/presents'><img className="categoryIcon" src="/categories/presents.png" /></NavLink>
 
 
          </div>

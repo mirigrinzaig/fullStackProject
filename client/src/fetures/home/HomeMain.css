@@ -15,6 +15,7 @@ img{
 }
 .HomeCategorys{
      max-width: 90vw;
+     min-height: 30vh;
     /* background-color: #fff; */ 
 }
 .carouselImg{

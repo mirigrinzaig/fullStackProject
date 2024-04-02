@@ -4,12 +4,15 @@
     justify-content: space-around;
     margin-top: 30px;
     color:var(--text);
-    font-family: cursive;
+    /* font-family: cursive; */
     min-height: 50vh;
-    min-width: 130%;
+    min-width: 100%;
+    max-width: 90%;
     padding-top: 20px;
     margin-top: 20px;
-    background-color: rgb(247, 170, 206);
+    background-color: rgb(255, 223, 238);
+    /* border-style:double; */
+    /* border-color: rgb(250, 105, 185); */
 }
 .footer-logo{
     font-weight: bold;
@@ -17,4 +20,8 @@
 
 .footer-text{
     font-size: 12px;
+}
+.brandsImgs{
+    display: flex;
+    flex-wrap: wrap;
 }

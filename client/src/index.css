@@ -28,7 +28,7 @@ a{
  text-decoration: none;
 } */
 :root{
-  --bg:#f6e5ec;
+  --bg:#f8f0f3;
   --bgSoft:#f6a6c5;
   --bgPink: #c76681d6;
   --text:rgb(60, 83, 88);
@@ -62,4 +62,8 @@ body{
 a{
  color: inherit;
  text-decoration: none;
+}
+.logoP{
+  min-width: 80px;
+  min-height: 100px;
 }

@@ -19,7 +19,7 @@ const DashLayout=()=>{
                 </div>
                 <HomeMain/> */}
                 <Outlet/>
-                <Footer/>
+                {/* <Footer/> */}
             </div>
         </div>
     )
