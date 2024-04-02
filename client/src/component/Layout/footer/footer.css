@@ -1,10 +1,15 @@
 .footer{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-top: 30px;
     color:var(--text);
     font-family: cursive;
+    min-height: 50vh;
+    min-width: 130%;
+    padding-top: 20px;
+    margin-top: 20px;
+    background-color: rgb(247, 170, 206);
 }
 .footer-logo{
     font-weight: bold;

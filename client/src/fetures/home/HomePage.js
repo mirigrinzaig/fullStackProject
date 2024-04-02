@@ -46,21 +46,16 @@ const HomePage = () => {
             </div>
             <table className="products-list-table">
                 <thead>
-                    {/* <tr>
-                        <td>תמונה</td>
-                        <td>שם מוצר</td>
-                        <td>חברה</td>
-                        <td>מחיר</td>
-                    </tr> */}
                 </thead>
                 <tbody className="products">
                     {filteredData.map(product => (
                         <tr className="single" key={product._id}>
                             <td>
                                 <div className="products-list-product">
-                                    <img src={getFilePath(product.image)} alt="" width={40} height={40} className="products-list-product-image" />
+                                    {/* <img src={getFilePath(product.image)} alt="" width={40} height={40} className="products-list-product-image" /> */}
                                 </div>
                             </td>
+                            <Link to={`/public/${product.barcod}`} className="products-list-btn products-list-view"><img src={getFilePath(product.image)} alt="" className="products-list-product-image" /></Link>
                             <div className="details">
                             <td>
                                 {product.name}
@@ -73,7 +68,7 @@ const HomePage = () => {
                             </td>
                             <td>
                                 <div className="products-list-btns">
-                                <Link to={`/public/${product.barcod}`} className="products-list-btn products-list-view">view</Link>
+                              
                                 </div>
                             </td>
                             </div>

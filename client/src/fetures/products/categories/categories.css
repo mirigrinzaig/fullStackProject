@@ -1,0 +1,44 @@
+.products-list{
+     border-color: rgb(164, 106, 30) !important;
+     
+    
+}
+.products-list-top{
+    display: flex;
+
+}
+.products-list-login-btn{
+    padding: 10px;
+    background-color: #40aca7;
+    color: rgb(176, 175, 175);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.products-list-regist-btn{
+    padding: 10px;
+    background-color: #40aca7;
+    color: rgb(176, 175, 175);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+.products-list-all{
+    display: flex;
+    gap: 0;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-color: #fff;
+    border-color: #052f2d;
+    border-style: dashed;
+    min-width: 90vw;
+    
+}
+.single {
+    display: flex;
+   max-width: 10vw;
+  }
+.product-img{
+
+}

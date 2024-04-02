@@ -23,7 +23,7 @@ const ProductsList = () => {
 
 
     if (isLoading) return <h1>loading...</h1>
-    if (isError) return <h1>{JSON.stringify(error)}</h1>
+    if (isError) return <h1>{JSON.sdivingify(error)}</h1>
 
     const filteredData = !q ? [...products] : products.filter(p => p.name.indexOf(q) > -1)
 
@@ -35,47 +35,22 @@ const ProductsList = () => {
                     הוספת מוצר
                 </Link>
             </div>
-            <table className="products-list-table">
-                <thead>
-                    {/* <tr>
-                        <td>תמונה</td>
-                        <td>barcod</td>
-                        <td>שם מוצר</td>
-                        <td>חברה</td>
-                        <td>מחיר</td>
-                    </tr> */}
-                </thead>
-                <tbody className="products">
-                    {filteredData.map(product => (
-                        <tr className="single" key={product._id}>
-                            <td>
-                                <div className="products-list-product">
-                                    <img src={getFilePath(product.image)} alt="" className="products-list-product-image" />
-                                </div>
-                            </td>
-                            <div className="details">
-                                <td>
-                                    {product.barcod}
-                                </td>
-                                <td>
-                                    {product.name}
-                                </td>
-                                <td>
-                                    {product.company}
-                                </td>
-                                <td>
-                                    {product.sellingPrice}
-                                </td>
-                                <td>
-                                    <div className="products-list-btns">
-                                        <Link to={`/dash/products/${product.barcod}`} className="products-list-btn products-list-view">view</Link>
-                                        <button onClick={() => { deleteClick(product) }} className="products-list-btn products-list-delete">delete</button></div>
-                                </td>
-                            </div>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
+            <div className="products">
+                {filteredData.map(product => (
+                    <div className="single" key={product._id}>
+                        <Link to={`/dash/products/${product.barcod}`} className="products-list-btn products-list-view"><img src={getFilePath(product.image)} alt="" className="products-list-product-image" /></Link>
+                        <div className="details">
+                            <div className="details-wr">
+                                {product.barcod}<br/>
+                                {product.name}<br/>
+                                {product.company}<br/>
+                                {product.sellingPrice}</div>
+                            <div className="products-list-btns">
+                                <button onClick={() => { deleteClick(product) }} className="products-list-btn products-list-delete">delete</button></div>
+                        </div>
+                    </div>
+                ))}
+            </div>
         </div>
     )
 }

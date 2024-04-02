@@ -1,13 +1,12 @@
-.login-page{
+/* .login-page{
 width:100%;
 min-height: 100vh;
 display: flex;
 align-items: center;
 justify-content: center;
-}
-.login-page-form{
+} */
+/* .login-page-form{
 background-color: var(--bgSoft);
-/* background-color: #fff; */
 padding: 50px;
 border-radius: 10px;
 width: 500px;
@@ -17,21 +16,110 @@ flex-direction: column;
 align-items: center;
 justify-content: center;
 gap: 30px;
-}
-.login-page-form input{
+} */
+/* .login-page-form input{
     width: 100%;
     padding: 30px;
     border: solid 2px #2e374a;
     border-radius: 5px;
     background-color: var(--bg);
     color: var(--text);
-}
-.login-page-form button{
+} */
+/* .login-page-form button{
     width: 100%;
     padding: 30px;
-    background-color: teal;
+    background-color:#f3d8e3;
     color: var(--text);
     border: none;
     cursor: pointer;
     border-radius: 5px;
-}
+} */
+
+
+.login-page{
+    width:100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--fontFamily);
+    padding: 10px;
+    }
+    .exit{
+        /* position: fixed;
+        top:10%;
+        left:20%; */
+    }
+    .logoP{
+        width: 200px;
+        height: 130px;
+        background-image:url("http://localhost:1234/uploads/logo.PNG");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .login-page-form{
+    background-color: whitesmoke;
+    padding: 40px;
+    padding-top: 0;
+    padding-bottom: 25px;
+    border-radius: 10px;
+    border-bottom-right-radius: 0%;
+    border-bottom-left-radius: 0%;
+    width: 450px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    border: solid var(--bgPink) 3px;
+    }
+    
+    .login-page-form input{
+        width: 100%;
+        height: 30px;
+        padding: 30px;
+        border: solid 2px var(--bgPink);
+        border-radius: 5px;
+        background-color:var(--bgWhite);
+        color: var(--bgSoft);
+        font-family: var(--fontFamily);
+    
+    }
+    .login-page-form button,.toRegist button{
+        width: 70%;
+        padding: 13px;
+        font-size: 20px;
+        font-family: var(--fontFamily);
+        background-color: var(--bgPink);
+        color: var(--text);
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        text-align: center center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .toRegist button{
+        background-color: var(--bgWhite);
+    
+    }
+    .toRegist{
+     width: 450px;
+     height: 30%;
+     padding: 40px;
+     padding-top: 25px;
+     gap:20px;
+     border-bottom: solid var(--bgSoft) 10px;
+     border-radius: 10px;
+     border-top-right-radius: 0%;
+     border-top-left-radius: 0%;
+     color: var(--text);
+     background-color: var(--bgSoft);
+     display: flex;
+     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }

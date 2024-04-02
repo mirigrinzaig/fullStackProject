@@ -1,4 +1,4 @@
-.regist-page{
+/* .regist-page{
     width:100%;
     min-height: 100vh;
     display: flex;
@@ -7,7 +7,6 @@
     }
     .regist-page-form{
     background-color: var(--bgSoft);
-    /* background-color: #fff; */
     padding: 20px;
     border-radius: 10px;
     width: 500px;
@@ -35,4 +34,61 @@
         cursor: pointer;
         border-radius: 5px;
     }
-    
+     */
+     .regist-page{
+        width:100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--fontFamily);
+        padding:10px;
+        }
+        .logoPS{
+            width: 320px;
+            height: 100px;
+            background-image:url("http://localhost:1234/uploads/serviesLogo.PNG");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .regist-page-form{
+            background-color: whitesmoke;
+            padding: 50px;
+            padding-bottom: 25px;
+            border-radius: 10px;
+            width: 450px;
+            height: 70%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
+            border: solid var(--bgPink) 3px;
+        }
+        .regist-page-form input{
+            width: 100%;
+        height: 30px;
+        padding: 30px;
+        border: solid 2px var(--bgPink);
+        border-radius: 5px;
+        background-color:var(--bgWhite);
+        color: var(--bgSoft);
+        font-family: var(--fontFamily);
+        }
+        .regist-page-form button{
+            width: 70%;
+            padding: 13px;
+            font-size: 20px;
+            font-family: var(--fontFamily);
+            background-color: var(--bgPink);
+            color: var(--text);
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            text-align: center center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        

@@ -1,91 +1,70 @@
-.products-list {
-    border-color: var(--bgSoft);
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 20px;
-   
-}
-
-.products-list-top {
+.products-list{
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
+    padding-top: 2px;
+    margin: 2px;
+    gap:10px;
+    min-width:200%;
 }
-
-.products-list-add-btn {
-    padding: 10px;
-    background-color: #40aca7;
-    color: rgb(176, 175, 175);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.products-list-table {
-    width: 100vw;
-}
-
-.products-list-table td {
-    padding: 10px;
-}
-
-.products-list-product {
+.products-list-top{
     display: flex;
-    align-items: center;
     gap: 10px;
 }
+.products-list-add-btn{
+    background-color: rgb(245, 176, 197);
+    border-radius: 50px;
+    min-width: 95px;
+    font-size: small;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
 
-.products-list-product-image {
+.products{
+    display: flex;
+    max-width: 80vw;
+    flex-wrap: wrap;
+    gap:5vw;
+}
+.single{
+    min-width: 15vw;
+    max-width: 15vw;
+    min-height: 20vh;
+    max-height: 27vh;
+    background-color: rgb(250, 187, 209);
+    /* border-radius: 100px; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+}
+
+.products-list-product-image{
     border-radius: 50%;
     gap: 10px;
     object-fit: cover;
     min-height: 25vh;
+    max-height: 25vh;
     min-width: 25vh;
     max-width: 25vh;
-}
-
-.products-list-btn {
-padding: 5px 10px;
-border-radius: 5px;
-color: var(--text);
-border: none;
-cursor: pointer;
-font-size: 14px;
-}
-.products-list-view {
-    background-color: teal;
-}
-.products-list-delete{
-    background-color: crimson;
-}
-.products-list-btns{
-    display: flex;
-    gap: 10px;
-}
-.products{
-    display: flex;
-    flex-direction:row;
-    flex-wrap: wrap;
-    gap: 40px;
-    max-width: 70vw;
-
-}
-.single{
-    
-    background-color: rgb(126, 215, 212);
-    border-radius: 1000px;
-    min-height: 5vh;
-    max-width: 6vh;
-    max-width: 10vw;
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-    margin: 0;
-   
+    cursor: pointer;
 }
 .details{
     display: flex;
     flex-wrap: wrap;
-    font-size: smaller;
-    max-width: 15vw;
+    flex-direction: column;
+    max-width: 15vw !important;
+    min-height: 10vh;
+    font-size: 0.5rem;
 }
+.details-wr{
+    /* display: flex;
+    flex-direction: row; */
+}
+.products-list-delete{
+    background-color: rgb(255, 196, 223);
+    border: none;
+    color: red;
+    cursor: pointer;
+}
+
