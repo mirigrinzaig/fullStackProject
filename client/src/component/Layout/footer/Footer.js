@@ -27,7 +27,9 @@ const Footer = () => {
                 
                 
                 </div>
-            <div className="footer-text"> Miri Grintzaig.All rights reserved @</div>
+                <img src="/logo.png" className="logoP"/>
+                <div><img src="/categories/brands.png"/> </div>
+            <div className="footer-text"> building:Miri Grintzaig 0556737092<br/>.All rights reserved @</div>
         </div>
     )
 }

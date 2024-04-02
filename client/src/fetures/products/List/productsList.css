@@ -23,9 +23,9 @@
 .products{
     display: flex;
     /* max-width: 90vw; */
-    min-width: 100vw;
+    min-width: 100%;
     flex-wrap: wrap;
-    gap:2vw;
+    gap:4vw;
 }
 .single{
     min-width: 15vw;

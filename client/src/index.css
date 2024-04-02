@@ -64,6 +64,6 @@ a{
  text-decoration: none;
 }
 .logoP{
-  min-width: 80px;
-  min-height: 100px;
+  min-width: 5vw;
+  min-height: 75vh;
 }
