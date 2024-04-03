@@ -37,13 +37,13 @@ const App = () => {
                 <Route path="/categories/clothing" element={<Clothing />} />
                 <Route path="/categories/feed" element={<Feed />} />
                 <Route path="/categories/hygine" element={<Hygine />} />
-                <Route path="/categories/play" element={<Clothing />} />
-                <Route path="/categories/presents" element={<Clothing />} />
-                <Route path="/categories/safe" element={<Clothing />} />
-                <Route path="/categories/sleep"element={<Clothing />} />
-                <Route path="/categories/walk" element={<Clothing />} />
-                <Route path="/categories/plumabrand" element={<Clothing />} />
-                <Route path="/categories/promotions"element={<Clothing />} />
+                <Route path="/categories/play" element={<Play />} />
+                <Route path="/categories/presents" element={<Presents />} />
+                <Route path="/categories/safe" element={<Safe />} />
+                <Route path="/categories/sleep"element={<Sleep />} />
+                <Route path="/categories/walk" element={<Walk />} />
+                <Route path="/categories/plumabrand" element={<PlumaBrand/>} />
+                <Route path="/categories/promotions"element={<Promoties />} />
                 <Route path="login" element={<LoginPage />} />
                 <Route path="regist" element={<RegistPage />} />
                 <Route path="/public/:productBarcod" element={<SingleProductPublic />} />

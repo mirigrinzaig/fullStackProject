@@ -75,7 +75,7 @@ export const LoginPage = () => {
         {/* <div className="logoP">
         </div> */}
         <h1>כניסת משתמשים</h1>
-        <input type='text' required name='userName' id='userName' placeholder='שם משתמש' />
+        <input type='text' required name='userName' id='userName' placeholder="כתובת אימייל" />
         <input type='password' required name='password' id='password' placeholder='ססמא' />
         <button type='submit'>כניסה</button>
         {error && error.data?.message}

@@ -29,7 +29,7 @@ const Footer = () => {
                 </div>
                 <img src="/logo.png" className="logoP"/>
                 <div><img src="/categories/brands.png"/> </div>
-            <div className="footer-text"> building:Miri Grintzaig 0556737092<br/>.All rights reserved @</div>
+            <div className="footer-text"> building:Miri Grintzaig 0556737092 mirigrinzaig111@gmail.com<br/>.All rights reserved @</div>
         </div>
     )
 }

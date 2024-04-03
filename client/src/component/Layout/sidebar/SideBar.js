@@ -86,7 +86,7 @@ const SideBar = () => {
 
     const logOutClick=()=>{
         logout()
-        navigate("/login")
+        navigate("/")
     }
     return (
         <div className="sidebar">

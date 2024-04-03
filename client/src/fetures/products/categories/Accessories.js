@@ -142,11 +142,11 @@ const Accessories = () => {
             <div className="products-list-table">
                 <div className="products">
                     {filteredData.map(product => (
-                        <div className="single" onClick={()=>{navigate(`/public/${product.barcod}`)}} style={{ backgroundImage: `url(${getFilePath(product.image)})`}} key={product._id}>
+                        <div className="single" key={product._id}>
                             <div className="products-list-product">
                                 {/* <img src={getFilePath(product.image)} alt="" width={40} height={40} className="products-list-product-image" /> */}
                             </div>
-                            {/* <Link to={`/public/${product.barcod}`} className="products-list-btn products-list-view"><img src={getFilePath(product.image)} alt="" className="products-list-product-image" /></Link> */}
+                            <Link to={`/public/${product.barcod}`} className="products-list-btn products-list-view"><img src={getFilePath(product.image)} alt="" className="products-list-product-image" /></Link>
                             <div className="details">
                                 {product.name}
                                 {product.company}

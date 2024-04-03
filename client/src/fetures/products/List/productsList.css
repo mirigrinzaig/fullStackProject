@@ -29,9 +29,9 @@
 }
 .single{
     min-width: 15vw;
-    max-width: 15vw;
-    min-height: 20vh;
-    max-height: 27vh;
+    /* max-width: 15vw; */
+    min-height: 44vh;
+    max-height: 44.5vh;
     background-color: rgb(252, 250, 251);
     /* border-radius: 100px; */
     display: flex;
@@ -40,43 +40,54 @@
     border-style: double;
     border-color: rgb(255, 104, 174);
     cursor: pointer;
-    
+    color:rgb(28, 28, 27)
     
 }
 .single img{
-    border-radius: 50%;
-    gap: 10px;
+    /* border-radius: 50%;
     object-fit: cover;
     min-height: 25vh;
     max-height: 25vh;
     min-width: 25vh;
     max-width: 25vh;
+    cursor: pointer; */
+    object-fit: cover;
+    min-height: 44vh;
+    max-height: 44vh;
+    /* max-height: 25vh; */
+    min-width: 15vw;
+    max-width: 15vw;
+
+    /* max-width: 25vh; */
     cursor: pointer;
 }
 
 
 .products-list-product-image{
-    border-radius: 50%;
-    gap: 10px;
+    /* border-radius: 50%; */
+    /* gap: 10px; */
     object-fit: cover;
     min-height: 25vh;
-    max-height: 25vh;
+    /* max-height: 25vh; */
     min-width: 25vh;
-    max-width: 25vh;
+    /* max-width: 25vh; */
     cursor: pointer;
 }
 .details{
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
+    min-width: 15vw;
     max-width: 15vw !important;
     min-height: 10vh;
-    font-size: 0.5rem;
+    font-size: 1.5rem;
+    position: absolute;
+    background-color: rgb(255, 216, 235);
 }
-.details-wr{
-    /* display: flex;
-    flex-direction: row; */
-}
+/* .details-wr{
+    display: flex;
+    flex-direction: row;
+} */
 .products-list-delete{
     background-color: rgb(255, 196, 223);
     border: none;
