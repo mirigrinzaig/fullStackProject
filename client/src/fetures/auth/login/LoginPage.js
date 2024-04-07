@@ -45,17 +45,25 @@ import { useLoginMutation } from "../authApiSlice"
 import { useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import { NavLink } from "react-router-dom/dist/umd/react-router-dom.development"
+import useAuth from "../../../hooks/useAuth"
 
 export const LoginPage = () => {
-
+  const { _id, userName, name, email, roles } = useAuth()
   const [login, { isError, error, isLoading, isSuccess, data }] = useLoginMutation()
   const navigate = useNavigate()
+  let userObj = {}
 
   useEffect(() => {
     if (isSuccess) {
+      console.log(userObj);
+      if (roles === "admin")
+        navigate("/dash")
       //this is the token!!
       console.log(data);
-      navigate("/dash")
+      console.log(name);
+      if (roles === "user")
+        navigate("/")
+      // navigate("/dash")
     }
 
   }, [isSuccess])
@@ -63,8 +71,8 @@ export const LoginPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     const data = new FormData(e.target)
-    const userObj = Object.fromEntries(data.entries())
-    console.log(userObj)
+    userObj = Object.fromEntries(data.entries())
+    console.log(userObj.userName)
     login(userObj)
   }
 

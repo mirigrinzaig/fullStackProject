@@ -6,13 +6,16 @@ import useGetFilePath from "../../hooks/useGetFilePath"
 import "../products/List/productsList.css"
 import { useEffect } from "react"
 import { UseSelector, useDispatch } from "react-redux"
+import { useNavigate } from "react-router-dom"
 import { resetProducts } from "../products/productsSlice"
+import {useSendLogoutMutation} from "../auth/authApiSlice"
 
 
 const HomePage = () => {
-    const { data: products, isError, error, isLoading, isSuccess } = useGetAllProductsPublicQuery()
+    const { data: products, isError, error, isLoading} = useGetAllProductsPublicQuery()
+    const [logout,{isSuccess}]=useSendLogoutMutation()
     //const {data:product,isError:isErrorGet1,error:errorProduct,isLoading:isProductLoading}=useGetProductByIdQuery()
-
+    const navigate=useNavigate()
     const [searchParams] = useSearchParams()
     const q = searchParams.get("q")
     const { getFilePath } = useGetFilePath()
@@ -25,6 +28,11 @@ const HomePage = () => {
         }
 
     }, [isSuccess])
+
+    const logOutClick=()=>{
+        logout()
+        navigate("/")
+    }
 
 
     if (isLoading) return <h1>loading...</h1>
