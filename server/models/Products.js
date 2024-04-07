@@ -15,8 +15,11 @@ const productSchema = new mongoose.Schema(
             type: String,
             // required: true
         },
-        itemDescription: {
-            type: [String,{ length: Number, width: Number, height: Number }],
+        // itemDescription: {
+        //     type: [String,{ length: Number, width: Number, height: Number }],
+        // },
+        itemDescription:{
+            type: String,
         },
         company: {
             type: String

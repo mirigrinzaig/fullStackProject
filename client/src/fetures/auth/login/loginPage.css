@@ -46,11 +46,7 @@ gap: 30px;
     font-family: var(--fontFamily);
     padding: 10px;
     }
-    .exit{
-        /* position: fixed;
-        top:10%;
-        left:20%; */
-    }
+    
     .logoP{
         width: 200px;
         height: 130px;
@@ -101,6 +97,16 @@ gap: 30px;
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+    .exit{
+        position: fixed;
+        top:0%;
+        left:0%;
+         max-height: 50px;
+         max-width: 50px;
+         align-self:self-end;
+         border-radius: 25px;
+         font-size: 40px;
     }
     .toRegist button{
         background-color: var(--bgWhite);

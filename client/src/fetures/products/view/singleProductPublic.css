@@ -1,12 +1,12 @@
 .single-product-container {
     display: flex;
     /* flex-direction: column; */
-    flex-direction: column;
+    flex-direction: row;
     gap: 0;
     padding: 2vh;
     margin: 2vw;
     position: relative;
-    border-radius: 100px;
+    /* border-radius: 100px; */
     overflow: hidden;
     justify-content: center;
     align-items: center;
@@ -34,20 +34,107 @@
     color: rgb(0, 159, 173);
 }
 .productName{
-    font-size: 10rem;
-}
+    font-size: 25px;
 
-.single-product-info{
-    max-width: 75vw;
+}
+#productName{
+    font-size: 60px;
+}
+.single-product-img{
+    max-width: 50vw;
     max-height:85vh;
-    min-width: 74vw;
-    min-height:84vh;
-    border-radius: 100px;
+    min-width: 50vw;
+    min-height:70vh;
     padding-top: 20px;
+    margin: 5vw;
     position: relative;
-    border-radius: 100px;
+    /* border-radius: 100px; */
     overflow: hidden;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+}
+.single-product-left-side{
+    max-width: 30vw;
+    max-height:85vh;
+    min-width: 30vw;
+    min-height:70vh;
+    /* margin: 10vw; */
+    /* display: flex;
+   flex-direction: column;
+   /* justify-content: center;
+   align-items: center; */ 
+}
+.productDetails{
+  padding: 15px;
+   display: flex;
+   flex-direction: column;
+   justify-content:space-between;
+   align-items:center;
+   gap: 7px;
+   min-height: 40vh;
+    border-top: solid 3px var(--bgSoft);
+    border-bottom: solid 3px var(--bgSoft);
+
+}
+#moreInfo{
+    border: none;
+    border-bottom: solid 1px var(--text);
+    font-family: var(--fontFamily);
+    font-size: 15px;
+    cursor: pointer;
+}
+.colorsBox button{
+    height: 40px;
+    width: 40px;
+    border-radius: 25px;
+    cursor: pointer;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.addButton{
+    /* height: 30px;
+    width: 30px;
+    border-radius: 25px; */
+    border: none;
+    cursor: pointer;
+    font-size: 30px;
+    color: var(--text);
+    border-bottom: solid 1.5px var(--text);
+
+}
+.colorsBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;    
+}
+.amountToBuy{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    gap: 20px;
+}
+.productAdd{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:20px;
+    margin-top: 40px;
+}
+.productAdd button{
+    background-color: var(--bgSoft);
+    color: var(--text);
+    border: none;
+    border-radius: 20px;
+    height: 35px;
+    font-size: 20px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
