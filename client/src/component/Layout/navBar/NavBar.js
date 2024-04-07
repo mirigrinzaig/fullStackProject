@@ -10,9 +10,17 @@ import {
 import { NavLink } from "react-router-dom"
 import MenuLink from "../sidebar/MenuLink"
 import useAuth from "../../../hooks/useAuth"
+import { useNavigate } from "react-router-dom"
+import {useSendLogoutMutation} from "../../../fetures/auth/authApiSlice"
 
 const NavBar = () => {
+    const navigate=useNavigate()
     const {_id,userName,name,email,roles}=useAuth()
+    const [logout,{isSuccess}]=useSendLogoutMutation()
+    const logOutClick=()=>{
+        logout()
+        navigate("/")
+    }
     // const links=[
     //     {
 
@@ -35,7 +43,7 @@ const NavBar = () => {
                 </div> */}
             </div>
             <div className="navbar-menu">
-                {userName&&<p>שלום ל:{name}</p>}
+                {userName&&<p>שלום ל:{name}<button onClick={logOutClick}>התנתקות</button></p>}
                 <NavLink to='/'><MdHome size={20} />home</NavLink>
                 {/* <MenuLink item={item}></MenuLink> */}
                 <NavLink to='/categories/clothing'><img src="/categories/clothing.png"/></NavLink>
