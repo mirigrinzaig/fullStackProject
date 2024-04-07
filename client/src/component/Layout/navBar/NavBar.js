@@ -9,8 +9,10 @@ import {
 } from "react-icons/md"
 import { NavLink } from "react-router-dom"
 import MenuLink from "../sidebar/MenuLink"
+import useAuth from "../../../hooks/useAuth"
 
 const NavBar = () => {
+    const {_id,userName,name,email,roles}=useAuth()
     // const links=[
     //     {
 
@@ -33,6 +35,7 @@ const NavBar = () => {
                 </div> */}
             </div>
             <div className="navbar-menu">
+                {userName&&<p>שלום ל:{name}</p>}
                 <NavLink to='/'><MdHome size={20} />home</NavLink>
                 {/* <MenuLink item={item}></MenuLink> */}
                 <NavLink to='/categories/clothing'><img src="/categories/clothing.png"/></NavLink>
