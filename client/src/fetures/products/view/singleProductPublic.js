@@ -4,6 +4,11 @@ import { useGetProductByIdQuery } from "../ProductsApiSlice"
 import useGetFilePath from "../../../hooks/useGetFilePath"
 import "./singleProductPublic.css"
 import { useState } from "react"
+import { TbCurrencyShekel } from "react-icons/tb";
+import { BsBagHeartFill } from "react-icons/bs";
+import { FaCartPlus } from "react-icons/fa6";
+
+
 //שאלה ענקית על כל הדף הזה!
 //?האם זה דף למנהל כדי שיוכל לשנות את פרטי המוצר או שזה דף למשתמש כדי שיראה אותו בנפרד
 const SingleProductPublic = () => {
@@ -54,16 +59,15 @@ const SingleProductPublic = () => {
             {/* <div className="single-product-img-container">
                 <img src={getFilePath(product.image)} alt="" />
             </div> */}
-            <div className="single-product-img" style={{ backgroundImage: `url(${getFilePath(product.image)})`  }}>
+            <div className="single-product-img" style={{ backgroundImage: `url(${getFilePath(product.image)})` }}>
             </div>
             {/* `url(${getFilePath(product.image)})` */}
             <div className="single-product-left-side">
                 <div className="productDetails">
                     <div className="productName">
                         <div id="productName">{product.name}</div>
-                        {product.company}<br></br>
-                        {/* להוסיף כאן איקון מחיר ש"ח */}
-                        {product.sellingPrice} ש"ח
+                        {product.company}<br /><br />
+                        {product.sellingPrice}<TbCurrencyShekel style={{ fontSize: 17 }} />
                     </div>
                     <button id="moreInfo" onClick={displayMoreInfo}>למידע נוסף > </button>
                     {moreInfo &&
@@ -87,8 +91,8 @@ const SingleProductPublic = () => {
                     <button className="addButton" onClick={minusOne}>-</button>
                 </div>
                 <div className="productAdd">
-                    <button onClick={addToCart}>הוספה לסל</button>
-                    <button onClick={addToFavourites}>אהבתי</button>
+                    <button className="addToCart" onClick={addToCart}>הוספה לסל</button>
+                    <button className="addToFavourites" onClick={addToFavourites}><BsBagHeartFill /></button>
                 </div>
 
             </div>
