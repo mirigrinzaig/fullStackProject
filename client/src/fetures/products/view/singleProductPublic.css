@@ -105,6 +105,9 @@
     font-size: 30px;
     color: var(--text);
     border-bottom: solid 1.5px var(--text);
+    border: none;
+    background-color: var(--bg);
+    
 
 }
 .colorsBox{
@@ -128,10 +131,12 @@
     gap:20px;
     margin-top: 40px;
 
+    color: white;
 }
 .productAdd button{
     color: var(--text);
     font-family: var(--fontFamily);
+    color: white;
     border: none;
     border-radius: 20px;
     height: 35px;
@@ -155,5 +160,12 @@
 .addToFavourites:active{
     color: var(--bgSoft);
     font-size: 35px;
+   
 
+}
+button{
+    cursor: pointer;
+}
+h2{
+    font-family: Arial, Helvetica, sans-serif;
 }

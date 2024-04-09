@@ -19,7 +19,7 @@ const createNewProduct = async (req, res) => {
     //create array of colors:
     let colorsImg = []
     if (colors) {
-        colorsImg = colors.split(" ")}
+        colorsImg = colors.split(",")}
     //create search datails:
     let searchDetails = `${name} ${category}`
     if (company) {
@@ -31,7 +31,7 @@ const createNewProduct = async (req, res) => {
     //create product:
     //לזכור להוסיף בהמשך עדכון תמונה.!!!!
     const product = await Products.create({
-        barcod, name, itemDescription, company, category, size, amount, colors,image,
+        barcod, name, itemDescription, company, category, size, amount, colors:colorsImg,image,
         agent, agentPrice, sellingPrice, salePrice, inSale, marked, searchDetails
     })
     return res.json(product)
@@ -41,7 +41,7 @@ const createNewProduct = async (req, res) => {
 //for every one!
 const getAllProducts = async (req, res) => {
     //יש כאן פרטים שהמשתמש לא רואה אבל צריך אותם בצד לקוח עבור כולם, כמו פרטי חיפוש או כמות עבור הצגת אזל
-    const products = await Products.find({}, {name: 1,barcod:1,company:1,category:1,amount:1,image:1,colors:1,sellingPrice:1,salePrice:1,inSale:1,marked:1,searchDetails:1}).lean()
+    const products = await Products.find({}, {name: 1,barcod:1,company:1,category:1,amount:1,image:1,colors:1,sellingPrice:1,salePrice:1,inSale:1,marked:1,searchDetails:1,itemDescription:1}).lean()
     if (!products?.length) {
     return res.status(400).json({ massage: 'no products' })
     }
@@ -163,6 +163,7 @@ const getProductById = async (req, res) => {
         colors:product.colors,
         sellingPrice:product.sellingPrice,
         salePrice:product.salePrice,
+        itemDescription:product.itemDescription,
         inSale:product.inSale,
         marked:product.marked,
         searchDetails:product.searchDetails}

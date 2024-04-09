@@ -8,17 +8,32 @@ import { TbCurrencyShekel } from "react-icons/tb";
 import { BsBagHeartFill } from "react-icons/bs";
 import { FaCartPlus } from "react-icons/fa6";
 
+import { useEffect,useState } from "react"
 
 //שאלה ענקית על כל הדף הזה!
 //?האם זה דף למנהל כדי שיוכל לשנות את פרטי המוצר או שזה דף למשתמש כדי שיראה אותו בנפרד
 const SingleProductPublic = () => {
     const { productBarcod } = useParams()
     console.log(productBarcod);
-    const { data: product, isLoading: isLoading, isError: isError, error: error } = useGetProductByIdQuery(productBarcod)
+    const { data: product, isLoading: isLoading, isError: isError, error: error,isSuccess} = useGetProductByIdQuery(productBarcod)
     console.log("data", product);
+    //console.log("colors",product.colors);
     console.log("isError", isError);
     const [amount, setAmount] = useState(1)
     const [moreInfo, setMoreInfo] = useState(false)
+    const [info, setInfo] = useState("אין מידע נוסף.")
+    const [colors,setColors]=useState([['rgb(0, 159, 173)', '#f8f0f3', '#c76681d6']])
+
+
+    //colors:
+    useEffect(() => {
+        if (isSuccess) {
+            console.log("colors: arr: ",product.colors);
+            product.colors.length>0?setColors(product.colors):setColors(['rgb(0, 159, 173)', '#f8f0f3', '#c76681d6'])
+            product.itemDescription.length>0?setInfo(product.itemDescription):setInfo("אין מידע נוסף")
+        }
+    }, [isSuccess])
+
 
 
     // const product=getProduct(productBarcod)
@@ -37,7 +52,9 @@ const SingleProductPublic = () => {
         setAmount(newAmount)
     }
     const minusOne = () => {
-        const newAmount = amount - 1
+        let newAmount = amount - 1
+        if(newAmount<1)
+        newAmount=1
         setAmount(newAmount)
     }
 
@@ -47,9 +64,7 @@ const SingleProductPublic = () => {
     const addToFavourites = () => {
 
     }
-    //למחוק אחר כך, לנסיון תצוגה בלבד!
-    const colors = ['rgb(0, 159, 173)', '#f8f0f3', '#c76681d6']
-
+    
     if (isLoading) return <h1>loading...</h1>
     if (isError) return <h1>{JSON.stringify(error)}</h1>
     if (!product)
@@ -69,12 +84,12 @@ const SingleProductPublic = () => {
                         {product.company}<br /><br />
                         {product.sellingPrice}<TbCurrencyShekel style={{ fontSize: 17 }} />
                     </div>
-                    <button id="moreInfo" onClick={displayMoreInfo}>למידע נוסף > </button>
-                    {moreInfo &&
+                    <button id="moreInfo" onClick={displayMoreInfo}>למידע נוסף</button>
+                    {moreInfo&&
                         <div className="moreInfo">
-                            moreInfo
-                            {product.itemDescription}
-                        </div>}
+                            {info}
+                        </div>
+                    }
                     <div className="colorsBox">
                         {
                             //קודם להביא את מערך הצבעים
@@ -93,6 +108,8 @@ const SingleProductPublic = () => {
                 <div className="productAdd">
                     <button className="addToCart" onClick={addToCart}>הוספה לסל</button>
                     <button className="addToFavourites" onClick={addToFavourites}><BsBagHeartFill /></button>
+                    <button onClick={addToCart}>🛒</button>
+                    <button onClick={addToFavourites}>❤</button>
                 </div>
 
             </div>

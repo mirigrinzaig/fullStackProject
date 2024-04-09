@@ -8,6 +8,7 @@ margin-top: 10px;
 display: flex;
 flex-wrap: wrap;
 justify-content: space-between;
+gap: 20px;
 }
 .add-product-form input{
 padding: 30px;
@@ -26,3 +27,43 @@ width: 45%;
    border-radius: 5px;
    cursor: pointer;
 }
+/* .colorInput{
+  border-radius: 800px;
+  background-color: aquamarine;
+  min-height: 60px;
+  max-height: 60px;
+
+} */
+.colorSelect{
+  border-radius: 50%;
+  background-color: rgb(34, 32, 32);
+  min-height: 65px;
+  max-height: 65px;
+  min-width: 65px;
+  max-width: 65px;
+  align-items: center;
+  justify-content: space-around;
+
+  
+}
+.colorSelect input{
+  border-radius: 50%;
+  min-height: 60px;
+  max-height: 60px;
+  min-width: 60px;
+  max-width: 60px;
+  background-color: none;
+  align-items: center;
+  justify-content: center;
+}
+.colors{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 20px;
+  min-width: 60vw;
+  max-width: 60vw;
+  
+}
+
+

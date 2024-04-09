@@ -1,21 +1,21 @@
 import "./homePage.css"
 import Search from "../../component/search/Search"
-import { useGetAllProductsPublicQuery, useGetProductByIdQuery } from "../products/ProductsApiSlice"
+import { useGetAllProductsPublicQuery} from "../products/ProductsApiSlice"
 import { Link, useSearchParams } from "react-router-dom"
 import useGetFilePath from "../../hooks/useGetFilePath"
 import "../products/List/productsList.css"
 import { useEffect } from "react"
-import { UseSelector, useDispatch } from "react-redux"
-import { useNavigate } from "react-router-dom"
+import { useDispatch } from "react-redux"
+//import { useNavigate } from "react-router-dom"
 import { resetProducts } from "../products/productsSlice"
-import {useSendLogoutMutation} from "../auth/authApiSlice"
+//import {useSendLogoutMutation} from "../auth/authApiSlice"
 
 
 const HomePage = () => {
-    const { data: products, isError, error, isLoading} = useGetAllProductsPublicQuery()
-    const [logout,{isSuccess}]=useSendLogoutMutation()
+    const { data: products, isError, error, isLoading,isSuccess} = useGetAllProductsPublicQuery()
+    // const [logout,{isSuccess}]=useSendLogoutMutation()
     //const {data:product,isError:isErrorGet1,error:errorProduct,isLoading:isProductLoading}=useGetProductByIdQuery()
-    const navigate=useNavigate()
+    //const navigate=useNavigate()
     const [searchParams] = useSearchParams()
     const q = searchParams.get("q")
     const { getFilePath } = useGetFilePath()
@@ -29,14 +29,15 @@ const HomePage = () => {
 
     }, [isSuccess])
 
-    const logOutClick=()=>{
-        logout()
-        navigate("/")
-    }
+    // const logOutClick=()=>{
+    //     logout()
+    //     navigate("/")
+    // }
 
+    console.log("error: ",error);
 
     if (isLoading) return <h1>loading...</h1>
-    if (isError) return <h1>{JSON.stringify(error)}</h1>
+    if (isError) return <h1>מצטערים, שגיאה זמנית.</h1>
 
 
     const filteredData = !q ? [...products] : products.filter(p => p.name.indexOf(q) > -1)
