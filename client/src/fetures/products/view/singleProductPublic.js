@@ -3,6 +3,11 @@ import "./singleProduct.css"
 import { useGetProductByIdQuery } from "../ProductsApiSlice"
 import useGetFilePath from "../../../hooks/useGetFilePath"
 import "./singleProductPublic.css"
+import { useState } from "react"
+import { TbCurrencyShekel } from "react-icons/tb";
+import { BsBagHeartFill } from "react-icons/bs";
+import { FaCartPlus } from "react-icons/fa6";
+
 import { useEffect,useState } from "react"
 
 //שאלה ענקית על כל הדף הזה!
@@ -76,9 +81,8 @@ const SingleProductPublic = () => {
                 <div className="productDetails">
                     <div className="productName">
                         <div id="productName">{product.name}</div>
-                        {product.company}<br></br>
-                        {/* להוסיף כאן איקון מחיר ש"ח */}
-                        {product.sellingPrice} ש"ח
+                        {product.company}<br /><br />
+                        {product.sellingPrice}<TbCurrencyShekel style={{ fontSize: 17 }} />
                     </div>
                     <button id="moreInfo" onClick={displayMoreInfo}>למידע נוסף</button>
                     {moreInfo&&
@@ -102,6 +106,8 @@ const SingleProductPublic = () => {
                     <button className="addButton" onClick={minusOne}>-</button>
                 </div>
                 <div className="productAdd">
+                    <button className="addToCart" onClick={addToCart}>הוספה לסל</button>
+                    <button className="addToFavourites" onClick={addToFavourites}><BsBagHeartFill /></button>
                     <button onClick={addToCart}>🛒</button>
                     <button onClick={addToFavourites}>❤</button>
                 </div>
