@@ -28,6 +28,12 @@ const createNewProduct = async (req, res) => {
     if (colors) {
         searchDetails = `${searchDetails} ${colors}`
     }
+    if(category){
+        searchDetails += category
+    }
+    if(itemDescription){
+        searchDetails+=itemDescription
+    }
     //create product:
     //לזכור להוסיף בהמשך עדכון תמונה.!!!!
     const product = await Products.create({
