@@ -153,11 +153,19 @@
 
 }
 .addToFavourites{
-    background-color:var(--bg);
-           font-size: 30px;
+    background-color: var(--bgSoft);
+    font-size: 20px;
 
 }
 .addToFavourites:active{
+    background-color: white;
+    color: var(--bgSoft);
+    font-size: 35px;
+   
+
+}
+.addToCart:active{
+    background-color: white;
     color: var(--bgSoft);
     font-size: 35px;
    

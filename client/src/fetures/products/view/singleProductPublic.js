@@ -3,7 +3,6 @@ import "./singleProduct.css"
 import { useGetProductByIdQuery } from "../ProductsApiSlice"
 import useGetFilePath from "../../../hooks/useGetFilePath"
 import "./singleProductPublic.css"
-import { useState } from "react"
 import { TbCurrencyShekel } from "react-icons/tb";
 import { BsBagHeartFill } from "react-icons/bs";
 import { FaCartPlus } from "react-icons/fa6";
@@ -29,8 +28,8 @@ const SingleProductPublic = () => {
     useEffect(() => {
         if (isSuccess) {
             console.log("colors: arr: ",product.colors);
-            product.colors.length>0?setColors(product.colors):setColors(['rgb(0, 159, 173)', '#f8f0f3', '#c76681d6'])
-            product.itemDescription.length>0?setInfo(product.itemDescription):setInfo("אין מידע נוסף")
+            product.colors?.length>0?setColors(product.colors):setColors(['rgb(0, 159, 173)', '#f8f0f3', '#c76681d6'])
+            product.itemDescription?.length>0?setInfo(product.itemDescription):setInfo("אין מידע נוסף")
         }
     }, [isSuccess])
 
@@ -106,10 +105,10 @@ const SingleProductPublic = () => {
                     <button className="addButton" onClick={minusOne}>-</button>
                 </div>
                 <div className="productAdd">
-                    <button className="addToCart" onClick={addToCart}>הוספה לסל</button>
+                    <button className="addToCart" onClick={addToCart}><FaCartPlus/></button>
                     <button className="addToFavourites" onClick={addToFavourites}><BsBagHeartFill /></button>
-                    <button onClick={addToCart}>🛒</button>
-                    <button onClick={addToFavourites}>❤</button>
+                    {/* <button onClick={addToCart}>🛒</button>
+                    <button onClick={addToFavourites}>❤</button> */}
                 </div>
 
             </div>
