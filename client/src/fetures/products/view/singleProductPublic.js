@@ -3,7 +3,6 @@ import "./singleProduct.css"
 import { useGetProductByIdQuery } from "../ProductsApiSlice"
 import useGetFilePath from "../../../hooks/useGetFilePath"
 import "./singleProductPublic.css"
-import { useState } from "react"
 import { TbCurrencyShekel } from "react-icons/tb";
 import { BsBagHeartFill } from "react-icons/bs";
 import { FaCartPlus } from "react-icons/fa6";
@@ -15,21 +14,24 @@ import { useEffect,useState } from "react"
 const SingleProductPublic = () => {
     const { productBarcod } = useParams()
     console.log(productBarcod);
-    const { data: product, isLoading: isLoading, isError: isError, error: error,isSuccess} = useGetProductByIdQuery(productBarcod)
+    const { data: product, isLoading: isLoading, isError: isError, error: error,isSuccess:isSuccess} = useGetProductByIdQuery(productBarcod)
     console.log("data", product);
     //console.log("colors",product.colors);
     console.log("isError", isError);
+    console.log("isSuccess",isSuccess);
     const [amount, setAmount] = useState(1)
     const [moreInfo, setMoreInfo] = useState(false)
     const [info, setInfo] = useState("אין מידע נוסף.")
-    const [colors,setColors]=useState([['rgb(0, 159, 173)', '#f8f0f3', '#c76681d6']])
+    const [colors,setColors]=useState(['rgb(0, 159, 173)', '#f8f0f3', '#c76681d6'])
 
 
     //colors:
     useEffect(() => {
         if (isSuccess) {
             console.log("colors: arr: ",product.colors);
-            product.colors.length>0?setColors(product.colors):setColors(['rgb(0, 159, 173)', '#f8f0f3', '#c76681d6'])
+        
+            product.colors?product.colors.length>0?setColors(product.colors):setColors(['rgb(0, 159, 173)', '#f8f0f3', '#c76681d6'])~
+            if( product.itemDescription)
             product.itemDescription.length>0?setInfo(product.itemDescription):setInfo("אין מידע נוסף")
         }
     }, [isSuccess])
@@ -64,7 +66,8 @@ const SingleProductPublic = () => {
     const addToFavourites = () => {
 
     }
-    
+    console.log(colors)
+
     if (isLoading) return <h1>loading...</h1>
     if (isError) return <h1>{JSON.stringify(error)}</h1>
     if (!product)
@@ -93,9 +96,8 @@ const SingleProductPublic = () => {
                     <div className="colorsBox">
                         {
                             //קודם להביא את מערך הצבעים
-                            // product.colors.map(color=><button style={{backgroundColor:color}}/>)
+                            // product.colors.map(color=><button style={{backgroundColor:color}}/>)                         
                             colors.map(color => <button style={{ backgroundColor: color }} />)
-
                         }
                     </div>
 
@@ -108,8 +110,8 @@ const SingleProductPublic = () => {
                 <div className="productAdd">
                     <button className="addToCart" onClick={addToCart}>הוספה לסל</button>
                     <button className="addToFavourites" onClick={addToFavourites}><BsBagHeartFill /></button>
-                    <button onClick={addToCart}>🛒</button>
-                    <button onClick={addToFavourites}>❤</button>
+                    {/* <button onClick={addToCart}>🛒</button>
+                    <button onClick={addToFavourites}>❤</button> */}
                 </div>
 
             </div>
