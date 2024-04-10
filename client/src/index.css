@@ -67,3 +67,19 @@ a{
   min-width: 5vw;
   min-height: 75vh;
 }
+.errorPage{
+  min-width: 97vw;
+  max-width: 97vw;
+  min-height: 100vh;
+  background-color: #f3dce5;
+  font-size: 5rem;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding: 20vh;
+  background-image: url("./../public/companiesLogo/logo.png");
+  object-fit: cover;
+}
+.errorPage image{
+  object-fit: cover;
+}

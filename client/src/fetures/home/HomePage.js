@@ -36,16 +36,17 @@ const HomePage = () => {
 
     console.log("error: ",error);
 
-    if (isLoading) return <h1>loading...</h1>
-    if (isError) return <h1>מצטערים, שגיאה זמנית.</h1>
+    if (isLoading) return <div className="errorPage">loading...</div>
+    if (isError) return <div className="errorPage">מצטערים, שגיאה זמנית.</div>
 
 
-    const filteredData = !q ? [...products] : products.filter(p => p.name.indexOf(q) > -1)
+    const filteredData = !q ? [...products] : products.filter(p => p.searchDetails.indexOf(q) > -1)
+
 
     return (
         <div className="products-list">
             <div className="products-list-top">
-                <Search placeholder={"חיפוש לפי שם מוצר"} />
+                <Search placeholder={"חיפוש כללי"} />
                 <Link to="/login" className="products-list-add-btn">
                     כניסת משתמשים
                 </Link>
@@ -53,6 +54,8 @@ const HomePage = () => {
                     הרשמה
                 </Link>
             </div>
+            {/* there are no products in the search */}
+            {filteredData.length<1&&<div className="errorPage">נראה שאין מוצרים העונים על התנאי שלך, נסה לחפש חיפוש מורחב יותר.</div>}
             <div className="products">
                 {filteredData.map(product => (
                     <div className="single" key={product._id}>

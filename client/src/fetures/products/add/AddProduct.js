@@ -53,7 +53,6 @@ const AddProduct = () => {
             <form onSubmit={formSubmit} className="add-product-form">
                 <input type="text" name="name" placeholder="שם המוצר" required />
                 <input type="text" name="barcod" placeholder="ברקוד" required />
-                {/* //do select for company name? */}
                 <input type="text" name="company" placeholder="חברה" required />
                 <input type="text" name="category" placeholder="קטגוריה" />
                 <input type="text" name="itemDescription" placeholder="תיאור המוצר" />
@@ -71,6 +70,7 @@ const AddProduct = () => {
                                 placeholder="בחירת צבע"
                                 onChange={(e) => handleColorChange(e.target.value, color.id)}
                             />
+                            {/* <input type="file" name="image" onChange={(e) => handleColorChange(e.target.value, color.id)} /> */}
                         </div>
                     ))
 
