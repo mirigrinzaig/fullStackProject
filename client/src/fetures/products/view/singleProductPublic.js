@@ -58,10 +58,11 @@ const SingleProductPublic = () => {
     }
 
     const addToCart = () => {
+        alert(`המוצר ${product.name} הוסף לסל שלך!`)
 
     }
     const addToFavourites = () => {
-
+        alert(`המוצר ${product.name} הוסף לרשימת האהובים שלך!`)
     }
     
     if (isLoading) return <h1>loading...</h1>
