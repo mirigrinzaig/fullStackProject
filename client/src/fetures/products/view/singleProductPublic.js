@@ -94,8 +94,7 @@ const SingleProductPublic = () => {
                     }
                     <div className="colorsBox">
                         {
-                            //קודם להביא את מערך הצבעים
-                            // product.colors.map(color=><button style={{backgroundColor:color}}/>)                         
+                            //קודם להביא את מערך הצבעים                       
                             colors.map(color => <button style={{ backgroundColor: color }} />)
                         }
                     </div>
