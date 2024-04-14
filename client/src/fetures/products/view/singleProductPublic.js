@@ -6,31 +6,33 @@ import "./singleProductPublic.css"
 import { TbCurrencyShekel } from "react-icons/tb";
 import { BsBagHeartFill } from "react-icons/bs";
 import { FaCartPlus } from "react-icons/fa6";
-
-import { useEffect,useState } from "react"
+import { useEffect, useState } from "react"
 
 //שאלה ענקית על כל הדף הזה!
 //?האם זה דף למנהל כדי שיוכל לשנות את פרטי המוצר או שזה דף למשתמש כדי שיראה אותו בנפרד
 const SingleProductPublic = () => {
     const { productBarcod } = useParams()
     console.log(productBarcod);
-    const { data: product, isLoading: isLoading, isError: isError, error: error,isSuccess:isSuccess} = useGetProductByIdQuery(productBarcod)
+    const { data: product, isLoading: isLoading, isError: isError, error: error, isSuccess: isSuccess } = useGetProductByIdQuery(productBarcod)
     console.log("data", product);
     //console.log("colors",product.colors);
     console.log("isError", isError);
-    console.log("isSuccess",isSuccess);
+    console.log("isSuccess", isSuccess);
     const [amount, setAmount] = useState(1)
+    const [size, setSize] = useState(0)
     const [moreInfo, setMoreInfo] = useState(false)
     const [info, setInfo] = useState("אין מידע נוסף.")
-    const [colors,setColors]=useState(['rgb(0, 159, 173)', '#f8f0f3', '#c76681d6'])
+    const [colors, setColors] = useState(['rgb(0, 159, 173)', '#f8f0f3', '#c76681d6'])
+    const [category, setCategory] = useState("")
 
 
     //colors:
     useEffect(() => {
         if (isSuccess) {
-            console.log("colors: arr: ",product.colors);
-            product.colors?.length>0?setColors(product.colors):setColors(['rgb(0, 159, 173)', '#f8f0f3', '#c76681d6'])
-            product.itemDescription?.length>0?setInfo(product.itemDescription):setInfo("אין מידע נוסף")
+            console.log("colors: arr: ", product.colors);
+            product.colors?.length > 0 ? setColors(product.colors) : setColors(['rgb(0, 159, 173)', '#f8f0f3', '#c76681d6'])
+            product.itemDescription?.length > 0 ? setInfo(product.itemDescription) : setInfo("אין מידע נוסף")
+            setCategory(product.category)
         }
     }, [isSuccess])
 
@@ -53,16 +55,20 @@ const SingleProductPublic = () => {
     }
     const minusOne = () => {
         let newAmount = amount - 1
-        if(newAmount<1)
-        newAmount=1
+        if (newAmount < 1)
+            newAmount = 1
         setAmount(newAmount)
     }
 
     const addToCart = () => {
+        if (category.toLowerCase() === "clothing" || category === "ביגוד")
+            alert(`the size is: ${size}`)
         alert(`המוצר ${product.name} הוסף לסל שלך!`)
 
     }
     const addToFavourites = () => {
+        if (category.toLowerCase() === "clothing" || category === "ביגוד")
+            alert(`the size is: ${size}`)
         alert(`המוצר ${product.name} הוסף לרשימת האהובים שלך!`)
     }
     console.log(colors)
@@ -87,7 +93,7 @@ const SingleProductPublic = () => {
                         {product.sellingPrice}<TbCurrencyShekel style={{ fontSize: 17 }} />
                     </div>
                     <button id="moreInfo" onClick={displayMoreInfo}>למידע נוסף</button>
-                    {moreInfo&&
+                    {moreInfo &&
                         <div className="moreInfo">
                             {info}
                         </div>
@@ -98,6 +104,23 @@ const SingleProductPublic = () => {
                             colors.map(color => <button style={{ backgroundColor: color }} />)
                         }
                     </div>
+                    {(category.toLowerCase() === "clothing" || category === "ביגוד") && (
+                        <div>
+                            מידה:
+                            <select value={size} onChange={(e) => setSize(e.target.value)}>
+                                <option value="0-3">0-3</option>
+                                <option value="3-6">3-6</option>
+                                <option value="6-9">6-9</option>
+                                <option value="9-12">9-12</option>
+                                <option value="12-18">12-18</option>
+                                <option value="18-24">18-24</option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                {/* נוסיף עוד אפשרויות כאן כמו S, M, L וכו' */}
+                            </select></div>
+                    )}
 
                 </div>
                 <div className="amountToBuy">
@@ -106,7 +129,7 @@ const SingleProductPublic = () => {
                     <button className="addButton" onClick={minusOne}>-</button>
                 </div>
                 <div className="productAdd">
-                    <button className="addToCart" onClick={addToCart}><FaCartPlus/></button>
+                    <button className="addToCart" onClick={addToCart}><FaCartPlus /></button>
                     <button className="addToFavourites" onClick={addToFavourites}><BsBagHeartFill /></button>
                     {/* <button onClick={addToCart}>🛒</button>
                     <button onClick={addToFavourites}>❤</button> */}

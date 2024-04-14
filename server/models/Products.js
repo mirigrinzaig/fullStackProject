@@ -29,7 +29,7 @@ const productSchema = new mongoose.Schema(
             required: true
         },
         size: {
-            type: Number
+            type: String
         },
         amount:{
             type:Number,
@@ -69,7 +69,7 @@ const productSchema = new mongoose.Schema(
             type: Boolean,
             default: false
         },
-        //what is it?
+        //for marking amount....
         marked: {
             type: Boolean,
             default:false

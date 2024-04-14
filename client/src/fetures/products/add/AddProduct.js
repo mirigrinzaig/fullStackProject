@@ -8,6 +8,7 @@ const AddProduct = () => {
 
     const [amColors, setAmColors] = useState(0)
     const [colors, setColors] = useState([]);
+    const [category,setCategory]=useState("")
 
 
     useEffect(() => {
@@ -54,9 +55,10 @@ const AddProduct = () => {
                 <input type="text" name="name" placeholder="שם המוצר" required />
                 <input type="text" name="barcod" placeholder="ברקוד" required />
                 <input type="text" name="company" placeholder="חברה" required />
-                <input type="text" name="category" placeholder="קטגוריה" />
-                <input type="text" name="itemDescription" placeholder="תיאור המוצר" />
-                <input type="text" name="size" placeholder="גודל" />
+                <input type="text" name="category" placeholder="קטגוריה" onChange={(e)=>{setCategory(e.target.value)}} />
+                <input type="text" name="itemDescription" placeholder="תיאור המוצר"/>
+                {/* only if is a cloth there is a size! */}
+                {(category.toLowerCase() === "clothing"||category==="ביגוד")&&<input type="text" name="size" placeholder="גודל" />}
                 <input type="text" name="amount" placeholder="כמות יחידות" required />
                 <input type="number" name="amountColors" placeholder="כמות צבעים במלאי" onChange={handleAmountChange} />
                 <div className="colors">
