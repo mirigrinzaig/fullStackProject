@@ -37,14 +37,20 @@ const ProductsList = () => {
             </div>
             <div className="products">
                 {filteredData.map(product => (
-                    <div className="single" style={{ backgroundImage: `url(${getFilePath(product.image)})`}} key={product._id}>
+                    <div className="single" style={{ backgroundImage: `url(${getFilePath(product.image)})` }} key={product._id}>
                         <Link to={`/dash/products/${product.barcod}`} className="products-list-btn products-list-view"><img src={getFilePath(product.image)} alt="" className="products-list-product-image" /></Link>
                         <div className="details">
                             <div className="details-wr">
-                                {product.barcod}<br/>
-                                {product.name}<br/>
-                                {product.company}<br/>
+                                {product.barcod}<br />
+                                {product.name}<br />
+                                {product.company}<br />
                                 {product.sellingPrice}</div>
+                            כמות:{product.amount}<br /><br />
+                            {(product.amount === 0) && (
+                                <div>
+                                    אזל במלאי
+                                </div>
+                            )}
                             <div className="products-list-btns">
                                 <button onClick={() => { deleteClick(product) }} className="products-list-btn products-list-delete">delete</button></div>
                         </div>
