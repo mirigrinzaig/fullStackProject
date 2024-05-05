@@ -102,7 +102,13 @@ const SingleProductPublic = () => {
                     <div className="productName">
                         <div id="productName">{product.name}</div>
                         {product.company}<br /><br />
+                        כמות:{product.amount}<br /><br />
                         {product.sellingPrice}<TbCurrencyShekel style={{ fontSize: 17 }} />
+                        {(product.amount === 0) && (
+                        <div>
+                            אזל במלאי
+                        </div>
+                    )}
                     </div>
                     <button id="moreInfo" onClick={displayMoreInfo}>למידע נוסף</button>
                     {moreInfo &&
@@ -116,6 +122,7 @@ const SingleProductPublic = () => {
                             colors.map(color => <button style={{ backgroundColor: color }} />)
                         }
                     </div>
+                    
                     {(category.toLowerCase() === "clothing" || category === "ביגוד") && (
                         <div>
                             מידה:

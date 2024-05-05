@@ -83,3 +83,7 @@ a{
 .errorPage image{
   object-fit: cover;
 }
+.azal{
+  color:red;
+  font-weight: bolder;
+}
