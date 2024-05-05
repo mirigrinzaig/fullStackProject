@@ -68,13 +68,15 @@ const SingleProductPublic = () => {
         alert(`המוצר ${product.name} הוסף לסל שלך!`)
 
     }
-    const addToFavourites = () => {
+    const addToFavourites = (name) => {
         if (category.toLowerCase() === "clothing" || category === "ביגוד")
             alert(`the size is: ${size}`)
-            favouritesList.push(product)
+    //   const findName =  favouritesList.find(p=>{p.name===name})
+    //   if(findName)
+            {favouritesList.push(JSON.stringify(product))
             console.log(`favouritesList:${favouritesList}`);
         alert(`המוצר ${product.name} הוסף לרשימת האהובים שלך!`)
-        saveList()
+        saveList()}
     }
 
     
@@ -149,7 +151,7 @@ const SingleProductPublic = () => {
                 </div>
                 <div className="productAdd">
                     <button className="addToCart" onClick={addToCart}><FaCartPlus /></button>
-                    <button className="addToFavourites" onClick={addToFavourites}><BsBagHeartFill /></button>
+                    <button className="addToFavourites" onClick={()=>{addToFavourites(product.name)}}><BsBagHeartFill /></button>
                     {/* <button onClick={addToCart}>🛒</button>
                     <button onClick={addToFavourites}>❤</button> */}
                 </div>
