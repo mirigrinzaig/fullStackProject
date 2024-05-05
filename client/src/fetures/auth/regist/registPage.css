@@ -45,6 +45,13 @@
         font-family: var(--fontFamily);
         padding:10px;
         }
+        .logoP{
+            width: 200px;
+            height: 130px;
+            background-image:url("http://localhost:1234/uploads/logo.PNG");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
         .logoPS{
             width: 320px;
             height: 100px;

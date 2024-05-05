@@ -74,13 +74,14 @@ export const RegistPage = () => {
   return (
     <div className='regist-page'>
       <form onSubmit={handleSubmit} className='regist-page-form'>
+      <div className="logoP">
+        </div>
         <h1>כמה פרטים ואת בפנים...</h1>
         <input type='text' required name='name' id='name' placeholder="שם מלא" />
         <input type='email' required name='userName' id='userName' placeholder="אימייל" />
         <input type='password' required name='password' id='password' placeholder='ססמא' />
         <input type='text' required name='phone' id='phone' placeholder="טלפון" />
         <div className="logoPS">
-        <img src="/logo.png" className="logoP"/>
         </div>
         <button type='submit'>כניסה</button>
         {error && error.data?.message}

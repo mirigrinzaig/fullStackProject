@@ -155,6 +155,46 @@ import "../products/List/productsList.css"
 import { useEffect, useState } from "react"
 import { useDispatch } from "react-redux"
 import { resetProducts } from "../products/productsSlice"
+import ScrollCarousel from 'scroll-carousel-react';
+
+const images = [
+    {
+       url: "http://localhost:1234/uploads/baby.jpg",
+       width: 320,
+       height: 174,
+       isSelected: true,
+       caption: "After Rain (Jeshu John - designerspics.com)",
+    },
+    {
+       url: "http://localhost:1234/uploads/sea.jpg",
+       width: 320,
+       height: 174,
+       isSelected: true,
+       caption: "After Rain (Jeshu John - designerspics.com)",
+    },
+    {
+       url: "http://localhost:1234/uploads/baby.jpg",
+       width: 320,
+       height: 174,
+       isSelected: true,
+       caption: "After Rain (Jeshu John - designerspics.com)",
+    },
+    {
+       url: "http://localhost:1234/uploads/sea.jpg",
+       width: 320,
+       height: 212,
+       tags: [
+          { value: "Ocean", title: "Ocean" },
+          { value: "People", title: "People" },
+       ],
+       alt: "Boats (Jeshu John - designerspics.com)",
+    },
+    {
+       url: "http://localhost:1234/uploads/baby.jpg",
+       width: 320,
+       height: 212,
+    },
+ ];
 
 const HomePage = () => {
     const { data: products, isError, error, isLoading, isSuccess } = useGetAllProductsPublicQuery()
@@ -218,6 +258,19 @@ const HomePage = () => {
                     הרשמה
                 </Link>
             </div>
+            {/* <ScrollCarousel
+            autoplay={true}
+            autoplaySpeed={0}
+            speed={0}
+            margin={20}
+            onReady={() => console.log('I am ready')}
+         >
+            {images.map((item) => (
+               <div key={item} className='bg-blue-300/20 border-2 border-blue-300/70 rounded h-36 w-48'>
+                  <img className="carouselImg" src={item.url} alt={item.alt}/>
+               </div>
+            ))}
+         </ScrollCarousel> */}
             {arrWordsSearch?.length < 1 && <div className="errorPage">נראה שאין מוצרים העונים על התנאי שלך, נסה לחפש חיפוש מורחב יותר.</div>}
             <div className="products">
                 {arrWordsSearch.map(product => (

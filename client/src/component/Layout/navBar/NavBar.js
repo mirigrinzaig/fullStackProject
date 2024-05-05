@@ -12,6 +12,8 @@ import MenuLink from "../sidebar/MenuLink"
 import useAuth from "../../../hooks/useAuth"
 import { useNavigate } from "react-router-dom"
 import {useSendLogoutMutation} from "../../../fetures/auth/authApiSlice"
+import { BsBagHeartFill } from "react-icons/bs";
+import { FaCartPlus } from "react-icons/fa6";
 
 const NavBar = () => {
     const navigate=useNavigate()
@@ -33,14 +35,13 @@ const NavBar = () => {
     // }
     return (
         <div className="navbar">
-             <img src="/logo.png" className="logoP"/>
             <div className="navbar-title">
-                {/* <h2 className="title">חנות בוטיק קסומה לתינוקות</h2> */}
-                {/* <div className="navbar-icons">
-                    <MdOutlineChat size={20}></MdOutlineChat>
-                    <MdNotifications size={20} />
-                    <MdPublic size={20} />
-                </div> */}
+            <img src="/logo.png" />
+                <h2 className="title">חנות בוטיק קסומה לתינוקות</h2>
+                <div className="navbar-icons">
+                    <FaCartPlus size={20}/>
+                    <BsBagHeartFill size={20}/>
+                </div>
             </div>
             <div className="navbar-menu">
                 {userName&&<p>שלום ל:{name}<button onClick={logOutClick}>התנתקות</button></p>}
