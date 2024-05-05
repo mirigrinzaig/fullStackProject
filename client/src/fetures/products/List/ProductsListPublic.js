@@ -16,21 +16,14 @@ const ProductsListPublic = (category) => {
     let filteredData=products
     if(category){
         console.log("category",category);
-        console.log("products="+products);
-        products.forEach(element => {
-            console.log("single element",element);
-            console.log("category=",element.category);
-        });
         console.log("category",category.category);
-    filteredData = products.filter(p => p.category === category.category)
-    console.log("filterde data="+filteredData);
+        filteredData = products.filter(p => p.category.toLowerCase() === category.category.toLowerCase())
 }
 
-    console.log("filterde data="+filteredData);
     if (category)
-        filteredData = !q ? [...filteredData] : filteredData.filter(p => p.name.indexOf(q) > -1 && p.category===category.category)
+        filteredData = !q ? [...filteredData] : filteredData.filter(p => p.name.toLowerCase().indexOf(q.toLowerCase()) > -1 && p.category.toLowerCase()===category.category.toLowerCase())
     else
-    filteredData = !q ? [...filteredData] : filteredData.filter(p => p.name.indexOf(q) > -1)
+    filteredData = !q ? [...filteredData] : filteredData.filter(p => p.name.toLowerCase().indexOf(q.toLowerCase()) > -1)
 
     return (
         <div className="products-list">
