@@ -26,11 +26,13 @@ import PlumaBrand from "./fetures/products/categories/PlumaBrand"
 import Walk from "./fetures/products/categories/Walk"
 import Promoties from "./fetures/products/categories/Promotions"
 import HomeMain from "./fetures/home/HomeMain"
+import FavouritesList from "./fetures/products/List/FavouritesList"
 const App = () => {
     return <Router>
         <Routes>
             <Route path="/" element={<SiteLayout />} >
                 <Route index element={<HomePage/>} />
+                <Route path="/favouriets" element={<FavouritesList/>}/>
                 {/* <Route index element={<HomeMain/>} /> */}
                 <Route path="/categories/accessories" element={<Accessories />} />
                 <Route path="/categories/bath" element={<Bath />} />

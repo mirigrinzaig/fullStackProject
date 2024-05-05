@@ -1,44 +1,45 @@
+import { useEffect } from "react"
 import "./productsList.css"
 import Search from "../../../component/search/Search"
 import { useGetAllProductsQuery, useDeleteProductMutation } from "../ProductsApiSlice"
 import { Link, useSearchParams } from "react-router-dom"
 import useGetFilePath from "../../../hooks/useGetFilePath"
 
-const ProductsList = () => {
-    // const products = [{ _id: 1, name: "name",imageUrl:"url", company:"company", "price":"---שח"}
-    // ]
+const FavouritesList = () => {
+    const favouritesList = JSON.parse(localStorage.getItem("favouritesList")) || [];
 
-    
-    const { data: products, isError, error, isLoading } = useGetAllProductsQuery()
-    const [deleteProduct, { isSuccess: isDeleteSuccess }] = useDeleteProductMutation()
+    useEffect(()=>{
 
-    const deleteClick = (product) => {
-        console.log("product barcod:", product.barcod);
-        if (window.confirm("?בטוח שברצונך למחוק את המוצר")) {
-            deleteProduct({ barcod: product.barcod })
+    },[favouritesList])
+
+    document.addEventListener("DOMContentLoaded", () => {
+        if (favouritesList==[]) {
+           return<>Add your favourites products!</>
         }
-    }
 
-    const [searchParams] = useSearchParams()
-    const q = searchParams.get("q")
+    })
+
     const { getFilePath } = useGetFilePath()
 
+    const removeItem = (id)=>{
+        // const newList = favouritesList.filter(p=>p.id !==id)
+        // favouritesList = newList
+        alert("המוצר הוסר בהצלחה")
+      
+      }
+    return <>
+    <h1>FavouritesList</h1>
+    <button onClick={removeItem}>c</button>
 
-    if (isLoading) return <h1>loading...</h1>
-    if (isError) return <h1>{JSON.sdivingify(error)}</h1>
-
-    const filteredData = !q ? [...products] : products.filter(p => p.name.indexOf(q) > -1)
-
-    return (
-        <div className="products-list">
-            <div className="products-list-top">
+    <div className="products-list">
+            {/* <div className="products-list-top">
                 <Search placeholder={"חיפוש לפי שם מוצר"} />
                 <Link to="/dash/products/add" className="products-list-add-btn">
                     הוספת מוצר
                 </Link>
-            </div>
+            </div> */}
             <div className="products">
-                {filteredData.map(product => (
+                {favouritesList.map(product => (
                     <div className="single" style={{ backgroundImage: `url(${getFilePath(product.image)})`}} key={product._id}>
                         <Link to={`/dash/products/${product.barcod}`} className="products-list-btn products-list-view"><img src={getFilePath(product.image)} alt="" className="products-list-product-image" /></Link>
                         <div className="details">
@@ -47,13 +48,19 @@ const ProductsList = () => {
                                 {product.name}<br/>
                                 {product.company}<br/>
                                 {product.sellingPrice}</div>
-                            <div className="products-list-btns">
-                                <button onClick={() => { deleteClick(product) }} className="products-list-btn products-list-delete">delete</button></div>
+                                <button onClick={removeItem}>removeItem</button>
+
+                            {/* <div className="products-list-btns">
+                                <button onClick={() => { deleteClick(product) }} className="products-list-btn products-list-delete">delete</button></div> */}
                         </div>
                     </div>
                 ))}
             </div>
         </div>
-    )
-}
-export default ProductsList
+    
+    </>
+    }
+
+
+
+export default FavouritesList

@@ -25,6 +25,8 @@ const SingleProductPublic = () => {
     const [colors, setColors] = useState(['rgb(0, 159, 173)', '#f8f0f3', '#c76681d6'])
     const [category, setCategory] = useState("")
 
+    //the favourites list
+    let favouritesList = JSON.parse(localStorage.getItem("favouritesList")) || [];
 
     //colors:
     useEffect(() => {
@@ -69,9 +71,19 @@ const SingleProductPublic = () => {
     const addToFavourites = () => {
         if (category.toLowerCase() === "clothing" || category === "ביגוד")
             alert(`the size is: ${size}`)
+            favouritesList.push(product)
+            console.log(`favouritesList:${favouritesList}`);
         alert(`המוצר ${product.name} הוסף לרשימת האהובים שלך!`)
+        saveList()
     }
+
+    
+      
     console.log(colors)
+
+    const saveList = ()=>{
+        localStorage.setItem("favouritesList", JSON.stringify(favouritesList))
+      }
 
     if (isLoading) return <h1>loading...</h1>
     if (isError) return <h1>{JSON.stringify(error)}</h1>

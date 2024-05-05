@@ -40,7 +40,8 @@ const NavBar = () => {
                 <h2 className="title">חנות בוטיק קסומה לתינוקות</h2>
                 <div className="navbar-icons">
                     <FaCartPlus size={20}/>
-                    <BsBagHeartFill size={20}/>
+                    <NavLink to='/favouriets'><BsBagHeartFill size={20}/></NavLink>
+
                 </div>
             </div>
             <div className="navbar-menu">
