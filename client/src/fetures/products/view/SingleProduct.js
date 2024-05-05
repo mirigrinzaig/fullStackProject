@@ -3,8 +3,7 @@ import "./singleProduct.css"
 import { useEffect } from "react"
 import {useGetAllProductsQuery, useUpdateProductMutation} from "../ProductsApiSlice"
 import useGetFilePath from "../../../hooks/useGetFilePath"
-//שאלה ענקית על כל הדף הזה!
-//?האם זה דף למנהל כדי שיוכל לשנות את פרטי המוצר או שזה דף למשתמש כדי שיראה אותו בנפרד
+
 const SingleProduct = () => {
     const {productBarcod}=useParams()
     const{data:products,isLoading,isError,error,isSuccess}=useGetAllProductsQuery()

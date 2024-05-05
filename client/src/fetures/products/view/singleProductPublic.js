@@ -8,8 +8,6 @@ import { BsBagHeartFill } from "react-icons/bs";
 import { FaCartPlus } from "react-icons/fa6";
 import { useEffect, useState } from "react"
 
-//שאלה ענקית על כל הדף הזה!
-//?האם זה דף למנהל כדי שיוכל לשנות את פרטי המוצר או שזה דף למשתמש כדי שיראה אותו בנפרד
 const SingleProductPublic = () => {
     const { productBarcod } = useParams()
     console.log(productBarcod);
