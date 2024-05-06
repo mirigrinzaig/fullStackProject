@@ -1,15 +1,15 @@
-.products-list{
+/* .products-list{
     display: flex;
     flex-direction: column;
     padding-top: 2px;
     margin: 2px;
     gap:10px;
     min-width:100%;
-}
-.products-list-top{
+} */
+/* .products-list-top{
     display: flex;
     gap: 10px;
-}
+} */
 .products-list-add-btn{
     background-color: rgb(245, 176, 197);
     border-radius: 50px;
@@ -22,6 +22,7 @@
 
 .products{
     display: flex;
+    flex-direction: column;
     /* max-width: 90vw; */
     min-width: 100%;
     flex-wrap: wrap;
@@ -29,7 +30,7 @@
 }
 .single{
     min-width: 15vw;
-    /* max-width: 15vw; */
+    max-width: 15vw;
     min-height: 44vh;
     max-height: 44.5vh;
     background-color: rgb(252, 250, 251);
@@ -96,5 +97,22 @@
     border: none;
     color: red;
     cursor: pointer;
+}
+.favoritesProducts{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2vw;
+}
+.removAllBtn{
+    max-width: 20vw;
+    min-height: 5vh;
+    justify-content: center;
+    align-items: center;
+   margin-right: 40%;
+   background-color: rgb(255, 196, 223);
+   /* border: none; */
+   /* color: red; */
+   cursor: pointer;
+   border-radius: 30vw;
 }
 
