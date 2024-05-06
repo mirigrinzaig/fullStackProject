@@ -199,7 +199,10 @@ const images = [
 const HomePage = () => {
     const { data: products, isError, error, isLoading, isSuccess } = useGetAllProductsPublicQuery()
     const [searchParams] = useSearchParams()
-    const q = searchParams.get("q")
+    const company = searchParams.get("company");
+    console.log("company=",company);
+    const q = searchParams.get("q")||company
+    console.log("q=",q);
     const { getFilePath } = useGetFilePath()
     const [arrWordsSearch, setArrWordsSearch] = useState([])
 
