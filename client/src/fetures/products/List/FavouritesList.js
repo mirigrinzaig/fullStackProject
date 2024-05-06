@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./productsList.css";
+import "./favoritesList.css";
 import { Link } from "react-router-dom";
 import useGetFilePath from "../../../hooks/useGetFilePath";
 
@@ -35,11 +35,11 @@ const FavouritesList = () => {
   return (
     <>
       <h1>המוצרים האהובים שלי</h1>
-      <div className="products">
+      <div className="productsF">
         <button className="removAllBtn" onClick={removeAll}>מחיקת כל רשימת האהובים שלי</button>
         <div className="favoritesProducts">
           {favouritesList.map(product => (
-            <div className="single" key={product._id}>
+            <div className="singleF" key={product._id}>
               <Link
                 to={`/public/${product.barcod}`}
                 className="products-list-btn products-list-view"
@@ -50,7 +50,7 @@ const FavouritesList = () => {
                   className="products-list-product-image"
                 />
               </Link>
-              <div className="details">
+              <div className="detailsF">
                 <div className="details-wr">
                   {product.name}<br />
                   {product.company}<br />
