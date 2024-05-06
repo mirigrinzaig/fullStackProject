@@ -1,77 +1,68 @@
-import { useEffect ,useState} from "react"
-import "./productsList.css"
-import Search from "../../../component/search/Search"
-import { useGetAllProductsQuery, useDeleteProductMutation } from "../ProductsApiSlice"
-import { Link, useSearchParams } from "react-router-dom"
-import useGetFilePath from "../../../hooks/useGetFilePath"
+import React, { useEffect, useState } from "react";
+import "./productsList.css";
+import { Link } from "react-router-dom";
+import useGetFilePath from "../../../hooks/useGetFilePath";
 
 const FavouritesList = () => {
-    // let favouritesList = JSON.parse(localStorage.getItem("favouritesList")) || [];
-    let  [favouritesList,setFavourites] = useState(JSON.parse(localStorage.getItem("favouritesList")) || []);
+  const [favouritesList, setFavouritesList] = useState(JSON.parse(localStorage.getItem("favouritesList"))||[]);
 
+  useEffect(() => {
+    // המרה של רשימת המוצרים למחרוזת לפני שמירה ב-localStorage
+    localStorage.setItem("favouritesList", JSON.stringify(favouritesList));
 
-    useEffect(()=>{
+    console.log("favorites=",favouritesList);
+  }, [favouritesList]);
 
-    },[favouritesList])
+  const { getFilePath } = useGetFilePath();
 
-    document.addEventListener("DOMContentLoaded", () => {
-        if (favouritesList==[]) {
-           return<>Add your favourites products!</>
-        }
+  const removeItem = (barcode) => {
+    console.log("barcode=",barcode);
+    const newList = favouritesList.filter(product => product.barcod !== barcode);
+    setFavouritesList(newList);
+    alert("The product has been removed successfully");
+  };
 
-    })
+  const removeAll = () => {
+    setFavouritesList([]);
+    alert("All products have been removed successfully");
+  };
 
-    const { getFilePath } = useGetFilePath()
+  return (
+    <>
+      <h1>Favorite products</h1>
+      <div className="products-list">
+        <div className="products">
+          <button onClick={removeAll}>Delete all favorite products</button>
 
-    const removeItem = (name)=>{
-        const newList = favouritesList.filter(p=>p.name!==name)
-        setFavourites(newList)
-        alert("המוצר הוסר בהצלחה")
-        saveList()
-      }
-      const removeAll = ()=>{
-        setFavourites([])
-        alert("המוצרים הוסרו בהצלחה")
-        saveList()
-      }
-      const saveList = ()=>{
-        localStorage.setItem("favouritesList", JSON.stringify(favouritesList))
-      }
-    return <>
-    <h1>FavouritesList</h1>
-    {/* <button onClick={removeItem}>c</button> */}
-    <div className="products-list">
-            {/* <div className="products-list-top">
-                <Search placeholder={"חיפוש לפי שם מוצר"} />
-                <Link to="/dash/products/add" className="products-list-add-btn">
-                    הוספת מוצר
-                </Link>
-            </div> */}
-            <div className="products">
-            <button onClick={()=>{removeAll()}}>removeAll</button>
-
-                {favouritesList.map(product => (
-                    <div className="single" style={{ backgroundImage: `url(${getFilePath(product.image)})`}} key={product._id}>
-                        <Link to={`/dash/products/${product.barcod}`} className="products-list-btn products-list-view"><img src={getFilePath(product.image)} alt="" className="products-list-product-image" /></Link>
-                        <div className="details">
-                            <div className="details-wr">
-                                {product.barcod}<br/>
-                                {product.name}<br/>
-                                {product.company}<br/>
-                                {product.sellingPrice}</div>
-                                <button onClick={()=>{removeItem(product.name)}}>removeItem</button>
-
-                            {/* <div className="products-list-btns">
-                                <button onClick={() => { deleteClick(product) }} className="products-list-btn products-list-delete">delete</button></div> */}
-                        </div>
-                    </div>
-                ))}
+          {favouritesList.map(product => (
+            <div className="single" key={product._id}>
+              <Link
+                to={`/dash/products/${product.barcod}`}
+                className="products-list-btn products-list-view"
+              >
+                <img
+                  src={getFilePath(product.image)}
+                  alt=""
+                  className="products-list-product-image"
+                />
+              </Link>
+              <div className="details">
+                <div className="details-wr">
+                  ברקוד:{product.barcod}<br />
+                  {product.name}<br />
+                  {product.company}<br />
+                  {product.sellingPrice}
+                </div>
+                <button onClick={() => removeItem(product.barcod)}>
+                  Remove from list
+                </button>
+              </div>
             </div>
+          ))}
         </div>
-    
+      </div>
     </>
-    }
+  );
+};
 
-
-
-export default FavouritesList
+export default FavouritesList;

@@ -281,6 +281,7 @@ const HomePage = () => {
                             {product.name}
                             {product.company}
                             {product.sellingPrice}
+                            {/* כמות:{product.amount} */}
                             {(product.amount === 0) && (
                                 <div className="azal">
                                     אזל במלאי

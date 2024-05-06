@@ -47,7 +47,7 @@ const createNewProduct = async (req, res) => {
 //for every one!
 const getAllProducts = async (req, res) => {
     //יש כאן פרטים שהמשתמש לא רואה אבל צריך אותם בצד לקוח עבור כולם, כמו פרטי חיפוש או כמות עבור הצגת אזל
-    const products = await Products.find({}, {name: 1,barcod:1,company:1,category:1,amount:1,image:1,colors:1,sellingPrice:1,salePrice:1,inSale:1,marked:1,searchDetails:1,itemDescription:1}).lean()
+    const products = await Products.find({}, {name: 1,barcod:1,company:1,amount:1,category:1,image:1,colors:1,sellingPrice:1,salePrice:1,inSale:1,marked:1,searchDetails:1,itemDescription:1}).lean()
     if (!products?.length) {
     return res.status(400).json({ massage: 'no products' })
     }
@@ -162,9 +162,10 @@ const getProductById = async (req, res) => {
     }
     let newProduct={
         name: product.name,
+        barcod:product.barcod,
         company:product.company,
         category:product.category,
-        amount:product.category,
+        amount:product.amount,
         image:product.image,
         colors:product.colors,
         sellingPrice:product.sellingPrice,

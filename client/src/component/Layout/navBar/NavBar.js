@@ -55,7 +55,7 @@ const NavBar = () => {
                             <NavLink className="btn" to='/favouriets'><BsBagHeartFill size={20} /></NavLink>
                         </div></div>}
                 </div>}
-                <NavLink to='/'><MdHome size={20} />home</NavLink>
+                <NavLink className="homeLink" to='/'><MdHome size={20} className="home"/>home</NavLink>
                 {/* <MenuLink item={item}></MenuLink> */}
                 <NavLink to='/categories/clothing'><img src="/categories/clothing.png" /></NavLink>
                 <NavLink to='/categories/accessories'><img src="/categories/accessories.png" /></NavLink>

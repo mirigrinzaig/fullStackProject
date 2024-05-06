@@ -29,3 +29,7 @@
     gap:5px;
     justify-content: space-around;
 }
+.logoP{
+    min-width: 10vw;
+    min-height: 20vh;
+}

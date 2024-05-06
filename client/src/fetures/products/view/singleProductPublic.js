@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import "./singleProduct.css"
 import { useGetProductByIdQuery } from "../ProductsApiSlice"
 import useGetFilePath from "../../../hooks/useGetFilePath"
@@ -12,8 +12,6 @@ const SingleProductPublic = () => {
     const { productBarcod } = useParams()
     console.log(productBarcod);
     const { data: product, isLoading: isLoading, isError: isError, error: error, isSuccess: isSuccess } = useGetProductByIdQuery(productBarcod)
-    console.log("data", product);
-    //console.log("colors",product.colors);
     console.log("isError", isError);
     console.log("isSuccess", isSuccess);
     const [amount, setAmount] = useState(1)
@@ -23,13 +21,16 @@ const SingleProductPublic = () => {
     const [colors, setColors] = useState(['rgb(0, 159, 173)', '#f8f0f3', '#c76681d6'])
     const [category, setCategory] = useState("")
 
-    //the favourites list
-    let favouritesList = JSON.parse(localStorage.getItem("favouritesList")) || [];
+    // the favourites list
+    const favouritesList = JSON.parse(localStorage.getItem("favouritesList")) || [];
+    console.log("favorites:", favouritesList);
 
     //colors:
     useEffect(() => {
         if (isSuccess) {
             console.log("colors: arr: ", product.colors);
+            // console.log(`product=${product}`);
+            // console.log("amount=",product.amount);
             product.colors?.length > 0 ? setColors(product.colors) : setColors(['rgb(0, 159, 173)', '#f8f0f3', '#c76681d6'])
             product.itemDescription?.length > 0 ? setInfo(product.itemDescription) : setInfo("אין מידע נוסף")
             setCategory(product.category)
@@ -61,29 +62,42 @@ const SingleProductPublic = () => {
     }
 
     const addToCart = () => {
-        if (category.toLowerCase() === "clothing" || category === "ביגוד")
-            alert(`the size is: ${size}`)
-        alert(`המוצר ${product.name} הוסף לסל שלך!`)
+        // if (category.toLowerCase() === "clothing" || category === "ביגוד")
+        //     alert(`the size is: ${size}`)
+        if (product.amount === 0)
+            alert("המוצר אזל מהמלאי, לא ניתן לרכוש אותו כרגע")
+        else
+            alert(`המוצר ${product.name} הוסף לסל שלך!`)
 
     }
-    const addToFavourites = (name) => {
-        if (category.toLowerCase() === "clothing" || category === "ביגוד")
-            alert(`the size is: ${size}`)
-    //   const findName =  favouritesList.find(p=>{p.name===name})
-    //   if(findName)
-            {favouritesList.push(JSON.stringify(product))
-            console.log(`favouritesList:${favouritesList}`);
-        alert(`המוצר ${product.name} הוסף לרשימת האהובים שלך!`)
-        saveList()}
+    const addToFavourites = (barcod) => {
+        // // if (category.toLowerCase() === "clothing" || category === "ביגוד")
+        // //     alert(`the size is: ${size}`)
+        // //   const findName =  favouritesList.find(p=>{p.name===name})
+        // //   if(findName)
+        // {
+        //     favouritesList.push(JSON.stringify(product))
+        //     localStorage.setItem("favouritesList", JSON.stringify(favouritesList));
+        //     // favouritesList.push(JSON.stringify(product))
+        //     console.log(`favouritesList:${favouritesList}`);
+        //     alert(`המוצר ${product.name} הוסף לרשימת האהובים שלך!`)
+        //     // saveList()
+        // }
+
+        // add the product to favouritesList as a string
+        favouritesList.push((product));
+        localStorage.setItem("favouritesList", JSON.stringify(favouritesList));
+        console.log(`favouritesList:${favouritesList}`);
+        alert(`המוצר ${product.name} הוסף לרשימת האהובים שלך!`);
     }
 
-    
-      
+
+
     console.log(colors)
 
-    const saveList = ()=>{
+    const saveList = () => {
         localStorage.setItem("favouritesList", JSON.stringify(favouritesList))
-      }
+    }
 
     if (isLoading) return <h1>loading...</h1>
     if (isError) return <h1>{JSON.stringify(error)}</h1>
@@ -102,13 +116,13 @@ const SingleProductPublic = () => {
                     <div className="productName">
                         <div id="productName">{product.name}</div>
                         {product.company}<br /><br />
-                        כמות:{product.amount}<br /><br />
                         {product.sellingPrice}<TbCurrencyShekel style={{ fontSize: 17 }} />
+
                         {(product.amount === 0) && (
-                        <div>
-                            אזל במלאי
-                        </div>
-                    )}
+                            <div className="azal">
+                                אזל במלאי
+                            </div>
+                        )}
                     </div>
                     <button id="moreInfo" onClick={displayMoreInfo}>למידע נוסף</button>
                     {moreInfo &&
@@ -116,30 +130,31 @@ const SingleProductPublic = () => {
                             {info}
                         </div>
                     }
-                    <div className="colorsBox">
+                    {colors && <div className="colorsBox">
                         {
                             //קודם להביא את מערך הצבעים                       
                             colors.map(color => <button style={{ backgroundColor: color }} />)
                         }
-                    </div>
-                    
-                    {(category.toLowerCase() === "clothing" || category === "ביגוד") && (
-                        <div>
-                            מידה:
-                            <select value={size} onChange={(e) => setSize(e.target.value)}>
-                                <option value="0-3">0-3</option>
-                                <option value="3-6">3-6</option>
-                                <option value="6-9">6-9</option>
-                                <option value="9-12">9-12</option>
-                                <option value="12-18">12-18</option>
-                                <option value="18-24">18-24</option>
-                                <option value="0">0</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                {/* נוסיף עוד אפשרויות כאן כמו S, M, L וכו' */}
-                            </select></div>
-                    )}
+                    </div>}
+
+                    {(category === "clothing" || category === "ביגוד" || category === "Clothing") &&
+                        (
+                            <div>
+                                מידה:
+                                <select value={size} onChange={(e) => setSize(e.target.value)}>
+                                    <option value="0-3">0-3</option>
+                                    <option value="3-6">3-6</option>
+                                    <option value="6-9">6-9</option>
+                                    <option value="9-12">9-12</option>
+                                    <option value="12-18">12-18</option>
+                                    <option value="18-24">18-24</option>
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    {/* נוסיף עוד אפשרויות כאן כמו S, M, L וכו' */}
+                                </select></div>
+                        )}
 
                 </div>
                 <div className="amountToBuy">
@@ -149,9 +164,7 @@ const SingleProductPublic = () => {
                 </div>
                 <div className="productAdd">
                     <button className="addToCart" onClick={addToCart}><FaCartPlus /></button>
-                    <button className="addToFavourites" onClick={()=>{addToFavourites(product.name)}}><BsBagHeartFill /></button>
-                    {/* <button onClick={addToCart}>🛒</button>
-                    <button onClick={addToFavourites}>❤</button> */}
+                    <button className="addToFavourites" onClick={() => { addToFavourites(product.barcod) }}><BsBagHeartFill /></button>
                 </div>
 
             </div>
