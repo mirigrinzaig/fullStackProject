@@ -1,15 +1,4 @@
-/* .products-list{
-    display: flex;
-    flex-direction: column;
-    padding-top: 2px;
-    margin: 2px;
-    gap:10px;
-    min-width:100%;
-} */
-/* .products-list-top{
-    display: flex;
-    gap: 10px;
-} */
+
 .products-list-add-btn{
     background-color: rgb(245, 176, 197);
     border-radius: 50px;
@@ -44,7 +33,7 @@
     color:rgb(28, 28, 27)
     
 }
-.single img{
+.singleF img{
     /* border-radius: 50%;
     object-fit: cover;
     min-height: 25vh;

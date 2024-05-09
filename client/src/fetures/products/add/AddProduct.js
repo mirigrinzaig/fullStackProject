@@ -81,7 +81,7 @@ const AddProduct = () => {
 
                 {/* <input list="browsers" name="browser"/> */}
                 <input type="file" name="image" />
-                <input type="text" name="agentName" placeholder="שם סוכן" />
+                <input type="text" name="agent" placeholder="שם סוכן" />
                 <input type="text" name="agentPrice" placeholder="מחיר מהסוכן" />
                 <input type="text" name="sellingPrice" placeholder="מחיר למכירה" />
                 {/* <input type="radio" name="inSale" placeholder="האם המוצר במבצע?" value="במבצע" checked>

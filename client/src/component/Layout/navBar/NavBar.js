@@ -46,7 +46,7 @@ const NavBar = () => {
             </div>
             <div className="navbar-menu">
                 {userName && <div className="navbar-menu-div">
-                    <MdSupervisedUserCircle className="userMenu" onClick={() => setUserMenu(!userMenu)}></MdSupervisedUserCircle>
+                    <MdPerson className="userMenu" onClick={() => setUserMenu(!userMenu)}></MdPerson>
                     {userMenu && <div>
                         <p>{name}</p>
                         <div className="navbar-icons">

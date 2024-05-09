@@ -2,6 +2,7 @@ import { Link } from "react-router-dom"
 // import nodemailer from 'nodemailer'
 import "./footer.css"
 import { useSearchParams } from "react-router-dom"
+import {MdOutlineChat} from "react-icons/md"
 
 const Footer = () => {
     const [searchParams, setSearchParamd] = useSearchParams()
@@ -10,15 +11,15 @@ const Footer = () => {
     //     console.log("send the mail");
     //     window.location.href = 'mailto:' + emailAddress;
     // }
-    const sendEmail = (event, emailAddress) => {
-        event.preventDefault();
-        window.open('mailto:' + emailAddress);
-    };
+    // const sendEmail = (event, emailAddress) => {
+    //     event.preventDefault();
+    //     window.open('mailto:' + emailAddress);
+    // };
 
-    const openMailToLink = (emailAddress) => {
-        console.log("Opening mail client...");
-        window.open(`mailto:${emailAddress}`);
-    };
+    // const openMailToLink = (emailAddress) => {
+    //     console.log("Opening mail client...");
+    //     window.open(`mailto:${emailAddress}`);
+    // };
 
 
     return (
@@ -69,9 +70,9 @@ const Footer = () => {
             {/* <a href="mailto:mirigrinzaig111@gmail.com">צור קשר</a> */}
             {/* <a href="#" onClick={sendEmail("mirigrinzaig111@gmail.com")}>צור קשר</a> */}
             {/* <a href="#" onClick={() => sendEmail("mirigrinzaig111@gmail.com")}>צור קשר</a> */}
-            <a href="#" onClick={() => openMailToLink("mirigrinzaig111@gmail.com")}>צור קשר</a>
-            <a href="mailto:mirigrinzaig111@gmail.com">צ2ור קשר</a>
-            <a href="#" onClick={(event) => sendEmail(event, 'mirigrinzaig111@gmail.com')}>צור קש3ר</a>
+            {/* <a href="#" onClick={() => openMailToLink("mirigrinzaig111@gmail.com")}>צור קשר</a> */}
+            <a href="mailto:mirigrinzaig111@gmail.com">צור קשר<MdOutlineChat>צור קשר</MdOutlineChat></a>
+            {/* <a href="#" onClick={(event) => sendEmail(event, 'mirigrinzaig111@gmail.com')}>צור קש3ר</a> */}
             <div className="footer-text"> building:Miri Grintzaig 0556737092 mirigrinzaig111@gmail.com<br />.All rights reserved @</div>
         </div>
     )

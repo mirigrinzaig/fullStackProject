@@ -1,21 +1,21 @@
-import { useNavigate,useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import "./singleProduct.css"
 import { useEffect } from "react"
-import {useGetAllProductsQuery, useUpdateProductMutation} from "../ProductsApiSlice"
+import { useGetAllProductsQuery, useUpdateProductMutation } from "../ProductsApiSlice"
 import useGetFilePath from "../../../hooks/useGetFilePath"
 
 const SingleProduct = () => {
-    const {productBarcod}=useParams()
-    const{data:products,isLoading,isError,error,isSuccess}=useGetAllProductsQuery()
-    const [updateProduct,{isSuccess:isUpdateSuccess}]=useUpdateProductMutation()
+    const { productBarcod } = useParams()
+    const { data: products, isLoading, isError, error, isSuccess } = useGetAllProductsQuery()
+    const [updateProduct, { isSuccess: isUpdateSuccess }] = useUpdateProductMutation()
     const navigate = useNavigate()
-    
-    useEffect(()=>{
-        if(isUpdateSuccess){
+
+    useEffect(() => {
+        if (isUpdateSuccess) {
             navigate("/dash/products")
         }
 
-    },[isUpdateSuccess])
+    }, [isUpdateSuccess])
 
     //function for submit the data:
     const formSubmit = (e) => {
@@ -26,19 +26,20 @@ const SingleProduct = () => {
         updateProduct(data)
     }
 
-    const {getFilePath}=useGetFilePath()
+    const { getFilePath } = useGetFilePath()
 
-    if(isLoading)return<h1>loading...</h1>
-    if(isError)return<h1>{JSON.stringify(error)}</h1>
+    if (isLoading) return <h1>loading...</h1>
+    if (isError) return <h1>{JSON.stringify(error)}</h1>
 
-    const product = products.find(pr=>pr.barcod===productBarcod)
-    if(!product)
-        return<h1>not found!!!</h1>
+    const product = products.find(pr => pr.barcod === productBarcod)
+    console.log(`product: ${product.name},agent:${product.agent}`);
+    if (!product)
+        return <h1>not found!!!</h1>
     return (
-        <div className="single-product-container">
+        <div className="single-product-container" style={{ flexDirection: 'column' }}>
             <div className="single-product-info">
                 <div className="single-product-img-container">
-                <img src={getFilePath(product.image)} alt=""  />
+                    <img src={getFilePath(product.image)} alt="" />
                 </div>
                 {product.name}
             </div>
@@ -56,7 +57,7 @@ const SingleProduct = () => {
                     {/* <input list="browsers" name="browser"/> */}
                     {/* defaultValue={product.image}  for image */}
                     <label>תמונת מוצר</label>
-                    <input  type="file" name="image" />
+                    <input type="file" name="image" />
                     <input defaultValue={product.agent} type="text" name="agent" placeholder="שם סוכן" />
                     <input defaultValue={product.agentPrice} type="number" name="agentPrice" placeholder="מחיר מהסוכן" />
                     <input defaultValue={product.sellingPrice} type="number" name="sellingPrice" placeholder="מחיר למכירה" />
