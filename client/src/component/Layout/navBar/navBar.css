@@ -9,6 +9,7 @@
     /* justify-content: space-between; */
     gap: 23px;
     color: white;
+    /* height: 10vh; */
     max-width: 99%;
 }
 
@@ -16,22 +17,56 @@
 .categoryIcon {
     width: 10%;
 }
+.logoNavBar{
+    width: 100px;
+    height: 80px;
+    background-image:url("http://localhost:1234/uploads/logo.PNG");
+    background-size: cover;
+    background-repeat: no-repeat;
+   
+}
+.navbar-menu-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
 
 .navbar-title {
     display: flex; 
     flex-direction: row;
+    padding: 2px;
+    padding-left: 20px;
+    padding-right: 20px;
     align-items: center;
     justify-content: center;
+    gap:15px;
+    width: 100%;
+    justify-content:space-between;
+    max-height: 70px;
+    /* 
+    width: 100%;
+    gap: 10%; */
+    /* padding-left: 30vw;
+    padding-right: 30vw; */
+
     /* justify-content: space-between; */
     /* max-width: 30%; */
-    padding: 2px;
-    margin-left: 8vw;
-    /* background-color:var(--bgPink); */
+    /* margin-left: 8vw; */
+    background-color:var(--bgPink);
+}
+.navbar-menu-div{
+    max-height: 60px;
+}
+.navbar-menu-div p{
+    margin-top: -10px;
 }
 
 .title {
     color: var(--textSoft);
     font-family: var(--fontFamily);
+    /* padding-left: 10vw; */
 }
 
 /* .logoP {

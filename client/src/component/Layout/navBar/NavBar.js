@@ -41,21 +41,31 @@ const NavBar = () => {
     return (
         <div className="navbar">
             <div className="navbar-title">
-                <img src="/logo.png" />
+                <div className="logoNavBar"></div>
                 <h2 className="title">חנות בוטיק קסומה לתינוקות</h2>
+                
+                {/* {userName && <div className="navbar-menu-div">
+                <MdPerson size={40} className="userMenu" onClick={() => setUserMenu(!userMenu)}></MdPerson>
+                    <p>{name}</p>
+                </div>} */}
+                <div className="navbar-menu-box"> <div className="navbar-menu-div">
+                    <MdPerson size={40} className="userMenu" onClick={() => setUserMenu(!userMenu)}></MdPerson>
+                    <p>ru,</p>
+                </div>
+
+                {userMenu && <div>
+
+                    <div className="navbar-icons">
+                        <FaCartPlus className="btn" size={20} />
+                        <NavLink className="btn" to='/favouriets'><BsBagHeartFill size={20} /></NavLink>
+                        <MdLogout className="btn"  size={20} onClick={logOutClick}>התנתקות</MdLogout>
+                    </div></div>}</div>
+               
+
             </div>
             <div className="navbar-menu">
-                {userName && <div className="navbar-menu-div">
-                    <MdPerson className="userMenu" onClick={() => setUserMenu(!userMenu)}></MdPerson>
-                    {userMenu && <div>
-                        <p>{name}</p>
-                        <div className="navbar-icons">
-                            <MdLogout className="btn" onClick={logOutClick}>התנתקות</MdLogout>
-                            <FaCartPlus className="btn" size={20} />
-                            <NavLink className="btn" to='/favouriets'><BsBagHeartFill size={20} /></NavLink>
-                        </div></div>}
-                </div>}
-                <NavLink className="homeLink" to='/'><MdHome size={20} className="home"/>home</NavLink>
+
+                <NavLink className="homeLink" to='/'><MdHome size={20} className="home" />home</NavLink>
                 {/* <MenuLink item={item}></MenuLink> */}
                 <NavLink to='/categories/clothing'><img src="/categories/clothing.png" /></NavLink>
                 <NavLink to='/categories/accessories'><img src="/categories/accessories.png" /></NavLink>
