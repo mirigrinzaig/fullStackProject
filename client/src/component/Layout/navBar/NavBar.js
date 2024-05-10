@@ -43,24 +43,19 @@ const NavBar = () => {
             <div className="navbar-title">
                 <div className="logoNavBar"></div>
                 <h2 className="title">חנות בוטיק קסומה לתינוקות</h2>
-                
-                {/* {userName && <div className="navbar-menu-div">
-                <MdPerson size={40} className="userMenu" onClick={() => setUserMenu(!userMenu)}></MdPerson>
-                    <p>{name}</p>
-                </div>} */}
-                <div className="navbar-menu-box"> <div className="navbar-menu-div">
-                    <MdPerson size={40} className="userMenu" onClick={() => setUserMenu(!userMenu)}></MdPerson>
-                    <p>ru,</p>
-                </div>
 
-                {userMenu && <div>
+                <div className="navbar-menu-box">
+                    {userName && <div className="navbar-menu-div">
+                        <MdPerson size={40} className="userMenu" onClick={() => setUserMenu(!userMenu)}></MdPerson>
+                        <p>{name}</p>
+                    </div>}
+                    {userMenu && <div>
+                        <div className="navbar-icons">
+                            <FaCartPlus className="btn" size={20} />
+                            <NavLink className="btn" to='/favouriets'><BsBagHeartFill size={20} /></NavLink>
+                            <MdLogout className="btn" size={20} onClick={logOutClick}>התנתקות</MdLogout>
+                        </div></div>}</div>
 
-                    <div className="navbar-icons">
-                        <FaCartPlus className="btn" size={20} />
-                        <NavLink className="btn" to='/favouriets'><BsBagHeartFill size={20} /></NavLink>
-                        <MdLogout className="btn"  size={20} onClick={logOutClick}>התנתקות</MdLogout>
-                    </div></div>}</div>
-               
 
             </div>
             <div className="navbar-menu">
