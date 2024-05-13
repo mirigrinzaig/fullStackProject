@@ -1,0 +1,79 @@
+/* Carousel.css */
+.slick-slide img {
+    max-width: 7vw;
+    min-height: 7vw; /* גובה יתאים אוטומטית */
+  }
+  
+  .slick-slider {
+    margin: 0 auto; /* מרווח מרכזי */
+    position: relative; /* קרוסלה תהיה מידעה של אלמנטים הכוללים אותה */
+  }
+  
+  .slick-prev, .slick-next {
+    font-size: 24px; /* גודל כפתורי הניווט */
+    color: black; /* הוספתי כדי להבהיר את הצבע */
+    position: absolute; /* הכפתורים יהיו ממוקמים מוחץ לקרוסלה */
+    top: 50%; /* מיקום אנכי מרכזי בגובה */
+    transform: translateY(-50%); /* למרכז את הכפתורים ביחס לרוחב שלהם */
+    cursor: pointer; /* לשנות לסמן יד */
+  }
+  
+  .slick-prev {
+    left: 0; /* הכפתור הקודם יהיה בצד שמאל */
+  }
+  
+  .slick-next {
+    right: 0; /* הכפתור הבא יהיה בצד ימין */
+  }
+  
+  .carouselImgDiv {
+    border-radius: 100px;
+    border-style: solid;
+    border-color: rgb(254, 147, 154);
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    max-width: 10vw;
+    min-height: 10vw;
+  }
+  
+  .carousel {
+    max-width: 90vw;
+  }
+  /* Carousel.css */
+.slick-slide img {
+    max-width: 7vw;
+    min-height: 7vw; /* גובה יתאים אוטומטית */
+  }
+  
+  .slick-slider {
+    margin: 0 auto; /* מרווח מרכזי */
+    position: relative; /* קרוסלה תהיה מידעה של אלמנטים הכוללים אותה */
+  }
+  
+  .slick-prev, .slick-next {
+    font-size: 24px; /* גודל כפתורי הניווט */
+    color: black; /* הוספתי כדי להבהיר את הצבע */
+    position: absolute; /* הכפתורים יהיו ממוקמים מוחץ לקרוסלה */
+    top: 50%; /* מיקום אנכי מרכזי בגובה */
+    transform: translateY(-50%); /* למרכז את הכפתורים ביחס לרוחב שלהם */
+    cursor: pointer; /* לשנות לסמן יד */
+  }
+  
+  .slick-prev {
+    left: 0; /* הכפתור הקודם יהיה בצד שמאל */
+  }
+  
+  .slick-next {
+    right: 0; /* הכפתור הבא יהיה בצד ימין */
+  }
+  
+  .slick-prev .visually-hidden, .slick-next .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+  }
+  
+  

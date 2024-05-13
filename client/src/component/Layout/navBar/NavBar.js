@@ -43,6 +43,7 @@ const NavBar = () => {
             <div className="navbar-title">
                 <div className="logoNavBar"></div>
                 <h2 className="title">חנות בוטיק קסומה לתינוקות</h2>
+                {/* <FaCartPlus className="btn" size={20} /> */}
 
                 <div className="navbar-menu-box">
                     {userName && <div className="navbar-menu-div">
