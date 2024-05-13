@@ -97,5 +97,29 @@
     color: red;
     cursor: pointer;
 }
+.carouselDiv {
+    min-width: 200px;
+    max-width: 400px;
+    min-height: 200px;
+    max-height: 400px;
+    padding: 20px;
+    margin: 0 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    text-align: center;
+    display: flex;
+    flex-direction: row; /* שנה כיוון התצוגה לרוחב */
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
 
+/* .carousel {
+    background-color: #d88f8f;
+} */
+.bigImage{
+    min-width: 90vw;
+    min-height: 80vh;
+    margin-right: 3vw;
+}
 

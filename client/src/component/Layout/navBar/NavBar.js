@@ -49,6 +49,7 @@ const NavBar = () => {
             <div className="navbar-title">
                 <div className="logoNavBar"></div>
                 <h2 className="title">חנות בוטיק קסומה לתינוקות</h2>
+<<<<<<< HEAD
                 <div className="navbar-a-box">
                 <Link to="/login" className="products-list-add-btn">
                     התחברות
@@ -57,6 +58,11 @@ const NavBar = () => {
                     הרשמה
                 </Link></div>
                 {userName &&<div className="navbar-menu-box">
+=======
+                {/* <FaCartPlus className="btn" size={20} /> */}
+
+                <div className="navbar-menu-box">
+>>>>>>> 76baab3cd3ab5b0496918c7fa2cb67c2dffd5673
                     {userName && <div className="navbar-menu-div">
                         <MdPerson size={40} className="userMenu" onClick={() => setUserMenu(!userMenu)}></MdPerson>
                         <p>{name}</p>
