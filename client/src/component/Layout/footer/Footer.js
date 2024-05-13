@@ -1,11 +1,10 @@
-import { Link } from "react-router-dom"
+
 // import nodemailer from 'nodemailer'
 import "./footer.css"
-import { useSearchParams } from "react-router-dom"
-import {MdOutlineChat} from "react-icons/md"
+import { MdAlternateEmail, MdLocationPin, MdPhone } from "react-icons/md"
+import { Link } from "react-router-dom"
 
 const Footer = () => {
-    const [searchParams, setSearchParamd] = useSearchParams()
 
     // const sendEmail = (emailAddress) => {
     //     console.log("send the mail");
@@ -24,55 +23,61 @@ const Footer = () => {
 
     return (
         <div className="footer">
-            המותגים שלנו:
-            <div className="footer-logo"></div>
-            <div className="brandsImgs">
-                <Link to="/?company=avent" className="linkCompany">
-                    <img src="/companiesLogo/avent.png" /></Link>
-                <Link to="/?company=B" className="linkCompany">
-                    <img src="/companiesLogo/B.png" /></Link>
-                <Link to="/?company=cybex" className="linkCompany">
-                    <img src="/companiesLogo/cybex.png" /></Link>
-                <Link to="/?company=yoyo" className="linkCompany">
-                    <img src="/companiesLogo/yoyo.png" /></Link>
-                <Link to="/?company=pluma" className="linkCompany">
-                    <img src="/companiesLogo/logo.png" /></Link>
-                <Link to="/?company=mam" className="linkCompany">
-                    <img src="/companiesLogo/mam.png" /></Link>
-                <Link to="/?company=shilav" className="linkCompany">
-                    <img src="/companiesLogo/shilav.png" /></Link>
-                <Link to="/?company=baby_einstein" className="linkCompany">
-                    <img src="/companiesLogo/baby_einstein.png" /></Link>
-                <Link to="/?company=babybjorn" className="linkCompany">
-                    <img src="/companiesLogo/babybjorn.png" /></Link>
-                <Link to="/?company=doona" className="linkCompany">
-                    <img src="/companiesLogo/doona.png" /></Link>
-                <Link to="/?company=easy_walker" className="linkCompany">
-                    <img src="/companiesLogo/easy_walker.png" /></Link>
-                <Link to="/?company=inglesina" className="linkCompany">
-                    <img src="/companiesLogo/inglesina.png" /></Link>
-                <Link to="/?company=maxi_cosi" className="linkCompany">
-                    <img src="/companiesLogo/maxi_cosi.png" /></Link>
-                <Link to="/?company=melissa_doug" className="linkCompany">
-                    <img src="/companiesLogo/melissa_doug.png" /></Link>
-                <Link to="/?company=simply_good" className="linkCompany">
-                    <img src="/companiesLogo/simply_good.png" /></Link>
-                <Link to="/?company=suavinex" className="linkCompany">
-                    <img src="/companiesLogo/suavinex.png" /></Link>
-                <Link to="/?company=tiny_love" className="linkCompany">
-                    <img src="/companiesLogo/tiny_love.png" /></Link>
-                <Link to="/?company=uppa_baby" className="linkCompany">
-                    <img src="/companiesLogo/uppa_baby.png" /></Link>
-
+            <div className="footer-logo"><img src="/logo.png" className="logoP" /></div>
+            <div className="footerInfo">
+                <div className="footerCategories">
+                    <h3>קטגוריות:</h3>
+                    <Link to="/categories/clothing" className="linkCompany">ביגוד לתינוקות</Link>
+                    <Link to="/categories/accessories" className="linkCompany">אקססוריז</Link>
+                    <Link to="/categories/bath" className="linkCompany">רחצה</Link>
+                    <Link to="/categories/feed" className="linkCompany">האכלה</Link>
+                    <Link to="/categories/hygine" className="linkCompany">היגיינה</Link>
+                    <Link to="/categories/play" className="linkCompany">משחק</Link>
+                    <Link to="/categories/presents" className="linkCompany">מתנות</Link>
+                    <Link to="/categories/safe" className="linkCompany">בטיחות</Link>
+                    <Link to="/categories/sleep" className="linkCompany">שינה</Link>
+                    <Link to="/categories/walk" className="linkCompany">טיול ועגלות</Link>
+                </div>
+                <div className="footerAbout">
+                    <h3>כללי:</h3>
+                    <Link to="/" className="linkCompany">תקנון החנות</Link>
+                    <Link to="/" className="linkCompany">אודות</Link>
+                    <Link to="/" className="linkCompany">המותג שלנו</Link>
+                    <Link to="/" className="linkCompany">פוסטים</Link>
+                </div>
+                <div className="footerCantact">
+                    <h3>צרו קשר</h3>
+                    <div className="adress" style={{display:"flex",flexDirection:"row"}}>
+                        <MdLocationPin />
+                        <div>
+                            <p>כתובת החנות:</p>
+                            <p>רחוב שפרינצק צפת</p></div>
+                    </div>
+                    <div className="phone" style={{display:"flex",flexDirection:"row"}}>
+                        <MdPhone />
+                        <div>
+                            <p>פלאפון חנות:</p>
+                            <p>055-6737092</p></div>
+                    </div>
+                    <div className="email" style={{display:"flex",flexDirection:"row"}}>
+                    <a href="mailto:mirigrinzaig111@gmail.com"><MdAlternateEmail /></a>
+                        <p>ליצירת קשר:</p> 
+                    </div>
+                </div>
+                <div className="footerStoreDetails">
+                    <h3>אפשרויות שירות</h3>
+                    <div className="timeActive">
+                        <p>שעות פעילות החנות:
+                        </p>
+                        <p>
+                            א-ה 10:00-19:00
+                        </p>
+                        <p>
+                            יום ו 10:00-13:00
+                        </p>
+                    </div>
+                </div>
             </div>
-            <img src="/logo.png" className="logoP" />
-            <div><img src="/categories/brands.png" /> </div>
-            {/* <a href="mailto:mirigrinzaig111@gmail.com">צור קשר</a> */}
-            {/* <a href="#" onClick={sendEmail("mirigrinzaig111@gmail.com")}>צור קשר</a> */}
-            {/* <a href="#" onClick={() => sendEmail("mirigrinzaig111@gmail.com")}>צור קשר</a> */}
-            {/* <a href="#" onClick={() => openMailToLink("mirigrinzaig111@gmail.com")}>צור קשר</a> */}
-            <a href="mailto:mirigrinzaig111@gmail.com">צור קשר<MdOutlineChat>צור קשר</MdOutlineChat></a>
-            {/* <a href="#" onClick={(event) => sendEmail(event, 'mirigrinzaig111@gmail.com')}>צור קש3ר</a> */}
             <div className="footer-text"> building:Miri Grintzaig 0556737092 mirigrinzaig111@gmail.com<br />.All rights reserved @</div>
         </div>
     )

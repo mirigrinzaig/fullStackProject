@@ -33,3 +33,24 @@
     min-width: 10vw;
     min-height: 20vh;
 }
+.footerInfo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    min-width: 80vw;
+}
+.footerInfo div{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+.timeActive {
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+.adress{
+    display: flex;
+    flex-direction:row;
+
+}

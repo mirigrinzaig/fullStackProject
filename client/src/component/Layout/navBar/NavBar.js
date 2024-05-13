@@ -77,18 +77,18 @@ const NavBar = () => {
         <Search className="navBarSearch" placeholder={"חיפוש כללי"} />
         <NavLink className="homeLink" to='/'><MdHome size={20} className="home" />home</NavLink>
         {/* <MenuLink item={item}></MenuLink> */}
-        <NavLink to='/categories/clothing'><img src="http://localhost:1234/uploads/categories/clothing.png" /></NavLink>
-        <NavLink to='/categories/accessories'><img src="http://localhost:1234/uploads/categories/accessories.png" /></NavLink>
-        <NavLink to='/categories/feed'> <img src="http://localhost:1234/uploads/categories/feed.png" /></NavLink>
-        <NavLink to='/categories/bath'><img src="http://localhost:1234/uploads/categories/bath.png" /></NavLink>
-        <NavLink to='/categories/sleep'><img src="http://localhost:1234/uploads//categories/sleep.png" /></NavLink>
-        <NavLink to='/categories/walk'><img src="http://localhost:1234/uploads//categories/walk.png" /></NavLink>
-        <NavLink to='/categories/play'><img src="http://localhost:1234/uploads//categories/play.png" /></NavLink>
-        <NavLink to='/categories/safe'><img src="http://localhost:1234/uploads//categories/safe.png" /></NavLink>
-        <NavLink to='/categories/hygine'><img src="http://localhost:1234/uploads//categories/hygine.png" /></NavLink>
-        <NavLink to='/categories/presents'><img src="http://localhost:1234/uploads//categories/presents.png" /></NavLink>
+        <NavLink to='/categories/clothing'><img src="./categories/clothing.png" /></NavLink>
+        <NavLink to='/categories/accessories'><img src="./categories/accessories.png" /></NavLink>
+        <NavLink to='/categories/feed'> <img src="./categories/feed.png" /></NavLink>
+        <NavLink to='/categories/bath'><img src="./categories/bath.png" /></NavLink>
+        <NavLink to='/categories/sleep'><img src="./categories/sleep.png" /></NavLink>
+        <NavLink to='/categories/walk'><img src="./categories/walk.png" /></NavLink>
+        <NavLink to='/categories/play'><img src="./categories/play.png" /></NavLink>
+        <NavLink to='/categories/safe'><img src="./categories/safe.png" /></NavLink>
+        <NavLink to='/categories/hygine'><img src="./categories/hygine.png" /></NavLink>
+        <NavLink to='/categories/presents'><img src="./categories/presents.png" /></NavLink>
         <NavLink to='/categories/plumabrand'><img src="/logo.png" /></NavLink>
-        <NavLink to='/categories/promotions'><img src="http://localhost:1234/uploads/categories/brands.png" /></NavLink>
+        <NavLink to='/categories/promotions'><img src="./categories/brands.png" /></NavLink>
 
 
 
