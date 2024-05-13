@@ -8,8 +8,8 @@ import "../products/List/productsList.css"
 import { useEffect, useState } from "react"
 import { useDispatch } from "react-redux"
 import { resetProducts } from "../products/productsSlice"
-import Carousel from "./Carousel"
 import CategoriesCarousel from "./CategoriesCarousel"
+import CompaniesCarousel from "./CompaniesCarousel"
 // import ScrollCarousel from 'scroll-carousel-react';
 // import Carousel from 'react-bootstrap/Carousel';
 
@@ -170,7 +170,7 @@ const HomePage = () => {
                 <div className="carouselDiv" style={{ background: "#f44336" }}>We love Developers 👩🏻‍💻</div>
             </Carousel> */}
           <h3>המותגים שלנו</h3>
-            <Carousel/>
+            <CompaniesCarousel/>
         </div>
     )
 }
