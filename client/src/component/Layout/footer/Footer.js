@@ -48,19 +48,19 @@ const Footer = () => {
                 <div className="footerCantact">
                     <h3>צרו קשר</h3>
                     <div className="adress" style={{display:"flex",flexDirection:"row"}}>
-                        <MdLocationPin />
+                        <MdLocationPin className="icon" />
                         <div>
                             <p>כתובת החנות:</p>
                             <p>רחוב שפרינצק צפת</p></div>
                     </div>
                     <div className="phone" style={{display:"flex",flexDirection:"row"}}>
-                        <MdPhone />
+                        <MdPhone className="icon" />
                         <div>
                             <p>פלאפון חנות:</p>
                             <p>055-6737092</p></div>
                     </div>
                     <div className="email" style={{display:"flex",flexDirection:"row"}}>
-                    <a href="mailto:mirigrinzaig111@gmail.com"><MdAlternateEmail /></a>
+                    <a href="mailto:mirigrinzaig111@gmail.com"><MdAlternateEmail className="icon"  /></a>
                         <p>ליצירת קשר:</p> 
                     </div>
                 </div>

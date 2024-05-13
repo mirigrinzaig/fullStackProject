@@ -15,6 +15,7 @@
     background-color:var(--bgSoft);
     /* border-style:double; */
     /* border-color: rgb(250, 105, 185); */
+    background-color: #fff;
 }
 .footer-logo{
     font-weight: bold;
@@ -52,5 +53,12 @@
 .adress{
     display: flex;
     flex-direction:row;
+
+}
+h3{
+    color:rgb(249, 151, 155);
+}
+.icon{
+    color:rgb(249, 151, 155);
 
 }
