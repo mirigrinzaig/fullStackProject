@@ -1,6 +1,9 @@
 
 .products-list-add-btn{
-    background-color: rgb(245, 176, 197);
+    /* background-color: rgb(245, 176, 197); */
+    border: solid 2px var(--bgPink);
+    color: var(--bgPink);
+    padding: 10px;
     border-radius: 50px;
     min-width: 95px;
     font-size: small;
