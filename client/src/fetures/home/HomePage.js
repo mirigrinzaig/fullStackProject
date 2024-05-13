@@ -110,7 +110,7 @@ const HomePage = () => {
 
     return (
         <div className="products-list">
-            <div className="products-list-top">
+            {/* <div className="products-list-top">
                 <Search placeholder={"חיפוש כללי"} />
                 <Link to="/login" className="products-list-add-btn">
                     כניסת משתמשים
@@ -118,7 +118,7 @@ const HomePage = () => {
                 <Link to="/regist" className="products-list-add-btn">
                     הרשמה
                 </Link>
-            </div>
+            </div> */}
             {/* <ScrollCarousel
             autoplay={true}
             autoplaySpeed={0}

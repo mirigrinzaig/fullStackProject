@@ -2,10 +2,12 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    background-color:#fac9dd;
+    color: var(--text);
+    background-color:var(--bg);
+    border: solid 2px var(--text);
     border-radius:10px ;
     padding: 10px;
-    max-width: 90vw;
+    max-width: 17vw;
 }
 .search-input{
   background-color:transparent; 

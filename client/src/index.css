@@ -58,6 +58,7 @@ body{
   color:var(--text);
   /* text-align: center; */
   font-family: var(--fontFamily);
+  max-width: 100vw;
 }
 a{
  color: inherit;
