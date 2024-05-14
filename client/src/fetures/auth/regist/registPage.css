@@ -1,40 +1,4 @@
-/* .regist-page{
-    width:100%;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    }
-    .regist-page-form{
-    background-color: var(--bgSoft);
-    padding: 20px;
-    border-radius: 10px;
-    width: 500px;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-    }
-    .regist-page-form input{
-        width: 100%;
-        padding: 30px;
-        border: solid 2px #2e374a;
-        border-radius: 5px;
-        background-color: var(--bg);
-        color: var(--text);
-    }
-    .regist-page-form button{
-        width: 100%;
-        padding: 30px;
-        background-color: teal;
-        color: var(--text);
-        border: none;
-        cursor: pointer;
-        border-radius: 5px;
-    }
-     */
+
      .regist-page{
         width:100%;
         height: 100%;
@@ -97,5 +61,13 @@
             display: flex;
             justify-content: center;
             align-items: center;
+        }
+        h1{
+            color:rgb(142, 172, 170);
+        }
+        .linkToLogin{
+            color:rgb(129, 166, 162);
+            font-size: 2rem;
+
         }
         
