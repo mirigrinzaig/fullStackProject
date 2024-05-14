@@ -14,46 +14,6 @@ import CompaniesCarousel from "./CompaniesCarousel"
 // import Carousel from 'react-bootstrap/Carousel';
 
 
-
-const images = [
-    {
-        url: "http://localhost:1234/uploads/baby.jpg",
-        width: 320,
-        height: 174,
-        isSelected: true,
-        caption: "After Rain (Jeshu John - designerspics.com)",
-    },
-    {
-        url: "http://localhost:1234/uploads/sea.jpg",
-        width: 320,
-        height: 174,
-        isSelected: true,
-        caption: "After Rain (Jeshu John - designerspics.com)",
-    },
-    {
-        url: "http://localhost:1234/uploads/baby.jpg",
-        width: 320,
-        height: 174,
-        isSelected: true,
-        caption: "After Rain (Jeshu John - designerspics.com)",
-    },
-    {
-        url: "http://localhost:1234/uploads/sea.jpg",
-        width: 320,
-        height: 212,
-        tags: [
-            { value: "Ocean", title: "Ocean" },
-            { value: "People", title: "People" },
-        ],
-        alt: "Boats (Jeshu John - designerspics.com)",
-    },
-    {
-        url: "http://localhost:1234/uploads/baby.jpg",
-        width: 320,
-        height: 212,
-    },
-];
-
 const HomePage = () => {
     const { data: products, isError, error, isLoading, isSuccess } = useGetAllProductsPublicQuery()
     const [searchParams] = useSearchParams()
@@ -132,6 +92,12 @@ const HomePage = () => {
                </div>
             ))}
          </ScrollCarousel> */}
+         {company && (
+                <h3>
+                    מוצרים של המותג :{company}
+            
+                </h3>
+            )}
           <img className="bigImage" src="./baby.jpg" alt="Image 1" />
          <h3>קטגוריות</h3>
          <CategoriesCarousel/>

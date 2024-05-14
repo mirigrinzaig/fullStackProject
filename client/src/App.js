@@ -16,13 +16,20 @@ import RegistPage from "./fetures/auth/regist/RegistPage"
 import HomeMain from "./fetures/home/HomeMain"
 import FavouritesList from "./fetures/products/List/FavouritesList"
 import ProductListPublic from "./fetures/products/List/ProductsListPublic"
+import ScrollToTop from './ScrollToTop';
+
+import React, { useEffect ,useLocation } from 'react';
+
+
 const App = () => {
     return <Router>
+        <ScrollToTop />
         <Routes>
             <Route path="/" element={<SiteLayout />} >
                 <Route index element={<HomePage/>} />
                 <Route path="/favouriets" element={<FavouritesList/>}/>
                 {/* <Route index element={<HomeMain/>} /> */}
+                <Route path="/categories/companies" element={<ProductListPublic  category="company"/>} />
                 <Route path="/categories/accessories" element={<ProductListPublic category="accessories"/>} />
                 <Route path="/categories/bath" element={<ProductListPublic category="bath"/>} />
                 <Route path="/categories/clothing" element={<ProductListPublic category="clothing"/>} />
