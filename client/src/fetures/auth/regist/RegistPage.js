@@ -56,7 +56,7 @@ export const RegistPage = () => {
         <div className="logoPS">
           <Link className="linkToLogin" to={"/login"}>רשומה? הכנסי</Link>
         </div>
-        <button type='submit' style={{ backgroundColor: fullData ? 'var(--bgPink)' : "rgb(142, 172, 170)" }}>כניסה</button>
+        <button type='submit' style={{ backgroundColor: fullData ? 'var(--bgPink)' : "rgb(142, 172, 170)" ,color:!fullData&&"white"}}>כניסה</button>
         {error && error.data?.message}
 
       </form>

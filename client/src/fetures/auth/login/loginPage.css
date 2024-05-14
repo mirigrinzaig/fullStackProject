@@ -118,14 +118,17 @@ gap: 30px;
      padding: 40px;
      padding-top: 25px;
      gap:20px;
-     border-bottom: solid var(--bgSoft) 10px;
+     border-bottom: solid var(--bgPink) 10px;
      border-radius: 10px;
      border-top-right-radius: 0%;
      border-top-left-radius: 0%;
-     color: var(--text);
-     background-color: var(--bgSoft);
+     color: #fff;
+     background-color: var(--bgPink);
      display: flex;
      flex-direction: column;
     justify-content: center;
     align-items: center;
+    }
+    .h1ToRegist{
+        color:#fff;
     }

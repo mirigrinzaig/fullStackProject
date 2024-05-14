@@ -88,7 +88,7 @@ export const LoginPage = () => {
         {error && error.data?.message}
       </form>
       <div className="toRegist">
-        <h1>חדשה באתר?</h1>
+        <h1 className="h1ToRegist">חדשה באתר?</h1>
         <button><NavLink to='/regist'>הרשמי עכשיו</NavLink></button>
       </div>
 
