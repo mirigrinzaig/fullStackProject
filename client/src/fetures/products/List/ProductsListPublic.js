@@ -13,28 +13,34 @@ const ProductsListPublic = (category) => {
     if (isLoading) return <div className="errorPage">אנא המתינו, הדף נטען</div>
     if (isError) return <div className="errorPage">מטערים, קיימת תקלה תכנית</div>
     //if not category.
-    let filteredData=products
-    if(category){
-        console.log("category",category);
-        console.log("category",category.category);
+    let filteredData = products
+    if (category) {
+        console.log("category", category);
+        console.log("category", category.category);
         filteredData = products.filter(p => p.category.toLowerCase() === category.category.toLowerCase())
-}
+    }
 
     if (category)
-        filteredData = !q ? [...filteredData] : filteredData.filter(p => p.name.toLowerCase().indexOf(q.toLowerCase()) > -1 && p.category.toLowerCase()===category.category.toLowerCase())
+        filteredData = !q ? [...filteredData] : filteredData.filter(p => p.name.toLowerCase().indexOf(q.toLowerCase()) > -1 && p.category.toLowerCase() === category.category.toLowerCase())
     else
-    filteredData = !q ? [...filteredData] : filteredData.filter(p => p.name.toLowerCase().indexOf(q.toLowerCase()) > -1)
+        filteredData = !q ? [...filteredData] : filteredData.filter(p => p.name.toLowerCase().indexOf(q.toLowerCase()) > -1)
 
     return (
         <div className="products-list">
+            {category && (
+                <h3>
+                    {category.category}
+            
+                </h3>
+            )}
             <div className="products-list-top">
-                <Search placeholder={"חיפוש לפי שם מוצר"} />
-                <Link to="/login" className="products-list-add-btn">
+                {/* <Search placeholder={"חיפוש לפי שם מוצר"} /> */}
+                {/* <Link to="/login" className="products-list-add-btn">
                     כניסת משתמשים
                 </Link>
                 <Link to="/regist" className="products-list-add-btn">
                     הרשמה
-                </Link>
+                </Link> */}
             </div>
             <div className="products-list-table">
                 <div className="products">
@@ -49,10 +55,10 @@ const ProductsListPublic = (category) => {
                                 {product.company}
                                 {product.sellingPrice}
                                 {(product.amount === 0) && (
-                                <div className="azal">
-                                    אזל במלאי
-                                </div>
-                            )}
+                                    <div className="azal">
+                                        אזל במלאי
+                                    </div>
+                                )}
                             </div>
                         </div>
                     ))}

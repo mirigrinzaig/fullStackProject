@@ -46,7 +46,7 @@ const Footer = () => {
                     <Link to="/" className="linkCompany">פוסטים</Link>
                 </div>
                 <div className="footerCantact">
-                    <h3>צרו קשר</h3>
+                    <h3>צרו קשר:</h3>
                     <div className="adress" style={{display:"flex",flexDirection:"row"}}>
                         <MdLocationPin className="icon" />
                         <div>
@@ -61,7 +61,9 @@ const Footer = () => {
                     </div>
                     <div className="email" style={{display:"flex",flexDirection:"row"}}>
                     <a href="mailto:mirigrinzaig111@gmail.com"><MdAlternateEmail className="icon"  /></a>
+                    <div className="mailLink">
                         <p>ליצירת קשר:</p> 
+                        <p>mirigrinzaig111@gmail.com</p></div>
                     </div>
                 </div>
                 <div className="footerStoreDetails">

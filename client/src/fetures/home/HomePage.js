@@ -133,7 +133,7 @@ const HomePage = () => {
             ))}
          </ScrollCarousel> */}
           <img className="bigImage" src="./baby.jpg" alt="Image 1" />
-         <h2>קטגוריות</h2>
+         <h3>קטגוריות</h3>
          <CategoriesCarousel/>
          
             {arrWordsSearch?.length < 1 && <div className="errorPage">נראה שאין מוצרים העונים על התנאי שלך, נסה לחפש חיפוש מורחב יותר.</div>}
