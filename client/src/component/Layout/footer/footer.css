@@ -10,7 +10,6 @@
     min-height: 50vh;
     min-width: 93%;
     max-width: 93%;
-    padding-top: 20px;
     background-color:var(--bgSoft);
     /* border-style:double; */
     /* border-color: rgb(250, 105, 185); */
@@ -19,6 +18,10 @@
 }
 .footer-logo{
     font-weight: bold;
+    max-height: 27vh;
+    margin-top: 5vh;
+    margin-bottom: 0;
+     object-fit: cover;
 }
 
 .footer-text{
@@ -31,21 +34,25 @@
     justify-content: space-around;
 }
 .logoP{
-    min-width: 10vw;
-    min-height: 20vh;
+    min-width: 20vw;
+    min-height: 39vh;
 }
 .footerInfo{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     min-width: 80vw;
+    max-height: 70vh;
+   margin-top: 0;
+   margin-bottom: 5vh;
 }
 .footerInfo div{
     display: flex;
     flex-direction: column;
     gap:10px;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     text-align: right;
+    margin-top: 0;
 }
 .timeActive {
     display: flex;
@@ -59,7 +66,7 @@
 }
 h3{
     color:rgb(249, 151, 155);
-    font-size: 2rem;
+    font-size: 1.8rem;
     /* text-align: center; */
 }
 .icon{
