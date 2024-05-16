@@ -16,6 +16,9 @@
             background-size: cover;
             background-repeat: no-repeat;
         }
+        .logoP-regist{
+            max-height: 20vh;
+        }
         .logoPS{
             width: 320px;
             height: 100px;
@@ -23,6 +26,7 @@
             background-size: cover;
             background-repeat: no-repeat;
         }
+
         .regist-page-form{
             background-color: whitesmoke;
             padding: 50px;

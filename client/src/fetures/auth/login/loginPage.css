@@ -49,10 +49,13 @@ gap: 30px;
     
     .logoP{
         width: 200px;
-        height: 130px;
+        height: 100px;
         background-image:url("http://localhost:1234/uploads/logo.PNG");
         background-size: cover;
         background-repeat: no-repeat;
+    }
+    .logoP-login{
+        max-height: 20vh;
     }
     .login-page-form{
     background-color: whitesmoke;
