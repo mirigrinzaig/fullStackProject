@@ -1,5 +1,5 @@
 
-.products-list-add-btn{
+.products-list-add-btn,.removAllBtn{
     /* background-color: rgb(245, 176, 197); */
     border: solid 2px var(--bgPink);
     color: var(--bgPink);
@@ -18,7 +18,8 @@
     /* max-width: 90vw; */
     min-width: 100%;
     flex-wrap: wrap;
-    gap:4vw;
+    gap:20px;
+    margin-top: 30px;
 }
 .singleF{
     min-width: 15vw;
@@ -89,6 +90,9 @@
     border: none;
     color: red;
     cursor: pointer;
+    position:absolute;
+    bottom: 10px;
+    left: 10px;
 }
 .favoritesProducts{
     display: flex;
@@ -97,11 +101,14 @@
 }
 .removAllBtn{
     max-width: 20vw;
-    min-height: 5vh;
+    align-self: self-end;
+    margin-left:20px ;
+    position: absolute;
+    /* min-height: 5vh;
     justify-content: center;
     align-items: center;
    margin-right: 40%;
-   background-color: rgb(255, 196, 223);
+   background-color: rgb(255, 196, 223); */
    /* border: none; */
    /* color: red; */
    cursor: pointer;

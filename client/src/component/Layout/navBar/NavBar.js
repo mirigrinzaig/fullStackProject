@@ -49,13 +49,13 @@ const NavBar = () => {
             <div className="navbar-title">
                 <div className="logoNavBar"></div>
                 <h2 className="title">חנות בוטיק קסומה לתינוקות</h2>
-                <div className="navbar-a-box">
+                {!userName && <div className="navbar-a-box">
                     <Link to="/login" className="products-list-add-btn">
                         התחברות
                     </Link>
                     <Link to="/regist" className="products-list-add-btn">
                         הרשמה
-                    </Link></div>
+                    </Link></div>}
                 {
                     userName && <div className="navbar-menu-div">
                         <MdPerson size={40} className="userMenu" onClick={() => setUserMenu(!userMenu)}></MdPerson>

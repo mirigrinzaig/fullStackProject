@@ -34,12 +34,14 @@ const FavouritesList = () => {
 
   return (
     <>
-      <h1>המוצרים האהובים שלי</h1>
       <div className="productsF">
+        <h1>המוצרים האהובים שלי</h1>
         <button className="removAllBtn" onClick={removeAll}>מחיקת כל רשימת האהובים שלי</button>
-        <div className="favoritesProducts">
+        {/* favoritesProductsהורדתי שם של  */}
+        <div className="products ">
           {favouritesList.map(product => (
-            <div className="singleF" key={product._id}>
+            // singleFהורדתי שם
+            <div className="singal " key={product._id}>
               <Link
                 to={`/public/${product.barcod}`}
                 className="products-list-btn products-list-view"
@@ -50,14 +52,15 @@ const FavouritesList = () => {
                   className="products-list-product-image"
                 />
               </Link>
-              <div className="detailsF">
+              {/* detailsFהורדתי שם */}
+              <div className="details">
                 <div className="details-wr">
                   {product.name}<br />
                   {product.company}<br />
                   {product.sellingPrice}
                 </div>
                 <button className="products-list-btn products-list-delete" onClick={() => removeItem(product.barcod)}>
-                  הסרה מהאהובים שלי
+                  x
                 </button>
               </div>
             </div>
