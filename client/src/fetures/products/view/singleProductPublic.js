@@ -120,7 +120,7 @@ const SingleProductPublic = () => {
 
                         {(product.amount === 0) && (
                             <div className="azal">
-                                אזל במלאי
+                                אזל מהמלאי
                             </div>
                         )}
                     </div>

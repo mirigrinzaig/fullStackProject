@@ -31,73 +31,95 @@
     gap: 4vw;
 }
 
+/* .products div:hover{
+    border-style: dashed;
+    border-color: rgb(250, 139, 139);
+} */
+
 .single {
     min-width: 15vw;
-    /* max-width: 15vw; */
-    /* min-height: 44vh;
-    max-height: 44.5vh; */
-    width: 180px;
-    height: 240px;
-    /* background-color: rgb(252, 250, 251); */
-    /* border-radius: 10px; */
+    max-width: 15vw;
+    min-height: 44vh;
+    max-height: 60.5vh;
+    border-radius: 10px;
     display: flex;
     flex-wrap: wrap;
+    
     justify-content: space-around;
-    /* border-style: double;
-    border-color: rgb(255, 104, 174); */
+    border: 1.5px solid transparent;
+    border-color:var(--bg);
     cursor: pointer;
     color: var(--text);
+    background-color: #fff;
+    box-shadow: 0px 0px 5px rgba(79, 78, 78, 0.5); /* הוספת צל עם צבע שחור ועוצמת 0.5 */
+}
+.price{
+    font-weight: bolder;
+    font-size: larger;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+
+.single:hover {
+    border-color: rgb(255, 104, 174);
 }
 
 .single img {
-    width: 180px;
-    height: 180px;
+    max-width: 170px;
+    min-height: 190px;
     object-fit: cover;
     cursor: pointer;
-     /* border-radius: 50%;
-    object-fit: cover;
-    min-height: 25vh;
-    max-height: 25vh;
-    min-width: 25vh;
-    max-width: 25vh;
-    cursor: pointer; */
-    /* min-height: 44vh;
-    max-height: 44vh; */
-    /* max-height: 25vh; */
-    /* min-width: 15vw;
-    max-width: 15vw;
-    border-radius: 10px; */
-    /* max-width: 25vh; */
-    
+    transition: transform 0.3s ease;
+    border-radius: 0;
+    padding-left: 5px;
+   
+   
+}
+
+.single:hover img {
+    border: none;
+    background-size: 200%; /* הגדלת התמונה ב-200% */
+    background-position: 50% 50%; 
 }
 
 
 .products-list-product-image {
-    /* border-radius: 50%; */
-    /* gap: 10px; */
     object-fit: cover;
     min-height: 25vh;
     /* max-height: 25vh; */
     min-width: 25vh;
     /* max-width: 25vh; */
     cursor: pointer;
-    border-radius: 10px;
+    /* border-radius: 0px; */
 }
 
 .details {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    /* min-width: 15vw;
+    min-width: 15vw;
     max-width: 15vw !important;
-    min-height: 10vh; */
-    width: 180px;
-    height: 60px;
+    min-height: 30vh;
+    /* width: 180px;
+    height: 60px; */
     font-size: 1.2rem;
-    position: sticky;
-    top: 180px;
-    background-color: rgb(255, 216, 235);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    /* position: sticky;
+    top: 180px; */
+    /* background-color: rgb(255, 216, 235); */
     /* border-radius: 10px 10px 0 0; */
+}
+.details div{
+    min-width: 15vw;
+    max-width: 15vw !important;
+
+}
+
+.details:hover {
+    border: none;
 }
 
 /* .details-wr{

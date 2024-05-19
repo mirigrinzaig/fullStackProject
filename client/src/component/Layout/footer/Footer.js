@@ -48,7 +48,7 @@ const Footer = () => {
                 <div className="footerCantact">
                     <h3>צרו קשר:</h3>
                     <div className="adress" style={{display:"flex",flexDirection:"row"}}>
-                        <MdLocationPin className="icon" />
+                        <Link to={"https://www.google.com/maps/place/%D7%A9%D7%A4%D7%A8%D7%99%D7%A0%D7%A6%D7%A7,+%D7%A6%D7%A4%D7%AA%E2%80%AD/@32.9582335,35.4970839,17z/data=!3m1!4b1!4m6!3m5!1s0x151c239bff83a463:0xc83d34d1118abae2!8m2!3d32.958229!4d35.494509!16s%2Fg%2F1ymw996nr?entry=ttu"}><MdLocationPin className="icon" /></Link>
                         <div>
                             <p>כתובת החנות:</p>
                             <p>רחוב שפרינצק צפת</p></div>

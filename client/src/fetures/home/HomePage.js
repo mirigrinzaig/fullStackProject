@@ -10,6 +10,7 @@ import { useDispatch } from "react-redux"
 import { resetProducts } from "../products/productsSlice"
 import CategoriesCarousel from "./CategoriesCarousel"
 import CompaniesCarousel from "./CompaniesCarousel"
+import { TbCurrencyShekel } from "react-icons/tb";
 // import ScrollCarousel from 'scroll-carousel-react';
 // import Carousel from 'react-bootstrap/Carousel';
 
@@ -47,7 +48,7 @@ const HomePage = () => {
             const arrWords = q.split(" ");
             const wordsMap = {};
             arrWords.forEach((word) => {
-                if (word !==" ")
+                if (word !== " ")
                     wordsMap[word] = [];
             });
 
@@ -92,33 +93,33 @@ const HomePage = () => {
                </div>
             ))}
          </ScrollCarousel> */}
-         {company && (
+            {company && (
                 <h3>
                     מוצרים של המותג :{company}
-            
+
                 </h3>
             )}
-          <img className="bigImage" src="./baby.jpg" alt="Image 1" />
-         <h3>קטגוריות</h3>
-         <CategoriesCarousel/>
-         
+            <img className="bigImage" src="./baby.jpg" alt="Image 1" />
+            <h3>קטגוריות</h3>
+            <CategoriesCarousel />
+
             {arrWordsSearch?.length < 1 && <div className="errorPage">נראה שאין מוצרים העונים על התנאי שלך, נסה לחפש חיפוש מורחב יותר.</div>}
             <div className="products">
                 {arrWordsSearch.map(product => (
                     <div className="single" key={product._id}>
-                        <div className="products-list-product"></div>
-                        <Link to={`/public/${product.barcod}`} className="products-list-btn products-list-view"><img src={getFilePath(product.image)} alt="" className="products-list-product-image" /></Link>
-                        <div className="details">
-                            {product.name}
-                            {product.company}
-                            {product.sellingPrice}
-                            {/* כמות:{product.amount} */}
-                            {(product.amount === 0) && (
-                                <div className="azal">
-                                    אזל במלאי
-                                </div>
-                            )}
-                        </div>
+                        <Link to={`/public/${product.barcod}`} className="products-list-btn products-list-view"><img src={getFilePath(product.image)} alt="" className="products-list-product-image" />
+                            <div className="details">
+                                <div>{product.company}</div>
+                                <div>{product.name}</div>
+                                <div>{product.itemDescription}</div>
+                                <div className="price">{product.sellingPrice}<TbCurrencyShekel style={{ fontSize: 17 }} /></div>
+                                {(product.amount === 0) && (
+                                    <div className="azal">
+                                        אזל מהמלאי
+                                    </div>
+                                )}
+                            </div>
+                        </Link>
                     </div>
                 ))}
             </div>
@@ -135,8 +136,8 @@ const HomePage = () => {
                 <div className="carouselDiv" style={{ background: "#2d66c3" }}>We love Web 🌐</div>
                 <div className="carouselDiv" style={{ background: "#f44336" }}>We love Developers 👩🏻‍💻</div>
             </Carousel> */}
-          <h3>המותגים שלנו</h3>
-            <CompaniesCarousel/>
+            <h3>המותגים שלנו</h3>
+            <CompaniesCarousel />
         </div>
     )
 }

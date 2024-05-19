@@ -50,7 +50,7 @@ const ProductsList = () => {
                             כמות:{product.amount}<br /><br />
                             {(product.amount === 0) && (
                                 <div>
-                                    אזל במלאי
+                                     אזל מהמלאי
                                 </div>
                             )}
                             <div className="products-list-btns">
