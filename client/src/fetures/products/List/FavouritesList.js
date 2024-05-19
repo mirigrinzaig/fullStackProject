@@ -40,20 +40,10 @@ const FavouritesList = () => {
         {/* favoritesProductsהורדתי שם של  */}
         <div className="products ">
           {favouritesList.map(product => (
-            // singleFהורדתי שם
-            <div className="singal " key={product._id}>
-              <Link
-                to={`/public/${product.barcod}`}
-                className="products-list-btn products-list-view"
-              >
-                <img
-                  src={getFilePath(product.image)}
-                  alt=""
-                  className="products-list-product-image"
-                />
-              </Link>
-              {/* detailsFהורדתי שם */}
-              <div className="details">
+            <div className="singleF" key={product._id}>
+              <Link to={`/public/${product.barcod}`} className="products-list-btn products-list-view">
+              <img src={getFilePath(product.image)} alt="" className="products-list-product-image" />
+              <div className="detailsF">
                 <div className="details-wr">
                   {product.name}<br />
                   {product.company}<br />
@@ -63,6 +53,8 @@ const FavouritesList = () => {
                   x
                 </button>
               </div>
+              </Link>
+
             </div>
           ))}</div>
       </div>

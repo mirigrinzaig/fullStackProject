@@ -24,14 +24,15 @@
 .singleF{
     min-width: 15vw;
     max-width: 15vw;
-    min-height: 44vh;
-    max-height: 44.5vh;
-    background-color: rgb(252, 250, 251);
+    min-height: 60vh;
+    max-height: 60.5vh;
+    background-color: white;
     border-radius: 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    border-style: double;
+    border-style:solid;
+    border: 1px solid transparent;
     border-color: rgb(255, 104, 174);
     cursor: pointer;
     color:rgb(28, 28, 27)
@@ -46,12 +47,13 @@
     max-width: 25vh;
     cursor: pointer; */
     object-fit: cover;
-    min-height: 44vh;
-    max-height: 44vh;
+    min-height: 40vh;
+    max-height: 40vh;
     /* max-height: 25vh; */
     min-width: 15vw;
     max-width: 15vw;
-    border-radius: 10px;
+    border-radius: 0px;
+    padding-top: 10px;
 
     /* max-width: 25vh; */
     cursor: pointer;
@@ -63,11 +65,11 @@
     /* gap: 10px; */
     object-fit: cover;
     min-height: 25vh;
-    /* max-height: 25vh; */
+    max-height: 25vh;
     min-width: 25vh;
     /* max-width: 25vh; */
     cursor: pointer;
-    border-radius: 10px;
+    border-radius: 0px;
 }
 .detailsF{
     display: flex;
@@ -78,8 +80,8 @@
     min-height: 10vh;
     font-size: 1.5rem;
     position: absolute;
-    background-color: rgb(255, 216, 235);
-    border-radius: 10px 10px 0 0;
+    /* background-color: rgb(255, 216, 235); */
+    border-radius: 0;
 }
 /* .details-wr{
     display: flex;
