@@ -15,3 +15,10 @@
     transition: all 0.3s ease;
 
 }
+.categoriesCarouselTitle{
+    text-align: right;
+    margin-right: 80px;
+    font-style: oblique;
+    font-weight: lighter;
+    font-size: 30px;
+}

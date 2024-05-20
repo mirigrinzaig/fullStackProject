@@ -25,7 +25,7 @@ const settings = {
   // dots: true,
   infinite: true,
   speed: 500,
-  slidesToShow: 8,
+  slidesToShow:4,
   slidesToScroll: 1,
   nextArrow: <NextArrow />,
   prevArrow: <PrevArrow />
@@ -34,47 +34,77 @@ const settings = {
 
 const CategoriesCarousel = () => {
   return (
-    <div className="carouselWrapper">
+    <div className="carouselWrapper Categories">
       <Slider className='carousel' {...settings}>
-        <div className='carouselImgDiv'>
-        <Link to="./categories/accessories" className="linkCompany">
-          <img src="./categories/accessories.png" alt="Image 1" /></Link>
+        <div className='CarouselCategoriesItem'>
+          <Link to="./categories/accessories" className="linkCategory">
+            <div className='linkCategoryDiv'>
+              <img src="./categoriesImg/accessories.webp" alt="Image 1" />
+              <p className='linkCategoryDeatails'>אקקסוריז ואביזרים</p>
+            </div></Link>
         </div>
-        <div className='carouselImgDiv'>
-        <Link to="./categories/bath" className="linkCompany">
-          <img src="./categories/bath.png" alt="Image 1" /></Link>
+        <div className='CarouselCategoriesItem'>
+          <Link to="./categories/bath" className="linkCategory">
+            <div className='linkCategoryDiv'>
+              <img src="./categoriesImg/bath.webp" alt="Image 1" />
+              <p className='linkCategoryDeatails'>רחצה</p>
+            </div></Link>
         </div>
-        <div className='carouselImgDiv'>
-        <Link to="./categories/brands" className="linkCompany">
-          <img src="./categories/brands.png" alt="Image 1" /></Link>
+        <div className='CarouselCategoriesItem'>
+          <Link to="./categories/brands" className="linkCategory">
+            <div className='linkCategoryDiv'>
+              <img src="./categoriesImg/play.webp" alt="Image 1" />
+              <p className='linkCategoryDeatails'>המותג שלנו</p>
+            </div></Link>
         </div>
-        <div className='carouselImgDiv'>
-        <Link to="./categories/clothing" className="linkCompany">
-          <img src="./categories/clothing.png" alt="Image 1" /></Link>
+        <div className='CarouselCategoriesItem'>
+          <Link to="./categories/clothing" className="linkCategory">
+            <div className='linkCategoryDiv'>
+              <img src="./categoriesImg/accessories.webp" alt="Image 1" />
+              <p className='linkCategoryDeatails'>ביגוד והלבשה</p>
+            </div></Link>
         </div>
-        <div className='carouselImgDiv'>
-        <Link to="./categories/feed" className="linkCompany">
-          <img src="./categories/feed.png" alt="Image 2" /></Link>
+        <div className='CarouselCategoriesItem'>
+          <Link to="./categories/feed" className="linkCategory">
+            <div className='linkCategoryDiv'>
+              <img src="./categoriesImg/feed.webp" alt="Image 1" />
+              <p className='linkCategoryDeatails'>האכלה ומוצצים</p>
+            </div></Link>
         </div>
-        <div className='carouselImgDiv'>
-        <Link to="./categories/hygine" className="linkCompany">
-          <img src="./categories/hygine.png" alt="Image 3" /></Link>
+        <div className='CarouselCategoriesItem'>
+          <Link to="./categories/hygine" className="linkCategory">
+            <div className='linkCategoryDiv'>
+              <img src="./categoriesImg/bath.webp" alt="Image 1" />
+              <p className='linkCategoryDeatails'>היגיינה וטיפוח</p>
+            </div></Link>
         </div>
-        <div className='carouselImgDiv'>
-        <Link to="./categories/play" className="linkCompany">
-          <img src="./categories/play.png" alt="Image 1" /></Link>
+        <div className='CarouselCategoriesItem'>
+          <Link to="./categories/play" className="linkCategory">
+            <div className='linkCategoryDiv'>
+              <img src="./categoriesImg/play.webp" alt="Image 1" />
+              <p className='linkCategoryDeatails'>צעצועים ומשחק</p>
+            </div></Link>
         </div>
-        <div className='carouselImgDiv'>
-        <Link to="./categories/presents" className="linkCompany">
-          <img src="./categories/presents.png" alt="Image 2" /></Link>
+        <div className='CarouselCategoriesItem'>
+          <Link to="./categories/presents" className="linkCategory">
+            <div className='linkCategoryDiv'>
+              <img src="./categoriesImg/presents.webp" alt="Image 1" />
+              <p className='linkCategoryDeatails'>מתנות ופינוקים</p>
+            </div></Link>
         </div>
-        <div className='carouselImgDiv'>
-        <Link to="./categories/safe" className="linkCompany">
-          <img src="./categories/safe.png" alt="Image 3" /></Link>
+        <div className='CarouselCategoriesItem'>
+          <Link to="./categories/safe" className="linkCategory">
+            <div className='linkCategoryDiv'>
+              <img src="./categoriesImg/accessories.webp" alt="Image 1" />
+              <p className='linkCategoryDeatails'>בטיחות</p>
+            </div></Link>
         </div>
-        <div className='carouselImgDiv'>
-        <Link to="./categories/walk" className="linkCompany">
-          <img src="./categories/walk.png" alt="Image 1" /></Link>
+        <div className='CarouselCategoriesItem'>
+          <Link to="./categories/walk" className="linkCategory">
+            <div className='linkCategoryDiv'>
+              <img src="./categoriesImg/walk.webp" alt="Image 1" />
+              <p className='linkCategoryDeatails'>טיול ועגלות</p>
+            </div></Link>
         </div>
       </Slider>
     </div>

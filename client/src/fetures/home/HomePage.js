@@ -100,7 +100,7 @@ const HomePage = () => {
                 </h3>
             )}
             <img className="bigImage" src="./baby.jpg" alt="Image 1" />
-            <h3>קטגוריות</h3>
+            <h3 className="categoriesCarouselTitle">מה עוד אפשר להציע לכם ? </h3>
             <CategoriesCarousel />
 
             {arrWordsSearch?.length < 1 && <div className="errorPage">נראה שאין מוצרים העונים על התנאי שלך, נסה לחפש חיפוש מורחב יותר.</div>}

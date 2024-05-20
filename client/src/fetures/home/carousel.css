@@ -88,3 +88,35 @@
 .slick-prev:hover, .slick-next:hover {
   color: blue;
 }
+
+.CarouselCategoriesItem{
+  background-color: white;
+  min-height: 60vh;
+  min-width: 19.5vw;
+  max-width: 19.5vw;
+
+  
+}
+.Categories{
+/*  */
+
+}
+.linkCategoryDiv{
+  display: flex;
+  flex-direction: column;
+  justify-content:space-around;
+}
+.linkCategoryDiv img{
+  min-width: 18vw;
+  max-width: 18vw;
+  min-height: 45vh;
+  max-height: 45vh;
+  margin:0.7vw;
+}
+.linkCategoryDeatails{
+  text-align: center;
+  align-items: center;
+  margin-top: 19px;
+  /* font-weight: bold; */
+
+}
