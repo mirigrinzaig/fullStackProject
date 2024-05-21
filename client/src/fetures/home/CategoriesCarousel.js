@@ -39,7 +39,7 @@ const CategoriesCarousel = () => {
         <div className='CarouselCategoriesItem'>
           <Link to="./categories/accessories" className="linkCategory">
             <div className='linkCategoryDiv'>
-              <img src="./categoriesImg/accessories.webp" alt="Image 1" />
+              <img src="./categoriesImg/accessories2.png" alt="Image 1" />
               <p className='linkCategoryDeatails'>אקקסוריז ואביזרים</p>
             </div></Link>
         </div>
@@ -60,7 +60,7 @@ const CategoriesCarousel = () => {
         <div className='CarouselCategoriesItem'>
           <Link to="./categories/clothing" className="linkCategory">
             <div className='linkCategoryDiv'>
-              <img src="./categoriesImg/accessories.webp" alt="Image 1" />
+              <img src="./categoriesImg/clothing2.webp" alt="Image 1" />
               <p className='linkCategoryDeatails'>ביגוד והלבשה</p>
             </div></Link>
         </div>
@@ -74,14 +74,14 @@ const CategoriesCarousel = () => {
         <div className='CarouselCategoriesItem'>
           <Link to="./categories/hygine" className="linkCategory">
             <div className='linkCategoryDiv'>
-              <img src="./categoriesImg/bath.webp" alt="Image 1" />
+              <img src="./categoriesImg/hygine.png" alt="Image 1" />
               <p className='linkCategoryDeatails'>היגיינה וטיפוח</p>
             </div></Link>
         </div>
         <div className='CarouselCategoriesItem'>
           <Link to="./categories/play" className="linkCategory">
             <div className='linkCategoryDiv'>
-              <img src="./categoriesImg/play.webp" alt="Image 1" />
+              <img src="./categoriesImg/accessories.webp" alt="Image 1" />
               <p className='linkCategoryDeatails'>צעצועים ומשחק</p>
             </div></Link>
         </div>
@@ -95,7 +95,7 @@ const CategoriesCarousel = () => {
         <div className='CarouselCategoriesItem'>
           <Link to="./categories/safe" className="linkCategory">
             <div className='linkCategoryDiv'>
-              <img src="./categoriesImg/accessories.webp" alt="Image 1" />
+              <img src="./categoriesImg/safe2.jpg" alt="Image 1" />
               <p className='linkCategoryDeatails'>בטיחות</p>
             </div></Link>
         </div>
