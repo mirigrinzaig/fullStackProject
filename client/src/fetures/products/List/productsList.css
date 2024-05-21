@@ -44,7 +44,7 @@
     border-radius: 10px;
     display: flex;
     flex-wrap: wrap;
-    
+    position: relative;
     justify-content: space-around;
     border: 1.5px solid transparent;
     border-color:var(--bg);
@@ -94,6 +94,7 @@
     /* border-radius: 0px; */
 }
 
+
 .details {
     display: flex;
     flex-wrap: wrap;
@@ -131,6 +132,22 @@
     border: none;
     color: red;
     cursor: pointer;
+}
+.products-list-btn-love{
+    color: white;
+    background-color:var(--bgPink);
+    padding: 15px;
+    border-radius: 50%;
+    border: none;
+    position:absolute ;
+    bottom:20px;
+    left: 20px;
+    height: 50px;
+    width: 50px;
+}
+.products-list-btn-love:hover{
+    color:var(--bgPink);
+    background-color: white;
 }
 
 .carouselDiv {

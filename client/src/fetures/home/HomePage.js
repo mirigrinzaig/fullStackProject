@@ -11,6 +11,9 @@ import { resetProducts } from "../products/productsSlice"
 import CategoriesCarousel from "./CategoriesCarousel"
 import CompaniesCarousel from "./CompaniesCarousel"
 import { TbCurrencyShekel } from "react-icons/tb";
+import { BsFillHeartFill } from "react-icons/bs";
+import { BsHeart } from "react-icons/bs";
+
 // import ScrollCarousel from 'scroll-carousel-react';
 // import Carousel from 'react-bootstrap/Carousel';
 
@@ -66,6 +69,29 @@ const HomePage = () => {
         }
     }, [q, isSuccess]);
 
+    const favouritesList = JSON.parse(localStorage.getItem("favouritesList")) || [];
+    console.log("favorites:", favouritesList);
+    const addToFavourites = (product) => {
+        // // if (category.toLowerCase() === "clothing" || category === "ביגוד")
+        // //     alert(`the size is: ${size}`)
+        // //   const findName =  favouritesList.find(p=>{p.name===name})
+        // //   if(findName)
+        // {
+        //     favouritesList.push(JSON.stringify(product))
+        //     localStorage.setItem("favouritesList", JSON.stringify(favouritesList));
+        //     // favouritesList.push(JSON.stringify(product))
+        //     console.log(`favouritesList:${favouritesList}`);
+        //     alert(`המוצר ${product.name} הוסף לרשימת האהובים שלך!`)
+        //     // saveList()
+        // }
+
+        // add the product to favouritesList as a string
+        favouritesList.push((product));
+        localStorage.setItem("favouritesList", JSON.stringify(favouritesList));
+        console.log(`favouritesList:${favouritesList}`);
+        alert(`המוצר ${product.name} הוסף לרשימת האהובים שלך!`);
+    }
+
     if (isLoading) return <div className="errorPage">loading...</div>
     if (isError) return <div className="errorPage">מצטערים, שגיאה זמנית.</div>
 
@@ -120,6 +146,9 @@ const HomePage = () => {
                                 )}
                             </div>
                         </Link>
+                        <button className="products-list-btn-love" onClick={() => {addToFavourites(product)  }}>
+                            <BsFillHeartFill size={20} />
+                        </button>
                     </div>
                 ))}
             </div>
