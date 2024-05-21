@@ -25,7 +25,7 @@ const settings = {
   // dots: true,
   infinite: true,
   speed: 500,
-  slidesToShow: 8,
+  slidesToShow: 7,
   slidesToScroll: 1,
   nextArrow: <NextArrow />,
   prevArrow: <PrevArrow />
@@ -33,7 +33,7 @@ const settings = {
 
 const CompaniesCarousel = () => {
   return (
-    <div className="carouselWrapper">
+    <div className="carouselWrapperCompanies">
       <Slider className='carousel' {...settings}>
         <div className='carouselImgDiv'>
           <Link to="/categories/companies/?company=avent" className="linkCompany">

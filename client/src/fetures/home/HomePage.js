@@ -71,28 +71,6 @@ const HomePage = () => {
 
     return (
         <div className="products-list">
-            {/* <div className="products-list-top">
-                <Search placeholder={"חיפוש כללי"} />
-                <Link to="/login" className="products-list-add-btn">
-                    כניסת משתמשים
-                </Link>
-                <Link to="/regist" className="products-list-add-btn">
-                    הרשמה
-                </Link>
-            </div> */}
-            {/* <ScrollCarousel
-            autoplay={true}
-            autoplaySpeed={0}
-            speed={0}
-            margin={20}
-            onReady={() => console.log('I am ready')}
-         >
-            {images.map((item) => (
-               <div key={item} className='bg-blue-300/20 border-2 border-blue-300/70 rounded h-36 w-48'>
-                  <img className="carouselImg" src={item.url} alt={item.alt}/>
-               </div>
-            ))}
-         </ScrollCarousel> */}
             {company && (
                 <h3>
                     מוצרים של המותג :{company}
@@ -100,8 +78,9 @@ const HomePage = () => {
                 </h3>
             )}
             <img className="bigImage" src="./baby.jpg" alt="Image 1" />
-            <h3 className="categoriesCarouselTitle">מה עוד אפשר להציע לכם ? </h3>
+            <h3 className="productsTitle">מה עוד אפשר להציע לכם ? </h3>
             <CategoriesCarousel />
+            <h3 className="productsTitle">מוצרים במבצע :</h3>
 
             {arrWordsSearch?.length < 1 && <div className="errorPage">נראה שאין מוצרים העונים על התנאי שלך, נסה לחפש חיפוש מורחב יותר.</div>}
             <div className="products">
@@ -123,20 +102,7 @@ const HomePage = () => {
                     </div>
                 ))}
             </div>
-            {/* קרוסלה!!!
-            <Carousel className="carousel" show={3.5} slide={3} swiping={true}>
-                <div className="carouselDiv" style={{ background: "#2d66c3" }}>We love Web 🌐</div>
-                <div className="carouselDiv" style={{ background: "#f44336" }}>We love Developers 👩🏻‍💻</div>
-                <div className="carouselDiv" style={{ background: "#2d66c3" }}>We love Web 🌐</div>
-                <div className="carouselDiv" style={{ background: "#f44336" }}>We love Developers 👩🏻‍💻</div>
-                <div className="carouselDiv" style={{ background: "#2d66c3" }}>We love Web 🌐</div>
-                <div className="carouselDiv" style={{ background: "#f44336" }}>We love Developers 👩🏻‍💻</div>
-                <div className="carouselDiv" style={{ background: "#2d66c3" }}>We love Web 🌐</div>
-                <div className="carouselDiv" style={{ background: "#f44336" }}>We love Developers 👩🏻‍💻</div>
-                <div className="carouselDiv" style={{ background: "#2d66c3" }}>We love Web 🌐</div>
-                <div className="carouselDiv" style={{ background: "#f44336" }}>We love Developers 👩🏻‍💻</div>
-            </Carousel> */}
-            <h3>המותגים שלנו</h3>
+             <h3 className="productsTitle">המותגים שלנו... </h3>
             <CompaniesCarousel />
         </div>
     )

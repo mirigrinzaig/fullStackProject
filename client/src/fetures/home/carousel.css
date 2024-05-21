@@ -1,6 +1,7 @@
 .slick-slide img {
-  max-width: 4vw;
-  min-height: 4vw;
+  max-width: 10vw;
+  min-height: 8vw;
+  max-height: 8vh;
   justify-content: center;
   align-items: center;
   margin-top: 3vh;
@@ -24,30 +25,20 @@
   cursor: pointer;
 }
 
-.slick-prev {
-  left: 0;
-}
 
-.slick-next {
-  right: 0;
-}
 
 .carouselImgDiv {
-  border-radius: 150px;
-  border-style: solid;
-  border-color: rgb(254, 147, 154);
-  /* text-align: center;
-    align-items: center;
-    justify-content: center; */
   position: relative;
   text-align: center;
   max-width: 7vw;
   min-height: 7vw;
   margin: 0 auto;
 }
+
 .carouselWrapper {
   position: relative;
 }
+
 .slick-arrow {
   z-index: 1;
 }
@@ -58,99 +49,89 @@
   margin-top: 5vh;
 }
 
-/* 
-.slick-slider {
-  margin: 0 auto;
-  position: relative;
-} */
-
-/* .slick-prev,
-.slick-next {
-  font-size: 24px;
-  color: black;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
-} */
-/* 
-.slick-prev .visually-hidden,
-.slick-next .visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-} */
 .carouselWrapper {
   position: relative;
 }
-.slick-prev:hover, .slick-next:hover {
+
+.slick-prev:hover,
+.slick-next:hover {
   color: blue;
 }
 
-.CarouselCategoriesItem{
+.CarouselCategoriesItem {
   background-color: white;
   min-height: 60vh;
   min-width: 19.5vw;
   max-width: 19.5vw;
 
-  
+
 }
 
-.linkCategoryDiv{
+.linkCategoryDiv {
   display: flex;
   flex-direction: column;
-  justify-content:space-around;
+  justify-content: space-around;
 }
-.linkCategoryDiv img{
+
+.linkCategoryDiv img {
   min-width: 18vw;
   max-width: 18vw;
   min-height: 45vh;
   max-height: 45vh;
-  margin:0.7vw;
+  margin: 0.7vw;
 }
-.linkCategoryDeatails{
+
+.linkCategoryDeatails {
   text-align: center;
   align-items: center;
   margin-top: 19px;
-  /* font-weight: bold; */
+  font-size: 1.2rem;
+
+}
+
+.carouselWrapperCompanies {
+  background-color: white;
+  min-width: 93%;
+  max-width: 93%;
+  margin: 3vw;
+  /* padding-right: 3vw;
+  padding-left: 3vw; */
+  max-height: 30vh;
+  border-radius: 10px;
+  justify-content: space-around;
+}
+/* הסתרת הריבוע סביב העיגול */
+.slick-arrow:before {
+  border: none; /* מסיר את המסגרת של הריבוע */
+}
+
+/* שינוי צבע העיגול לורוד */
+.slick-arrow:before {
+  color: pink;
+}
+
+
+/* שינוי גודל העיגול */
+.slick-arrow:before {
+  font-size: 56px; 
+}
+/* שינוי גודל החץ */
+.slick-arrow {
+  width: 24px; /* רוחב החץ */
+  height: 24px; /* גובה החץ */
+  font-size: 0.5rem;
+}
+
+.slick-prev {
+  left: -30px; 
+}
+
+.slick-next {
+  right: 0px; 
+}
+
+@media screen and (max-width: 908px) {
 
 }
 
 
-.slick-prev::before,
-.slick-next::before {
-  content: "";
-  width: 60px; /* אורך החץ */
-  height: 2px; /* רוחב החץ */
-  background-color: black; /* צבע החץ */
-  position: absolute;
-}
-
-.slick-prev::before {
-  left: 0px; /* מיקום החץ משמאל */
-}
-
-.slick-next::before {
-  right: 0px; /* מיקום החץ מימין */
-}
-
-.slick-prev::after,
-.slick-next::after {
-  content: "<"; /* סימן הכיוון */
-  font-size: 26px; /* גודל הסימן */
-  position: absolute;
-  top: 7%;
-  transform: translateY(-10%);
-  color: black; /* צבע הסימן */
-}
-
-.slick-prev::after {
-  right: 10px; /* מיקום הסימן משמאל */
-}
-
-.slick-next::after {
-  left: 10px; /* מיקום הסימן מימין */
-  transform: translateY(-50%) rotate(180deg); /* סיבוב הסימן לצורת החץ הנכונה */
-}

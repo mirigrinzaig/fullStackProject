@@ -22,3 +22,17 @@
     font-weight: lighter;
     font-size: 30px;
 }
+.productsTitle{
+    text-align: center;
+    font-style: oblique;
+    font-weight: lighter;
+    font-size: 40px;
+    margin-bottom: 40px;
+    border-bottom: 2px solid #ff9d9d; /* הוספת קו תחתי בצבע ורוד */
+    border-top: 2px solid #ff9d9d;
+    display: inline-block; /* כדי להבטיח שהקו יהיה רק לאורך הטקסט */
+    max-width: 400px;
+    margin-right: 400px;
+    min-height: 10vh;
+   
+}
