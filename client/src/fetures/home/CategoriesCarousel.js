@@ -51,7 +51,7 @@ const CategoriesCarousel = () => {
             </div></Link>
         </div>
         <div className='CarouselCategoriesItem'>
-          <Link to="./categories/brands" className="linkCategory">
+          <Link to="./categories/plumabrand" className="linkCategory">
             <div className='linkCategoryDiv'>
               <img src="./categoriesImg/play.webp" alt="Image 1" />
               <p className='linkCategoryDeatails'>המותג שלנו</p>

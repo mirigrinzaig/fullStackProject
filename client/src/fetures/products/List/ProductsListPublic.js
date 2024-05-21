@@ -34,10 +34,10 @@ const ProductsListPublic = ({ category }) => {
     return (
         <div className="products-list">
             {category && category !== "company" && (
-                <h3>{category}</h3>
+                <h3 className="productsTitle">{category}</h3>
             )}
             {company && (
-                <h3>מוצרים של חברת: {company}</h3>
+                <h3 className="productsTitle">מוצרים של חברת: {company}</h3>
             )}
             <div className="products">
                 {filteredData.map(product => (

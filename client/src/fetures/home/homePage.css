@@ -36,3 +36,12 @@
     min-height: 10vh;
    
 }
+
+@media screen and (max-width: 908px) {
+    .productsTitle{
+        margin-right:20px;
+        
+    }
+
+
+}

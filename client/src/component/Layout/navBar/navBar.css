@@ -210,3 +210,13 @@
         flex-direction: column;
         color: #505151
     }
+
+
+@media screen and (max-width: 908px) {
+    .navbar-menu{
+        display: flex;
+        flex-wrap: wrap;
+        min-height: 30vh;
+    }
+
+}
