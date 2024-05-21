@@ -97,10 +97,7 @@
 
   
 }
-.Categories{
-/*  */
 
-}
 .linkCategoryDiv{
   display: flex;
   flex-direction: column;
@@ -119,4 +116,41 @@
   margin-top: 19px;
   /* font-weight: bold; */
 
+}
+
+
+.slick-prev::before,
+.slick-next::before {
+  content: "";
+  width: 60px; /* אורך החץ */
+  height: 2px; /* רוחב החץ */
+  background-color: black; /* צבע החץ */
+  position: absolute;
+}
+
+.slick-prev::before {
+  left: 0px; /* מיקום החץ משמאל */
+}
+
+.slick-next::before {
+  right: 0px; /* מיקום החץ מימין */
+}
+
+.slick-prev::after,
+.slick-next::after {
+  content: "<"; /* סימן הכיוון */
+  font-size: 26px; /* גודל הסימן */
+  position: absolute;
+  top: 7%;
+  transform: translateY(-10%);
+  color: black; /* צבע הסימן */
+}
+
+.slick-prev::after {
+  right: 10px; /* מיקום הסימן משמאל */
+}
+
+.slick-next::after {
+  left: 10px; /* מיקום הסימן מימין */
+  transform: translateY(-50%) rotate(180deg); /* סיבוב הסימן לצורת החץ הנכונה */
 }
