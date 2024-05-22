@@ -1,5 +1,5 @@
-
-.products-list-add-btn,.removAllBtn{
+.products-list-add-btn,
+.removAllBtn {
     /* background-color: rgb(245, 176, 197); */
     border: solid 2px var(--bgPink);
     color: var(--bgPink);
@@ -12,16 +12,17 @@
     justify-content: center;
 }
 
-.productsF{
+.productsF {
     display: flex;
     flex-direction: column;
     /* max-width: 90vw; */
     min-width: 100%;
     flex-wrap: wrap;
-    gap:20px;
+    gap: 20px;
     margin-top: 30px;
 }
-.singleF{
+
+.singleF {
     min-width: 15vw;
     max-width: 15vw;
     min-height: 60vh;
@@ -31,14 +32,16 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    border-style:solid;
+    border-style: solid;
     border: 1px solid transparent;
     border-color: rgb(255, 104, 174);
     cursor: pointer;
-    color:rgb(28, 28, 27)
+    color: rgb(28, 28, 27);
+    position: relative;
     
 }
-.singleF img{
+
+.singleF img {
     /* border-radius: 50%;
     object-fit: cover;
     min-height: 25vh;
@@ -60,7 +63,7 @@
 }
 
 
-.products-list-product-image{
+.products-list-product-image {
     /* border-radius: 50%; */
     /* gap: 10px; */
     object-fit: cover;
@@ -71,7 +74,8 @@
     cursor: pointer;
     border-radius: 0px;
 }
-.detailsF{
+
+.detailsF {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -83,37 +87,42 @@
     /* background-color: rgb(255, 216, 235); */
     border-radius: 0;
 }
+
 /* .details-wr{
     display: flex;
     flex-direction: row;
 } */
-.products-list-delete{
-    background-color: rgb(255, 196, 223);
+.trash {
+    background-color: white;
     border: none;
-    color: red;
+    color: rgb(255, 104, 174);
     cursor: pointer;
-    position:absolute;
-    bottom: 10px;
-    left: 10px;
+    width: 30px;
+    align-self: flex-end;
+    margin-bottom: 10px;
+    position: absolute;
+    bottom:20px;
+    left: 20px;
 }
-.favoritesProducts{
+
+.favoritesProducts {
     display: flex;
     flex-wrap: wrap;
     gap: 2vw;
 }
-.removAllBtn{
+
+.removAllBtn {
     max-width: 20vw;
     align-self: self-end;
-    margin-left:20px ;
+    margin-left: 20px;
     position: absolute;
     /* min-height: 5vh;
     justify-content: center;
     align-items: center;
    margin-right: 40%;
    background-color: rgb(255, 196, 223); */
-   /* border: none; */
-   /* color: red; */
-   cursor: pointer;
-   border-radius: 30vw;
+    /* border: none; */
+    /* color: red; */
+    cursor: pointer;
+    border-radius: 30vw;
 }
-

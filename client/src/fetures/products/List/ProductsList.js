@@ -3,6 +3,7 @@ import Search from "../../../component/search/Search"
 import { useGetAllProductsQuery, useDeleteProductMutation } from "../ProductsApiSlice"
 import { Link, useSearchParams } from "react-router-dom"
 import useGetFilePath from "../../../hooks/useGetFilePath"
+import { BsFillHeartFill } from "react-icons/bs";
 
 const ProductsList = () => {
     // const products = [{ _id: 1, name: "name",imageUrl:"url", company:"company", "price":"---שח"}
@@ -56,6 +57,9 @@ const ProductsList = () => {
                             <div className="products-list-btns">
                                 <button onClick={() => { deleteClick(product) }} className="products-list-btn products-list-delete">delete</button></div>
                         </div>
+                        <button className="products-list-btn-love" onClick={() => { }}>
+                            <BsFillHeartFill size={20} />
+                        </button>
                     </div>
                 ))}
             </div>

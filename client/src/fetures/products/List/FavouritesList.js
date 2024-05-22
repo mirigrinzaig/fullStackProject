@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./favoritesList.css";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import useGetFilePath from "../../../hooks/useGetFilePath";
+import { TbTrashXFilled } from "react-icons/tb";
 
 const FavouritesList = () => {
   const [favouritesList, setFavouritesList] = useState(JSON.parse(localStorage.getItem("favouritesList")) || []);
@@ -42,19 +43,18 @@ const FavouritesList = () => {
           {favouritesList.map(product => (
             <div className="singleF" key={product._id}>
               <Link to={`/public/${product.barcod}`} className="products-list-btn products-list-view">
-              <img src={getFilePath(product.image)} alt="" className="products-list-product-image" />
-              <div className="detailsF">
-                <div className="details-wr">
-                  {product.name}<br />
-                  {product.company}<br />
-                  {product.sellingPrice}
+                <img src={getFilePath(product.image)} alt="" className="products-list-product-image" />
+                <div className="detailsF">
+                  <div className="details-wr">
+                    {product.name}<br />
+                    {product.company}<br />
+                    {product.sellingPrice}
+                  </div>
                 </div>
-                <button className="products-list-btn products-list-delete" onClick={() => removeItem(product.barcod)}>
-                  x
-                </button>
-              </div>
               </Link>
-
+              <button className="trash products-list-btn products-list-delete" onClick={() => removeItem(product.barcod)}>
+                <TbTrashXFilled size={20} />
+              </button>
             </div>
           ))}</div>
       </div>

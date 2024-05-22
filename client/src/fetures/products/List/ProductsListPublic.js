@@ -3,6 +3,8 @@ import Search from "../../../component/search/Search"
 import { useGetAllProductsPublicQuery } from "../ProductsApiSlice"
 import useGetFilePath from "../../../hooks/useGetFilePath"
 import { TbCurrencyShekel } from "react-icons/tb";
+import { BsFillHeartFill } from "react-icons/bs";
+
 import "./productsList.css"
 
 const toLowerCase = (str) => str.toLowerCase();
@@ -52,9 +54,9 @@ const ProductsListPublic = ({ category }) => {
                                     <div className="azal">
                                         אזל במלאי
                                     </div>
-                                )}
+                                )}                      
                             </div>
-                        </Link>
+                        </Link>     
                     </div>
                 ))}
             </div>
