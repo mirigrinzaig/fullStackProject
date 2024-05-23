@@ -26,24 +26,24 @@ const Footer = () => {
             <div className="footer-logo"><img src="/logo.png" className="logoP" /></div>
             <div className="footerInfo">
                 <div className="footerCategories">
-                    <h3>קטגוריות:</h3>
-                    <Link to="/categories/clothing" className="linkCompany">ביגוד לתינוקות</Link>
-                    <Link to="/categories/accessories" className="linkCompany">אקססוריז</Link>
-                    <Link to="/categories/bath" className="linkCompany">רחצה</Link>
-                    <Link to="/categories/feed" className="linkCompany">האכלה</Link>
-                    <Link to="/categories/hygine" className="linkCompany">היגיינה</Link>
-                    <Link to="/categories/play" className="linkCompany">משחק</Link>
-                    <Link to="/categories/presents" className="linkCompany">מתנות</Link>
-                    <Link to="/categories/safe" className="linkCompany">בטיחות</Link>
-                    <Link to="/categories/sleep" className="linkCompany">שינה</Link>
-                    <Link to="/categories/walk" className="linkCompany">טיול ועגלות</Link>
+                    <h3 className="categoriesTitle">קטגוריות:</h3>
+                    <Link to="/categories/clothing" className="linkCompany categoryLinkFooter">ביגוד לתינוקות</Link>
+                    <Link to="/categories/accessories" className="linkCompany categoryLinkFooter">אקססוריז</Link>
+                    <Link to="/categories/bath" className="linkCompany categoryLinkFooter">רחצה</Link>
+                    <Link to="/categories/feed" className="linkCompany categoryLinkFooter">האכלה</Link>
+                    <Link to="/categories/hygine" className="linkCompany categoryLinkFooter">היגיינה</Link>
+                    <Link to="/categories/play" className="linkCompany categoryLinkFooter">משחק</Link>
+                    <Link to="/categories/presents" className="linkCompany categoryLinkFooter">מתנות</Link>
+                    <Link to="/categories/safe" className="linkCompany categoryLinkFooter">בטיחות</Link>
+                    <Link to="/categories/sleep" className="linkCompany categoryLinkFooter">שינה</Link>
+                    <Link to="/categories/walk" className="linkCompany categoryLinkFooter">טיול ועגלות</Link>
                 </div>
                 <div className="footerAbout">
                     <h3>כללי:</h3>
-                    <Link to="/" className="linkCompany">תקנון החנות</Link>
-                    <Link to="/" className="linkCompany">אודות</Link>
-                    <Link to="/" className="linkCompany">המותג שלנו</Link>
-                    <Link to="/" className="linkCompany">פוסטים</Link>
+                    <Link to="/" className="linkCompany linkAbout">תקנון החנות</Link>
+                    <Link to="/" className="linkCompany linkAbout">אודות</Link>
+                    <Link to="/" className="linkCompany linkAbout">המותג שלנו</Link>
+                    <Link to="/" className="linkCompany linkAbout">פוסטים</Link>
                 </div>
                 <div className="footerCantact">
                     <h3>צרו קשר:</h3>

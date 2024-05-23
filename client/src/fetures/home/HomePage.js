@@ -14,10 +14,6 @@ import { TbCurrencyShekel } from "react-icons/tb";
 import { BsFillHeartFill } from "react-icons/bs";
 import { BsHeart } from "react-icons/bs";
 
-// import ScrollCarousel from 'scroll-carousel-react';
-// import Carousel from 'react-bootstrap/Carousel';
-
-
 const HomePage = () => {
     const { data: products, isError, error, isLoading, isSuccess } = useGetAllProductsPublicQuery()
     const [searchParams] = useSearchParams()
@@ -27,6 +23,7 @@ const HomePage = () => {
     console.log("q=", q);
     const { getFilePath } = useGetFilePath()
     const [arrWordsSearch, setArrWordsSearch] = useState([])
+    const [heartHover, setHeartHover] = useState(false)
 
     // const dispatch = useDispatch()
     let filteredData = products
@@ -69,27 +66,24 @@ const HomePage = () => {
         }
     }, [q, isSuccess]);
 
-    const favouritesList = JSON.parse(localStorage.getItem("favouritesList")) || [];
-    console.log("favorites:", favouritesList);
+    // const favouritesList = JSON.parse(localStorage.getItem("favouritesList")) || [];
+    const [favorites, setFavorites] = useState(JSON.parse(localStorage.getItem("favouritesList")) || []);
+    // console.log("favorites:", favouritesList);
     const addToFavourites = (product) => {
-        // // if (category.toLowerCase() === "clothing" || category === "ביגוד")
-        // //     alert(`the size is: ${size}`)
-        // //   const findName =  favouritesList.find(p=>{p.name===name})
-        // //   if(findName)
-        // {
-        //     favouritesList.push(JSON.stringify(product))
-        //     localStorage.setItem("favouritesList", JSON.stringify(favouritesList));
-        //     // favouritesList.push(JSON.stringify(product))
-        //     console.log(`favouritesList:${favouritesList}`);
-        //     alert(`המוצר ${product.name} הוסף לרשימת האהובים שלך!`)
-        //     // saveList()
-        // }
-
-        // add the product to favouritesList as a string
-        favouritesList.push((product));
-        localStorage.setItem("favouritesList", JSON.stringify(favouritesList));
-        console.log(`favouritesList:${favouritesList}`);
+        const updatedFavorites = [...favorites, product];
+        setFavorites(updatedFavorites);
+        localStorage.setItem("favouritesList", JSON.stringify(updatedFavorites));
         alert(`המוצר ${product.name} הוסף לרשימת האהובים שלך!`);
+    }
+
+    const removeFromFavorites = (product) => {
+        const updatedFavorites = favorites.filter((item) => item._id !== product._id);
+        setFavorites(updatedFavorites);
+        localStorage.setItem("favouritesList", JSON.stringify(updatedFavorites));
+        alert(`המוצר ${product.name} הוסר מרשימת האהובים שלך!`);
+    }
+    const isFavorite = (product) => {
+        return favorites.some((item) => item._id === product._id);
     }
 
     if (isLoading) return <div className="errorPage">loading...</div>
@@ -125,13 +119,13 @@ const HomePage = () => {
                                 )}
                             </div>
                         </Link>
-                        <button className="products-list-btn-love" onClick={() => {addToFavourites(product)  }}>
-                            <BsFillHeartFill size={20} />
+                        <button className="products-list-btn-love" onClick={() => { isFavorite(product) ? removeFromFavorites(product) : addToFavourites(product) }}>
+                            {isFavorite(product) ? <BsFillHeartFill size={190} /> : <BsHeart size={100} />}
                         </button>
                     </div>
                 ))}
             </div>
-             <h3 className="productsTitle">המותגים שלנו... </h3>
+            <h3 className="productsTitle">המותגים שלנו... </h3>
             <CompaniesCarousel />
         </div>
     )

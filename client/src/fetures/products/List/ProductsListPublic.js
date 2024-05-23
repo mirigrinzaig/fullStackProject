@@ -4,7 +4,8 @@ import { useGetAllProductsPublicQuery } from "../ProductsApiSlice"
 import useGetFilePath from "../../../hooks/useGetFilePath"
 import { TbCurrencyShekel } from "react-icons/tb";
 import { BsFillHeartFill } from "react-icons/bs";
-
+import { BsHeart } from "react-icons/bs";
+import { useState } from "react"
 import "./productsList.css"
 
 const toLowerCase = (str) => str.toLowerCase();
@@ -14,6 +15,26 @@ const ProductsListPublic = ({ category }) => {
     const company = searchParams.get("company");
     const q = searchParams.get("q");
     const { getFilePath } = useGetFilePath()
+
+     // const favouritesList = JSON.parse(localStorage.getItem("favouritesList")) || [];
+     const [favorites, setFavorites] = useState(JSON.parse(localStorage.getItem("favouritesList")) || []);
+
+     const addToFavourites = (product) => {
+         const updatedFavorites = [...favorites, product];
+         setFavorites(updatedFavorites);
+         localStorage.setItem("favouritesList", JSON.stringify(updatedFavorites));
+         alert(`המוצר ${product.name} הוסף לרשימת האהובים שלך!`);
+     }
+ 
+     const removeFromFavorites = (product) => {
+         const updatedFavorites = favorites.filter((item) => item._id !== product._id);
+         setFavorites(updatedFavorites);
+         localStorage.setItem("favouritesList", JSON.stringify(updatedFavorites));
+         alert(`המוצר ${product.name} הוסר מרשימת האהובים שלך!`);
+     }
+     const isFavorite = (product) => {
+         return favorites.some((item) => item._id === product._id);
+     }
 
     if (isLoading) return <div className="errorPage">אנא המתינו, הדף נטען</div>;
     if (isError) return <div className="errorPage">מטערים, קיימת תקלה תכנית</div>;
@@ -56,7 +77,10 @@ const ProductsListPublic = ({ category }) => {
                                     </div>
                                 )}                      
                             </div>
-                        </Link>     
+                        </Link>
+                        <button className="products-list-btn-love" onClick={() => { isFavorite(product) ? removeFromFavorites(product) : addToFavourites(product) }}>
+                            {isFavorite(product) ? <BsFillHeartFill size={190} /> : <BsHeart size={100} />}
+                        </button>   
                     </div>
                 ))}
             </div>

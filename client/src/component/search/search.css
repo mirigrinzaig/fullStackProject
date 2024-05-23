@@ -8,9 +8,13 @@
     border-radius:10px ;
     padding: 10px;
     max-width: 17vw;
+    
 }
+
 .search-input{
-  background-color:transparent; 
+  background-color: transparent; 
   border: none; 
   color: var(--text);
+  outline: none; 
+  width: 100%; 
 }

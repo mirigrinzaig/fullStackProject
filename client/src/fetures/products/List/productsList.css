@@ -132,22 +132,7 @@
     color: red;
     cursor: pointer;
 }
-.products-list-btn-love{
-    color: white;
-    background-color:var(--bgPink);
-    padding: 15px;
-    border-radius: 50%;
-    border: none;
-    position:absolute ;
-    bottom:20px;
-    left: 20px;
-    height: 50px;
-    width: 50px;
-}
-.products-list-btn-love:hover{
-    color:var(--bgPink);
-    background-color: white;
-}
+
 
 .carouselDiv {
     min-width: 200px;
@@ -180,6 +165,37 @@
 h3 {
     margin-top: 5vh;
 }
+
+
+.products-list-btn-love {
+    position: absolute;
+    top: 10px; /* עליון בראש התמונה */
+    left: 10px; /* שמאלית */
+    padding: 15px;
+    border-radius: 50%;
+    text-align: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    background-color: transparent;
+    border: 1.5px solid transparent;
+    border-color: rgb(255, 58, 150);
+    display: flex; /* פקודה חדשה: נקבע מרכז התמונה באמצע הכפתור */
+    justify-content: center; /* פקודה חדשה: מרכז אופקי */
+    align-items: center;
+}
+
+.products-list-btn-love:hover {
+    background-color: rgba(255, 104, 174, 0.342); /* התכתובת הצבע או הגוון שתרצי */
+}
+
+.products-list-btn-love svg {
+    color:rgb(255, 58, 150);
+    min-width: 27px; /* הגדלת גודל הלב */
+    min-height: 27px; /* הגדלת גודל הלב */
+    outline: 2rem;
+}
+
 
 
 @media screen and (max-width: 908px) {
