@@ -180,8 +180,8 @@ h3 {
     background-color: transparent;
     border: 1.5px solid transparent;
     border-color: rgb(255, 58, 150);
-    display: flex; /* פקודה חדשה: נקבע מרכז התמונה באמצע הכפתור */
-    justify-content: center; /* פקודה חדשה: מרכז אופקי */
+    display: flex; 
+    justify-content: center; 
     align-items: center;
 }
 
@@ -191,10 +191,11 @@ h3 {
 
 .products-list-btn-love svg {
     color:rgb(255, 58, 150);
-    min-width: 27px; /* הגדלת גודל הלב */
-    min-height: 27px; /* הגדלת גודל הלב */
+    min-width: 27px; 
+    min-height: 27px; 
     outline: 2rem;
 }
+
 
 
 

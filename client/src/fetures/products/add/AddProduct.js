@@ -8,7 +8,7 @@ const AddProduct = () => {
 
     const [amColors, setAmColors] = useState(0)
     const [colors, setColors] = useState([]);
-    const [category,setCategory]=useState("")
+    const [category, setCategory] = useState("")
 
 
     useEffect(() => {
@@ -55,28 +55,28 @@ const AddProduct = () => {
                 <input type="text" name="name" placeholder="שם המוצר" required />
                 <input type="text" name="barcod" placeholder="ברקוד" required />
                 <input type="text" name="company" placeholder="חברה" required />
-                <input type="text" name="category" placeholder="קטגוריה" onChange={(e)=>{setCategory(e.target.value)}} />
-                <input type="text" name="itemDescription" placeholder="תיאור המוצר"/>
+                <input type="text" name="category" placeholder="קטגוריה" onChange={(e) => { setCategory(e.target.value) }} />
+                <input type="text" name="itemDescription" placeholder="תיאור המוצר" />
                 {/* only if is a cloth there is a size! */}
-                {(category.toLowerCase() === "clothing"||category==="ביגוד")&&<input type="text" name="size" placeholder="גודל" />}
+                {(category.toLowerCase() === "clothing" || category === "ביגוד") && <input type="text" name="size" placeholder="גודל" />}
                 <input type="text" name="amount" placeholder="כמות יחידות" required />
                 <input type="number" name="amountColors" placeholder="כמות צבעים במלאי" onChange={handleAmountChange} />
                 <div className="colors">
-                {
-                    colors.map(color => (
-                        <div className="colorSelect">
-                            <input className="colorInput" style={{ backgroundColor: color.value }}
-                                key={color.id}
-                                type="color"
-                                value={color.value}
-                                placeholder="בחירת צבע"
-                                onChange={(e) => handleColorChange(e.target.value, color.id)}
-                            />
-                            {/* <input type="file" name="image" onChange={(e) => handleColorChange(e.target.value, color.id)} /> */}
-                        </div>
-                    ))
+                    {
+                        colors.map(color => (
+                            <div className="colorSelect">
+                                <input className="colorInput" style={{ backgroundColor: color.value }}
+                                    key={color.id}
+                                    type="color"
+                                    value={color.value}
+                                    placeholder="בחירת צבע"
+                                    onChange={(e) => handleColorChange(e.target.value, color.id)}
+                                />
+                                {/* <input type="file" name="image" onChange={(e) => handleColorChange(e.target.value, color.id)} /> */}
+                            </div>
+                        ))
 
-                }
+                    }
                 </div>
 
                 {/* <input list="browsers" name="browser"/> */}
@@ -84,10 +84,12 @@ const AddProduct = () => {
                 <input type="text" name="agent" placeholder="שם סוכן" />
                 <input type="text" name="agentPrice" placeholder="מחיר מהסוכן" />
                 <input type="text" name="sellingPrice" placeholder="מחיר למכירה" />
-                {/* <input type="radio" name="inSale" placeholder="האם המוצר במבצע?" value="במבצע" checked>
-                <input name="inSale" value="לא במבצע"/>
-                <input name="inSale" value="במבצע"/>
-                </input> */}
+                <label>
+                    <input type="radio" name="inSale" value="true" checked /> במבצע
+                </label>
+                <label>
+                    <input type="radio" name="inSale" value="false" /> לא במבצע
+                </label>
                 {/* <input type="boolean" name="marked" placeholder="marked" /> */}
                 <button type="submit">אישור</button>
             </form>

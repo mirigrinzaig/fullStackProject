@@ -47,6 +47,8 @@ import { useNavigate } from "react-router-dom"
 import { NavLink } from "react-router-dom/dist/umd/react-router-dom.development"
 import useAuth from "../../../hooks/useAuth"
 import { Link } from "react-router-dom"
+import Alert from '@mui/material/Alert';
+import AlertTitle from '@mui/material/AlertTitle';
 
 export const LoginPage = () => {
   const { _id, userName, name, email, roles } = useAuth()
@@ -80,13 +82,16 @@ export const LoginPage = () => {
   return (
     <div className='login-page'>
       <form onSubmit={handleSubmit} className='login-page-form'>
-        <button className="exit"><Link to='/'/>x</button>
-        <div className="logoP-login"><img src="/logo.png" className="logoP" style={{minHeight:"30vh"}}/></div>
+        <button className="exit"><Link to='/' />x</button>
+        <div className="logoP-login"><img src="/logo.png" className="logoP" style={{ minHeight: "30vh" }} /></div>
         <h1>כניסת משתמשים</h1>
         <input type='text' required name='userName' id='userName' placeholder="כתובת אימייל" />
         <input type='password' required name='password' id='password' placeholder='ססמא' />
+        {error &&
+          <Alert className="error" variant="outlined" severity="error" style={{ color: 'red', minWidth: '350px'}}>
+            {error && error.data?.message}
+          </Alert>}
         <button type='submit'>כניסה</button>
-        {error && error.data?.message}
       </form>
       <div className="toRegist">
         <h1 className="h1ToRegist">חדשה באתר?</h1>

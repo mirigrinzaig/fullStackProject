@@ -8,13 +8,13 @@ const createNewProduct = async (req, res) => {
         agent, agentPrice, sellingPrice, salePrice, inSale, marked } = req.body
         //validation of the requiered fields
     if (!barcod || !name || !category) {
-        return res.status(400).json({ error: "Missing required fields"});
+        return res.status(400).json({ error: "חסרים נתונים"});
     }
     //validation of a unique barcod
     const products = await Products.find().lean()
     const productExists = products.find((p) => p.barcod === barcod)
     if (productExists) {
-        return res.status(409).json({ error: "Barcod already exists" });
+        return res.status(409).json({ error: "קיים מוצר עם ברקוד זהה" });
     }
     //create array of colors:
     let colorsImg = []
@@ -49,7 +49,7 @@ const getAllProducts = async (req, res) => {
     //יש כאן פרטים שהמשתמש לא רואה אבל צריך אותם בצד לקוח עבור כולם, כמו פרטי חיפוש או כמות עבור הצגת אזל
     const products = await Products.find({}, {name: 1,barcod:1,company:1,amount:1,category:1,image:1,colors:1,sellingPrice:1,salePrice:1,inSale:1,marked:1,searchDetails:1,itemDescription:1}).lean()
     if (!products?.length) {
-    return res.status(400).json({ massage: 'no products' })
+    return res.status(400).json({ massage: 'שגיאה בקבלת נתונים' })
     }
     return res.json(products)
 }
@@ -58,7 +58,7 @@ const getAllProducts = async (req, res) => {
 const getAllProductsForAdmin = async (req, res) => {
     const products = await Products.find().lean()
     if (!products?.length) {
-    return res.status(400).json({ massage: 'no products' })
+    return res.status(400).json({ massage: 'שגיאה בקבלת הנתונים' })
     }
     return res.json(products)
 }

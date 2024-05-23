@@ -63,3 +63,11 @@ a{
   color:red;
   font-weight: bolder;
 }
+.error{
+  color: red;
+  font-size: larger;
+  text-align: right;
+  margin-right: 0;
+  
+
+}

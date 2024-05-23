@@ -73,14 +73,14 @@ const HomePage = () => {
         const updatedFavorites = [...favorites, product];
         setFavorites(updatedFavorites);
         localStorage.setItem("favouritesList", JSON.stringify(updatedFavorites));
-        alert(`המוצר ${product.name} הוסף לרשימת האהובים שלך!`);
+        // alert(`המוצר ${product.name} הוסף לרשימת האהובים שלך!`);
     }
 
     const removeFromFavorites = (product) => {
         const updatedFavorites = favorites.filter((item) => item._id !== product._id);
         setFavorites(updatedFavorites);
         localStorage.setItem("favouritesList", JSON.stringify(updatedFavorites));
-        alert(`המוצר ${product.name} הוסר מרשימת האהובים שלך!`);
+        // alert(`המוצר ${product.name} הוסר מרשימת האהובים שלך!`);
     }
     const isFavorite = (product) => {
         return favorites.some((item) => item._id === product._id);
@@ -104,27 +104,31 @@ const HomePage = () => {
 
             {arrWordsSearch?.length < 1 && <div className="errorPage">נראה שאין מוצרים העונים על התנאי שלך, נסה לחפש חיפוש מורחב יותר.</div>}
             <div className="products">
-                {arrWordsSearch.map(product => (
-                    <div className="single" key={product._id}>
-                        <Link to={`/public/${product.barcod}`} className="products-list-btn products-list-view"><img src={getFilePath(product.image)} alt="" className="products-list-product-image" />
-                            <div className="details">
-                                <div>{product.company}</div>
-                                <div>{product.name}</div>
-                                <div>{product.itemDescription}</div>
-                                <div className="price">{product.sellingPrice}<TbCurrencyShekel style={{ fontSize: 17 }} /></div>
-                                {(product.amount === 0) && (
-                                    <div className="azal">
-                                        אזל מהמלאי
-                                    </div>
-                                )}
+    {filteredData.map(product => (
+        product.inSale ? (
+            <div className="single" key={product._id}>
+                <Link to={`/public/${product.barcod}`} className="products-list-btn products-list-view">
+                    <img src={getFilePath(product.image)} alt="" className="products-list-product-image" />
+                    <div className="details">
+                        <div>{product.company}</div>
+                        <div>{product.name}</div>
+                        <div>{product.itemDescription}</div>
+                        <div className="price">{product.sellingPrice}<TbCurrencyShekel style={{ fontSize: 17 }} /></div>
+                        {(product.amount === 0) && (
+                            <div className="azal">
+                                אזל במלאי
                             </div>
-                        </Link>
-                        <button className="products-list-btn-love" onClick={() => { isFavorite(product) ? removeFromFavorites(product) : addToFavourites(product) }}>
-                            {isFavorite(product) ? <BsFillHeartFill size={190} /> : <BsHeart size={100} />}
-                        </button>
+                        )}
                     </div>
-                ))}
+                </Link>
+                <button className="products-list-btn-love" onClick={() => { isFavorite(product) ? removeFromFavorites(product) : addToFavourites(product) }}>
+                    {isFavorite(product) ? <BsFillHeartFill size={190} /> : <BsHeart size={100} />}
+                </button>
             </div>
+        ) : null
+    ))}
+</div>
+
             <h3 className="productsTitle">המותגים שלנו... </h3>
             <CompaniesCarousel />
         </div>

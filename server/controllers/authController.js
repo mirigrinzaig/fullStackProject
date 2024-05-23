@@ -7,16 +7,16 @@ const jwt=require('jsonwebtoken')
 const login=async(req,res)=>{
     const {userName,password}=req.body
     if(!userName||!password){
-        return res.status(400).json({message:"All fields are required!"})
+        return res.status(400).json({message:"נא למלא את כל השדות"})
     }
     const foundUser=await User.findOne({userName}).lean()
     //not exist
     if(!foundUser)
-        return res.status(401).json({message:"Not exist!"})
+        return res.status(401).json({message:"אחד מהפרטים שגוי, נסה שנית"})
     //validate password
     const match=await bcrypt.compare(password,foundUser.password)
     if(!match)
-        return res.status(401).json({message:"The password is wrong!"})
+        return res.status(401).json({message:"סיסמא שגויה!"})
     //all the datails without password
     const userInfo={_id:foundUser._id,userName:foundUser.userName,name:foundUser.name,roles:foundUser.roles,email:foundUser.email}
     const accessToken=jwt.sign(userInfo,process.env.ACCESS_TOKEN_SECRET,{expiresIn:'15m'})
@@ -51,11 +51,11 @@ const register=async(req,res)=>{
     const { name, password, userName, email, phone} = req.body;
     //required fields
     if(!name||!userName||!password)
-       return res.status(400).json({message:"All fields are required!"})
+       return res.status(400).json({message:"נא למלא את כל השדות"})
     //uniqe field
     const duplicate=await User.findOne({userName}).lean()
     if(duplicate)
-        return res.status(409).json({message:"Duplicate username! username must be uniqe!"})
+        return res.status(409).json({message:"יש לכתוב שם משתמש שונה"})
     //bcrypt-password
     const hashPass=await bcrypt.hash(password,10)
     const updateUser={ name, password:hashPass, userName, email, phone}

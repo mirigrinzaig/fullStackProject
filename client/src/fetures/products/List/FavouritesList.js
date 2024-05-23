@@ -20,7 +20,7 @@ const FavouritesList = () => {
     console.log("barcode=", barcode);
     const newList = favouritesList.filter(product => product.barcod !== barcode);
     setFavouritesList(newList);
-    alert("The product has been removed successfully");
+    // alert("The product has been removed successfully");
   };
 
   const removeAll = () => {
@@ -30,7 +30,7 @@ const FavouritesList = () => {
     // }
     alert("האם אתה בטוח שברצונך למחוק את כל המוצרים האהובים מהרשימה?")
     setFavouritesList([]);
-    alert("All products have been removed successfully");
+    // alert("All products have been removed successfully");
   };
 
   return (
