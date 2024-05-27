@@ -42,17 +42,21 @@ const ProductsListPublic = ({ category }) => {
     // בדיקה של קיום הנתונים והשמת ערכים בהתאם
     let filteredData = [...products];
 
-    if (category && category !== "company") {
+    if (category && category !== "company" &&category!=='promotions') {
         filteredData = filteredData.filter((product) => toLowerCase(product.category) === toLowerCase(category));
     }
 
     if (q) {
-        filteredData = filteredData.filter((product) => toLowerCase(product.name).includes(toLowerCase(q)));
+        filteredData = filteredData.filter((product) => toLowerCase(product.searchDetails).includes(toLowerCase(q)));
     }
 
     if (company) {
         filteredData = filteredData.filter((product) => toLowerCase(product.company) === toLowerCase(company));
     }
+    if (category&&category==='promotions') {
+        filteredData = filteredData.filter((product) =>product.inSale);
+    }
+
 
     return (
         <div className="products-list">
@@ -75,7 +79,7 @@ const ProductsListPublic = ({ category }) => {
                                     <div className="price">{product.sellingPrice}<TbCurrencyShekel style={{ fontSize: 17 }} /></div>
                                     {(product.amount === 0) && (
                                         <div className="azal">
-                                            אזל במלאי
+                                            אזל מהמלאי
                                         </div>
                                     )}
                                 </div>

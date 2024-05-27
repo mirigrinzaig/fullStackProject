@@ -17,6 +17,7 @@
 .sidebar-user-datails{
 display: flex;
 flex-direction: column;
+color: rgb(66, 63, 63);
 }
 .sidebar-user-username{
     font-weight: 500;
@@ -25,7 +26,7 @@ flex-direction: column;
     list-style: none;
 }
 .sidebar-menu-cat{
-color:  var(--textSoft);
+color: rgb(66, 63, 63);
 font-weight: bold;
 font-size: 13px;
 margin: 10px 0px;
@@ -37,6 +38,7 @@ align-items: center;
 gap: 10px;
 margin: 5px 0px;
 border-radius: 10px;
+color: rgb(66, 63, 63);
 }
 .sidebar-menu-link:hover, .sidebar-menu-link.active{
     background-color:  #f4d0e2;
@@ -50,7 +52,7 @@ border-radius: 10px;
   cursor: pointer;
   border-radius: 10px;
   background: none;
-  color: white;
+  color: rgb(66, 63, 63);
   widows: 100%;
   border: none;
 }

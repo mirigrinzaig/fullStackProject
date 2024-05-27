@@ -3,6 +3,7 @@ import "./favoritesList.css";
 import { Link, Navigate } from "react-router-dom";
 import useGetFilePath from "../../../hooks/useGetFilePath";
 import { TbTrashXFilled } from "react-icons/tb";
+import { TbCurrencyShekel } from "react-icons/tb";
 
 const FavouritesList = () => {
   const [favouritesList, setFavouritesList] = useState(JSON.parse(localStorage.getItem("favouritesList")) || []);
@@ -49,6 +50,7 @@ const FavouritesList = () => {
                     {product.name}<br />
                     {product.company}<br />
                     {product.sellingPrice}
+                    <TbCurrencyShekel style={{ fontSize: 17 }} />
                   </div>
                 </div>
               </Link>

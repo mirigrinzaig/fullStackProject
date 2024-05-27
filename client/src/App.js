@@ -40,7 +40,7 @@ const App = () => {
                 <Route path="/categories/safe" element={<ProductListPublic category="safe"/>}  />
                 <Route path="/categories/sleep" element={<ProductListPublic category="sleep"/>} />
                 <Route path="/categories/walk" element={<ProductListPublic category="walk"/>}  />
-                <Route path="/categories/plumabrand" element={<ProductListPublic category="plumaBrand"/>}  />
+                <Route path="/categories/plumabrand" element={<ProductListPublic category="pluma"/>}  />
                 <Route path="/categories/promotions"element={<ProductListPublic category="promotions"/>}  />
                 <Route path="login" element={<LoginPage />} />
                 <Route path="regist" element={<RegistPage />} />
@@ -48,7 +48,7 @@ const App = () => {
                 <Route element={<PersistsLogin />}>
                     <Route element={<RequireAuth allowRoles={['admin', 'user']} />}>
                         <Route path="/dash" element={<DashLayout />}>
-                            <Route index element={<HomeMain/>} />
+                            <Route index element={<HomePage/>} />
                             <Route element={<RequireAuth allowRoles={['admin']} />}>
                                 <Route path="users" element={<Outlet />}>
                                     <Route index element={<UsersList />} />

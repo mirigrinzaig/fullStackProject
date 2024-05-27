@@ -61,10 +61,12 @@ const SingleProduct = () => {
                     <input defaultValue={product.agent} type="text" name="agent" placeholder="שם סוכן" />
                     <input defaultValue={product.agentPrice} type="number" name="agentPrice" placeholder="מחיר מהסוכן" />
                     <input defaultValue={product.sellingPrice} type="number" name="sellingPrice" placeholder="מחיר למכירה" />
-                    {/* <input  type="radio" name="inSale" placeholder="האם המוצר במבצע?" defaultValue="במבצע" checked>
-                        <input name="inSale" defaultValue="לא במבצע" />
-                        <input name="inSale" defaultValue="במבצע" />
-                    </input> */}
+                    <label>
+                        <input type="radio" name="inSale" value="true" checked /> במבצע
+                    </label>
+                    <label>
+                        <input type="radio" name="inSale" value="false" /> לא במבצע
+                    </label>
                     <button type="submit">עדכן</button>
                 </form>
 

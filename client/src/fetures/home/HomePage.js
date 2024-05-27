@@ -104,30 +104,31 @@ const HomePage = () => {
 
             {arrWordsSearch?.length < 1 && <div className="errorPage">נראה שאין מוצרים העונים על התנאי שלך, נסה לחפש חיפוש מורחב יותר.</div>}
             <div className="products">
-    {filteredData.map(product => (
-        product.inSale ? (
-            <div className="single" key={product._id}>
-                <Link to={`/public/${product.barcod}`} className="products-list-btn products-list-view">
-                    <img src={getFilePath(product.image)} alt="" className="products-list-product-image" />
-                    <div className="details">
-                        <div>{product.company}</div>
-                        <div>{product.name}</div>
-                        <div>{product.itemDescription}</div>
-                        <div className="price">{product.sellingPrice}<TbCurrencyShekel style={{ fontSize: 17 }} /></div>
-                        {(product.amount === 0) && (
-                            <div className="azal">
-                                אזל במלאי
-                            </div>
-                        )}
-                    </div>
-                </Link>
-                <button className="products-list-btn-love" onClick={() => { isFavorite(product) ? removeFromFavorites(product) : addToFavourites(product) }}>
-                    {isFavorite(product) ? <BsFillHeartFill size={190} /> : <BsHeart size={100} />}
-                </button>
+                {arrWordsSearch.map(product => (
+                    product.inSale ? (
+                        <div className="single" key={product._id}>
+                            <Link to={`/public/${product.barcod}`} className="products-list-btn products-list-view">
+                                <img src={getFilePath(product.image)} alt="" className="products-list-product-image" />
+                                <div className="details">
+                                    <div>{product.company}</div>
+                                    <div>{product.name}</div>
+                                    <div>{product.itemDescription}</div>
+                                    <div className="price">{product.sellingPrice}<TbCurrencyShekel style={{ fontSize: 17 }} /></div>
+                                    {(product.amount === 0) && (
+                                        <div className="azal">
+                                            אזל מהמלאי
+                                        </div>
+                                    )}
+                                </div>
+                            </Link>
+                            <button className="products-list-btn-love" onClick={() => { isFavorite(product) ? removeFromFavorites(product) : addToFavourites(product) }}>
+                                {isFavorite(product) ? <BsFillHeartFill size={190} /> : <BsHeart size={100} />}
+                            </button>
+                        </div>
+                    ) : null
+                ))}
+               <Link to={"http://localhost:3000/categories/promotions"}>לכל המבצעים</Link>
             </div>
-        ) : null
-    ))}
-</div>
 
             <h3 className="productsTitle">המותגים שלנו... </h3>
             <CompaniesCarousel />

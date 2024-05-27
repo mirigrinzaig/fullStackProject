@@ -33,12 +33,16 @@
     flex-wrap: wrap;
     justify-content: space-around;
     border-style: solid;
-    border: 1px solid transparent;
-    border-color: rgb(255, 104, 174);
+    border: 1.5px solid transparent;
+    border-color:none;
     cursor: pointer;
     color: rgb(28, 28, 27);
     position: relative;
     
+}
+.singleF:hover{
+    border: 1.5px solid transparent;
+    border-color:rgb(255, 130, 130);
 }
 
 .singleF img {
@@ -53,10 +57,10 @@
     min-height: 40vh;
     max-height: 40vh;
     /* max-height: 25vh; */
-    min-width: 15vw;
-    max-width: 15vw;
+    min-width: 13vw;
+    max-width: 13vw;
     border-radius: 0px;
-    padding-top: 10px;
+    padding-top: 0px;
 
     /* max-width: 25vh; */
     cursor: pointer;

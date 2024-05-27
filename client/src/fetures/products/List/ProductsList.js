@@ -4,12 +4,13 @@ import { useGetAllProductsQuery, useDeleteProductMutation } from "../ProductsApi
 import { Link, useSearchParams } from "react-router-dom"
 import useGetFilePath from "../../../hooks/useGetFilePath"
 import { BsFillHeartFill } from "react-icons/bs";
+import { TbCurrencyShekel } from "react-icons/tb";
 
 const ProductsList = () => {
     // const products = [{ _id: 1, name: "name",imageUrl:"url", company:"company", "price":"---שח"}
     // ]
 
-    
+
     const { data: products, isError, error, isLoading } = useGetAllProductsQuery()
     const [deleteProduct, { isSuccess: isDeleteSuccess }] = useDeleteProductMutation()
 
@@ -40,26 +41,27 @@ const ProductsList = () => {
             </div>
             <div className="products">
                 {filteredData.map(product => (
-                    <div className="single"  key={product._id}>
-                        <Link to={`/dash/products/${product.barcod}`} className="products-list-btn products-list-view"><img src={getFilePath(product.image)} alt="" className="products-list-product-image" /></Link>
-                        <div className="details">
-                            <div className="details-wr">
-                                {product.barcod}<br />
-                                {product.name}<br />
-                                {product.company}<br />
-                                {product.sellingPrice}</div>
-                            כמות:{product.amount}<br /><br />
-                            {(product.amount === 0) && (
-                                <div>
-                                     אזל מהמלאי
-                                </div>
-                            )}
-                            <div className="products-list-btns">
-                                <button onClick={() => { deleteClick(product) }} className="products-list-btn products-list-delete">delete</button></div>
-                        </div>
-                        <button className="products-list-btn-love" onClick={() => { }}>
+                    <div className="single" key={product._id}>
+                        <Link to={`/dash/products/${product.barcod}`} className="products-list-btn products-list-view"><img src={getFilePath(product.image)} alt="" className="products-list-product-image" />
+                            <div className="details">
+                                <div className="details-wr">
+                                    {product.barcod}<br />
+                                    {product.name}<br />
+                                    {product.company}<br />
+                                    {product.sellingPrice}<TbCurrencyShekel style={{ fontSize: 17 }} /></div>
+                                כמות במלאי: {product.amount}<br /><br />
+                                {(product.amount === 0) && (
+                                    <div>
+                                        אזל מהמלאי
+                                    </div>
+                                )}
+                                <div className="products-list-btns">
+                                    <button onClick={() => { deleteClick(product) }} className="products-list-btn products-list-delete">delete</button></div>
+                            </div>
+                        </Link>
+                        {/* <button className="products-list-btn-love" onClick={() => { }}>
                             <BsFillHeartFill size={20} />
-                        </button>
+                        </button> */}
                     </div>
                 ))}
             </div>
