@@ -3,13 +3,13 @@ body{
 }
 .container{
     display: flex;
+    flex-direction: column;
 }
-.menu{
-    background-color: var(--bgSoft);
+.menu {
+    /* background-color: #5d7b88bd; */
     color: var(--textSoft);
-    padding: 20px;
-    min-height: 100vh;
-    max-width: 20vw;
+    max-height: 100px;
+    min-width: 100vw;
 }
 .content{
     flex:4;

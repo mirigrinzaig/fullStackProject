@@ -21,7 +21,7 @@ const SideBar = () => {
     const [logout,{isSuccess}]=useSendLogoutMutation()
     const adminMenuItem = [
         {
-            title: "דפים",
+            // title: "דפים",
             list: [
                 {
                     title: "ראשי",
@@ -43,16 +43,16 @@ const SideBar = () => {
                     path: "/dash/actions",
                     icon: <MdPendingActions />
                 },
-                {
-                    title: "הגדרות",
-                    path: "/dash/settings",
-                    icon: <MdOutlineSettings />
-                },
-                {
-                    title: "עזרה",
-                    path: "/dash/help",
-                    icon: <MdHelpCenter />
-                }
+                // {
+                //     title: "הגדרות",
+                //     path: "/dash/settings",
+                //     icon: <MdOutlineSettings />
+                // },
+                // {
+                //     title: "עזרה",
+                //     path: "/dash/help",
+                //     icon: <MdHelpCenter />
+                // }
             ],
         }]
         const userMenuItem=[{
@@ -90,7 +90,7 @@ const SideBar = () => {
     }
     return (
         <div className="sidebar">
-            <div className="sidebar-user">
+            {/* <div className="sidebar-user">
                 <img src={user.image || "/logo512.png"} alt="" width="50" height="50" className="sidebar-user-image"/>
                 <div className="sidebar-user-datails">
                     <span className="sidebar-user-username">{name}</span>
@@ -98,10 +98,10 @@ const SideBar = () => {
                     <span className="sidebar-user-username">{email}</span>
                     <span className="sidebar-user-username">roles:{roles}</span>
                 </div>
-            </div>
+            </div> */}
             <ul className="sidebar-menu-list">
             {menuItem.map(cat => (
-                <li key={cat.title}>
+                <li className="sidebar-menu-li" key={cat.title}>
                     <span className="sidebar-menu-cat">{cat.title}</span>
                     {cat.list.map(item => (
                         <MenuLink item={item}>{item.title}</MenuLink>

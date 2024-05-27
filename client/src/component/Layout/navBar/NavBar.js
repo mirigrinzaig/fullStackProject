@@ -2,7 +2,7 @@ import "./navBar.css"
 import {
     MdPerson,
     MdSupervisedUserCircle,
-    MdLogout, 
+    MdLogout,
     MdHome,
     MdHomeFilled
 } from "react-icons/md"
@@ -22,7 +22,7 @@ const NavBar = () => {
 
     // },[])
     const navigate = useNavigate()
-    const { _id, userName, name, email} = useAuth()
+    const { _id, userName, name, email,roles } = useAuth()
     const [logout, { isSuccess }] = useSendLogoutMutation()
     const [userMenu, setUserMenu] = useState(false)
     const logOutClick = () => {
@@ -33,22 +33,24 @@ const NavBar = () => {
     const [showFixedMenu, setShowFixedMenu] = useState(false);
     useEffect(() => {
         const handleScroll = () => {
-          const threshold = 100; // הגדרת סף הגלילה שבו ישתנה התפריט ל־position: fixed
-          const isScrolled = window.scrollY > threshold;
-    
-          setShowFixedMenu(isScrolled);
+            const threshold = 100; // הגדרת סף הגלילה שבו ישתנה התפריט ל־position: fixed
+            const isScrolled = window.scrollY > threshold;
+
+            setShowFixedMenu(isScrolled);
         };
-    
+
         window.addEventListener("scroll", handleScroll);
-    
+
         return () => window.removeEventListener("scroll", handleScroll);
-      }, []);
-    
+    }, []);
+
     return (
         <div className="navbar">
             <div className="navbar-title">
-                <div className="logoNavBar"></div>
-                <h2 className="title">חנות בוטיק קסומה לתינוקות</h2>
+                <div className="navbar-logo-box">
+                    <div className="logoNavBar"></div>
+                    <h2 className="title">חנות בוטיק קסומה לתינוקות</h2></div>
+
                 {!userName && <div className="navbar-a-box">
                     <Link to="/login" className="products-list-add-btn">
                         התחברות
@@ -56,20 +58,32 @@ const NavBar = () => {
                     <Link to="/regist" className="products-list-add-btn">
                         הרשמה
                     </Link></div>}
-                {
-                    userName && <div className="navbar-menu-div">
-                        <MdPerson size={40} className="userMenu" onClick={() => setUserMenu(!userMenu)}></MdPerson>
-                        <p>{name}</p>
-                    </div>
-                }
-                {
-                    userMenu && <div className="navbar-menu-box">
-                        <div className="navbar-icons">
-                            <FaCartPlus className="btn" size={20} />
-                            <NavLink className="btn" to='/favouriets'><BsBagHeartFill size={20} /></NavLink>
-                            <MdLogout className="btn" size={20} onClick={logOutClick}>התנתקות</MdLogout>
-                        </div></div>
-                }
+                {roles==='admin' && <div className="admin-user">
+                <div className="sidebar-user-datails">
+                    <span className="sidebar-user-username">מנהל: {name}</span>
+                    {/* <span className="sidebar-user-username">{userName}</span> */}
+                    {/* <span className="sidebar-user-username">{email}</span> */}
+                    <span className="sidebar-user-username">roles: {roles}</span>
+                </div>
+                <img src={ "/blackLogo.png"} alt="" width="50" height="50" className="sidebar-user-image"/>
+            </div>}
+            {roles!=='admin' &&userName && <div className="navbar-menu-box">
+                    {
+                        userName && <div className="navbar-menu-div">
+                            <MdPerson size={40} className="userMenu" onClick={() => setUserMenu(!userMenu)}></MdPerson>
+                            <p>{name}</p>
+                        </div>
+                    }
+                    {
+                        userMenu && <div className="navbar-menu-box">
+                            <div className="navbar-icons">
+                                <FaCartPlus className="btn" size={20} />
+                                <NavLink className="btn" to='/favouriets'><BsBagHeartFill size={20} /></NavLink>
+                                <MdLogout className="btn" size={20} onClick={logOutClick}>התנתקות</MdLogout>
+                            </div></div>
+                    }
+                </div>}
+
             </div >
 
             {/* </div >} */}
@@ -87,8 +101,8 @@ const NavBar = () => {
                 <NavLink to='/categories/safe'><img src="./categories/safe.png" /></NavLink>
                 <NavLink to='/categories/hygine'><img src="./categories/hygine.png" /></NavLink>
                 <NavLink to='/categories/presents'><img src="./categories/presents.png" /></NavLink>
-                <NavLink to='/categories/plumabrand'><img src="/logo.png" /></NavLink>
-                <NavLink to='/categories/promotions'><img src="./categories/brands.png" /></NavLink>
+                <NavLink className="aMotag" to='/categories/plumabrand'><img className="IMotag" src="/blackLogo.png"/>המותג</NavLink>
+                <NavLink className="aMotag"  to='/categories/promotions'><img className="IMotag" src="/logoK.png"/>אודותנו</NavLink>
             </div>
         </div >
     )

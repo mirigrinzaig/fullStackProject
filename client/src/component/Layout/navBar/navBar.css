@@ -28,13 +28,19 @@
 }
 
 .navbar-menu-box,
-.navbar-a-box {
+.navbar-a-box,
+.navbar-logo-box,
+.admin-user {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 20px;
     padding-left: 20px;
+}
+.navbar-logo-box{
+    width: 60%;
+    justify-content: space-between;
 }
 
 .navbar-title {
@@ -124,7 +130,21 @@
     padding: 10px;
     border-radius: 10px;
 } */
-
+.IMotag {
+    border-radius: 50%;
+    background-color: white;
+    min-height: 38px;
+    max-height: 38px;
+}
+    .aMotag {
+        display: flex;
+        flex-direction: column;
+        min-height: 50px;
+        max-height: 50px;
+        margin-bottom: 10px;
+        color: var(--text);
+        font-size: 13.5px;
+    }
     .navbar-input {
         background-color: transparent;
         border: none;
