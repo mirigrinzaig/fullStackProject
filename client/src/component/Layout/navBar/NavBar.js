@@ -51,7 +51,7 @@ const NavBar = () => {
                     <div className="logoNavBar"></div>
                     <h2 className="title">חנות בוטיק קסומה לתינוקות</h2></div>
 
-                {!userName && <div className="navbar-a-box">
+                {roles!=='admin'&&!userName && <div className="navbar-a-box">
                     <Link to="/login" className="products-list-add-btn">
                         התחברות
                     </Link>
