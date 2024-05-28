@@ -71,10 +71,12 @@
 .navbar-menu-div {
     max-height: 60px;
     padding-left: 20px;
+    color: #505151;
 }
 
 .navbar-menu-div p {
     margin-top: -10px;
+    color: #505151;
 }
 
 .title {
@@ -155,7 +157,7 @@
         display: flex;
         gap: 10px;
         cursor: pointer;
-        color: white;
+        color: rgb(107, 104, 104);
     }
 
     /* .navbar{

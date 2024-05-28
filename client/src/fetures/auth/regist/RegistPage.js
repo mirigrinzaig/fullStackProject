@@ -14,15 +14,41 @@ export const RegistPage = () => {
   const [userName, setUserName] = useState("")
   const [password, setPassword] = useState("")
   const [phone, setPhone] = useState("")
+  const [showWelcomeMessage, setShowWelcomeMessage] = useState(false);
 
+  // useEffect(() => {
+  //   if (isSuccess) {
+  //     //this is the token!!
+  //     console.log(data);
+  //     setShowWelcomeMessage(true);
+  //     setTimeout(() => {
+  //       setShowWelcomeMessage(false);
+  //     }, 2010); 
+  //     navigate("/login")
+  //   }
+
+  // }, [isSuccess])
   useEffect(() => {
     if (isSuccess) {
-      //this is the token!!
-      console.log(data);
-      navigate("/")
+        setShowWelcomeMessage(true);
+        setTimeout(() => {
+            setShowWelcomeMessage(false);
+        }, 2010);
+        alert("נרשמת בהצלחה למערכת. הינך מועברת לדף הכניסה")
+        navigate("/login")
     }
+}, [isSuccess]);
 
-  }, [isSuccess])
+useEffect(() => {
+    if (showWelcomeMessage) {
+        const timer = setTimeout(() => {
+            setShowWelcomeMessage(false);
+        }, 5000); // מילישניות = 5 שניות
+        return () => clearTimeout(timer);
+    }
+}, [showWelcomeMessage]);
+
+
 
   useEffect(() => {
     checkFull()
@@ -44,6 +70,13 @@ export const RegistPage = () => {
       setFullData(false)
     }
   }
+
+  if (showWelcomeMessage&&!isSuccess) return (
+    <div className="welcome-message">
+        {name}<br/>
+        נרשמת בהצלחה למערכת, הינך מועברת לדף הרישום.
+    </div>
+);
 
   return (
     <div className='regist-page'>

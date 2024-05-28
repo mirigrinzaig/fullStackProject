@@ -15,6 +15,9 @@ body{
     flex:4;
     padding: 20px;
     max-width: 80vw;
+    align-items: center;
+    justify-content: center;
+    
 }
 /* .navbar-search{
     max-width: 90vw;

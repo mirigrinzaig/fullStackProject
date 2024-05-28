@@ -13,8 +13,12 @@ import CompaniesCarousel from "./CompaniesCarousel"
 import { TbCurrencyShekel } from "react-icons/tb";
 import { BsFillHeartFill } from "react-icons/bs";
 import { BsHeart } from "react-icons/bs";
+import useAuth from "../../hooks/useAuth"
+
 
 const HomePage = () => {
+    const { _id, userName, name, email,roles } = useAuth()
+    const isLoginOrRegister=roles==='admin'||roles==='user'
     const { data: products, isError, error, isLoading, isSuccess } = useGetAllProductsPublicQuery()
     const [searchParams] = useSearchParams()
     const company = searchParams.get("company");
@@ -23,8 +27,9 @@ const HomePage = () => {
     console.log("q=", q);
     const { getFilePath } = useGetFilePath()
     const [arrWordsSearch, setArrWordsSearch] = useState([])
-    const [heartHover, setHeartHover] = useState(false)
-
+    const [showWelcomeMessage, setShowWelcomeMessage] = useState(true);
+    // const [heartHover, setHeartHover] = useState(false)
+    
     // const dispatch = useDispatch()
     let filteredData = products
     const dispatch = useDispatch()
@@ -33,6 +38,7 @@ const HomePage = () => {
         if (isSuccess) {
             dispatch(resetProducts(products))
         }
+        console.log("is login",isLoginOrRegister);
 
     }, [isSuccess])
 
@@ -66,6 +72,12 @@ const HomePage = () => {
         }
     }, [q, isSuccess]);
 
+    useEffect(() => {
+        setTimeout(() => {
+          setShowWelcomeMessage(false);
+        }, 2010); // 10000 מילישניות = 10 שניות
+      }, []);
+
     // const favouritesList = JSON.parse(localStorage.getItem("favouritesList")) || [];
     const [favorites, setFavorites] = useState(JSON.parse(localStorage.getItem("favouritesList")) || []);
     // console.log("favorites:", favouritesList);
@@ -88,6 +100,10 @@ const HomePage = () => {
 
     if (isLoading) return <div className="errorPage">loading...</div>
     if (isError) return <div className="errorPage">מצטערים, שגיאה זמנית.</div>
+    if(isLoginOrRegister && showWelcomeMessage ) return <div className="welcome-message">{name}<br/>
+    ברוכה הבאה לפלומה! 
+   </div>
+    // {isLoginOrRegister && showWelcomeMessage && <div className="welcome-message">ברוכים הבאים</div>}
 
     return (
         <div className="products-list">
@@ -132,6 +148,7 @@ const HomePage = () => {
 
             <h3 className="productsTitle">המותגים שלנו... </h3>
             <CompaniesCarousel />
+            
         </div>
     )
 }
