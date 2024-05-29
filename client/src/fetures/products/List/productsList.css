@@ -153,14 +153,6 @@
 }
 
 
-.bigImage {
-    min-width: 90vw;
-    min-height: 90vh;
-    margin-top: 10vh;
-    margin-right: 3vw;
-    object-fit: cover;
-    
-}
 
 h3 {
     margin-top: 5vh;

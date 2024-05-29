@@ -53,17 +53,17 @@ const Footer = () => {
                             <p>כתובת החנות:</p>
                             <p>רחוב שפרינצק צפת</p></div>
                     </div>
-                    <div className="phone" style={{display:"flex",flexDirection:"row"}}>
-                        <MdPhone className="icon" />
+                    <div className="phone" style={{display:"flex",flexDirection:"row"}}> 
+                        <a href="tel+:0527698642"><MdPhone className="icon" /></a>
                         <div>
-                            <p>פלאפון חנות:</p>
-                            <p>055-6737092</p></div>
+                            <p>טלפון : </p>
+                            <p>052-769-8642</p></div>
                     </div>
                     <div className="email" style={{display:"flex",flexDirection:"row"}}>
                     <a href="mailto:mirigrinzaig111@gmail.com"><MdAlternateEmail className="icon"  /></a>
                     <div className="mailLink">
                         <p>ליצירת קשר:</p> 
-                        <p>mirigrinzaig111@gmail.com</p></div>
+                        <p>pluma.babyloves@gmail.com</p></div>
                     </div>
                 </div>
                 <div className="footerStoreDetails">
@@ -72,10 +72,10 @@ const Footer = () => {
                         <p>שעות פעילות החנות:
                         </p>
                         <p>
-                            א-ה 10:00-19:00
+                            בוקר : 11:00-13:00
                         </p>
                         <p>
-                            יום ו 10:00-13:00
+                            ערב :  18:00-21:00
                         </p>
                     </div>
                 </div>

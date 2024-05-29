@@ -15,22 +15,21 @@ import { BsFillHeartFill } from "react-icons/bs";
 import { BsHeart } from "react-icons/bs";
 import useAuth from "../../hooks/useAuth"
 
+const images = ["./baby.jpg", "./promotions-img.png", "./imgs/nice.jpg", "./imgs/nice1.jpg", "./imgs/pluma1.jpg", "./imgs/pluma2.jpg", "./imgs/pluma3.jpg", "./imgs/pluma4.jpg", "./imgs/pluma5.jpg", "./imgs/pluma6.jpg", "./imgs/pluma7.jpg"];
+
 
 const HomePage = () => {
-    const { _id, userName, name, email,roles } = useAuth()
-    const isLoginOrRegister=roles==='admin'||roles==='user'
+    const { _id, userName, name, email, roles } = useAuth()
+    const isLoginOrRegister = roles === 'admin' || roles === 'user'
     const { data: products, isError, error, isLoading, isSuccess } = useGetAllProductsPublicQuery()
     const [searchParams] = useSearchParams()
     const company = searchParams.get("company");
-    console.log("company=", company);
     const q = searchParams.get("q") || company
-    console.log("q=", q);
     const { getFilePath } = useGetFilePath()
     const [arrWordsSearch, setArrWordsSearch] = useState([])
     const [showWelcomeMessage, setShowWelcomeMessage] = useState(true);
-    // const [heartHover, setHeartHover] = useState(false)
-    
-    // const dispatch = useDispatch()
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
     let filteredData = products
     const dispatch = useDispatch()
 
@@ -38,7 +37,7 @@ const HomePage = () => {
         if (isSuccess) {
             dispatch(resetProducts(products))
         }
-        console.log("is login",isLoginOrRegister);
+        console.log("is login", isLoginOrRegister);
 
     }, [isSuccess])
 
@@ -74,9 +73,36 @@ const HomePage = () => {
 
     useEffect(() => {
         setTimeout(() => {
-          setShowWelcomeMessage(false);
+            setShowWelcomeMessage(false);
         }, 2010); // 10000 מילישניות = 10 שניות
-      }, []);
+    }, []);
+
+    // useEffect(() => {
+    //     const interval = setInterval(() => {
+    //         setCurrentImageIndex((currentImageIndex + 1) % images.length);
+    //     }, 8000); // Change image every 2 seconds
+
+    //     return () => clearInterval(interval);
+    // }, [currentImageIndex]);
+    useEffect(() => {
+        const interval = setInterval(() => {
+            const newIndex = (currentImageIndex + 1) % images.length;
+            const imageElement = document.querySelector('.image-carousel img.bigImage');
+            imageElement.classList.remove('bigImage');
+            imageElement.classList.add('bigImageNone');
+            setTimeout(() => {
+                imageElement.classList.remove('bigImageNone');
+                imageElement.classList.add('bigImage');
+                setCurrentImageIndex(newIndex);
+            }, 100);
+        }, 8000);
+
+        return () => clearInterval(interval);
+    }, [currentImageIndex]);
+
+
+
+    
 
     // const favouritesList = JSON.parse(localStorage.getItem("favouritesList")) || [];
     const [favorites, setFavorites] = useState(JSON.parse(localStorage.getItem("favouritesList")) || []);
@@ -100,9 +126,9 @@ const HomePage = () => {
 
     if (isLoading) return <div className="errorPage">loading...</div>
     if (isError) return <div className="errorPage">מצטערים, שגיאה זמנית.</div>
-    if(isLoginOrRegister && showWelcomeMessage ) return <div className="welcome-message">{name}<br/>
-    ברוכה הבאה לפלומה! 
-   </div>
+    if (isLoginOrRegister && showWelcomeMessage) return <div className="welcome-message">{name}<br />
+        ברוכה הבאה לפלומה!
+    </div>
     // {isLoginOrRegister && showWelcomeMessage && <div className="welcome-message">ברוכים הבאים</div>}
 
     return (
@@ -113,7 +139,10 @@ const HomePage = () => {
 
                 </h3>
             )}
-            <img className="bigImage" src="./baby.jpg" alt="Image 1" />
+            <div className="image-carousel">
+                <img src={images[currentImageIndex]} alt="Carousel Image" className="bigImage" />
+            </div>
+            {/* <img className="bigImage" src="./baby.jpg" alt="Image 1" /> */}
             <h3 className="productsTitle">מה עוד אפשר להציע לכם ? </h3>
             <CategoriesCarousel />
             <h3 className="productsTitle">מוצרים במבצע :</h3>
@@ -143,12 +172,12 @@ const HomePage = () => {
                         </div>
                     ) : null
                 ))}
-               <Link to={"http://localhost:3000/categories/promotions"}>לכל המבצעים</Link>
+                <Link to={"http://localhost:3000/categories/promotions"}>לכל המבצעים</Link>
             </div>
 
             <h3 className="productsTitle">המותגים שלנו... </h3>
             <CompaniesCarousel />
-            
+
         </div>
     )
 }

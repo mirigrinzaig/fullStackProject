@@ -23,9 +23,8 @@ export const RegistPage = () => {
         setShowWelcomeMessage(false);
       }, 2010);
       setTimeout(() => {
-        // alert("נרשמת בהצלחה למערכת. הינך מועברת לדף הכניסה");
         navigate("/login");
-      }, 1500); // הוסף עיכוב לפני הצגת ההודעה
+      }, 1500); 
     }
   }, [isSuccess]);
 
