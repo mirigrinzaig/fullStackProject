@@ -16,37 +16,18 @@ export const RegistPage = () => {
   const [phone, setPhone] = useState("")
   const [showWelcomeMessage, setShowWelcomeMessage] = useState(false);
 
-  // useEffect(() => {
-  //   if (isSuccess) {
-  //     //this is the token!!
-  //     console.log(data);
-  //     setShowWelcomeMessage(true);
-  //     setTimeout(() => {
-  //       setShowWelcomeMessage(false);
-  //     }, 2010); 
-  //     navigate("/login")
-  //   }
-
-  // }, [isSuccess])
   useEffect(() => {
     if (isSuccess) {
-        setShowWelcomeMessage(true);
-        setTimeout(() => {
-            setShowWelcomeMessage(false);
-        }, 2010);
-        alert("נרשמת בהצלחה למערכת. הינך מועברת לדף הכניסה")
-        navigate("/login")
+      setShowWelcomeMessage(true);
+      setTimeout(() => {
+        setShowWelcomeMessage(false);
+      }, 2010);
+      setTimeout(() => {
+        // alert("נרשמת בהצלחה למערכת. הינך מועברת לדף הכניסה");
+        navigate("/login");
+      }, 1500); // הוסף עיכוב לפני הצגת ההודעה
     }
-}, [isSuccess]);
-
-useEffect(() => {
-    if (showWelcomeMessage) {
-        const timer = setTimeout(() => {
-            setShowWelcomeMessage(false);
-        }, 5000); // מילישניות = 5 שניות
-        return () => clearTimeout(timer);
-    }
-}, [showWelcomeMessage]);
+  }, [isSuccess]);
 
 
 
@@ -71,12 +52,12 @@ useEffect(() => {
     }
   }
 
-  if (showWelcomeMessage&&!isSuccess) return (
+  if (showWelcomeMessage) return (
     <div className="welcome-message">
-        {name}<br/>
-        נרשמת בהצלחה למערכת, הינך מועברת לדף הרישום.
+      {name}<br />
+      נרשמת בהצלחה למערכת, הינך מועברת לדף הרישום.
     </div>
-);
+  );
 
   return (
     <div className='regist-page'>
@@ -92,7 +73,7 @@ useEffect(() => {
           <Link className="linkToLogin" to={"/login"}>רשומה? הכנסי</Link>
         </div>
         {error &&
-          <Alert className="error" variant="outlined" severity="error" style={{ color: 'red', minWidth: '350px'}}>
+          <Alert className="error" variant="outlined" severity="error" style={{ color: 'red', minWidth: '350px' }}>
             {error && error.data?.message}
           </Alert>}
         <button type='submit' style={{ backgroundColor: fullData ? 'var(--bgPink)' : "rgb(142, 172, 170)", color: !fullData && "white" }}>כניסה</button>
