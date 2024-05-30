@@ -101,9 +101,6 @@ const HomePage = () => {
     }, [currentImageIndex]);
 
 
-
-    
-
     // const favouritesList = JSON.parse(localStorage.getItem("favouritesList")) || [];
     const [favorites, setFavorites] = useState(JSON.parse(localStorage.getItem("favouritesList")) || []);
     // console.log("favorites:", favouritesList);
@@ -124,61 +121,67 @@ const HomePage = () => {
         return favorites.some((item) => item._id === product._id);
     }
 
-    if (isLoading) return <div className="errorPage">loading...</div>
-    if (isError) return <div className="errorPage">מצטערים, שגיאה זמנית.</div>
-    if (isLoginOrRegister && showWelcomeMessage) return <div className="welcome-message">{name}<br />
-        ברוכה הבאה לפלומה!
-    </div>
+    // if (isLoading) return <div className="errorPage">loading...</div>
+    // if (isError) return <div className="errorPage">מצטערים, שגיאה זמנית.</div>
+    // if (isLoginOrRegister && showWelcomeMessage) return <div className="welcome-message">{name}<br />
+    //     ברוכה הבאה לפלומה!
+    // </div>
     // {isLoginOrRegister && showWelcomeMessage && <div className="welcome-message">ברוכים הבאים</div>}
 
     return (
-        <div className="products-list">
-            {company && (
-                <h3>
-                    מוצרים של המותג :{company}
+        <>
+            {isLoading && <div className="errorPage">loading...</div>}
+            {isError && <div className="errorPage">מצטערים, שגיאה זמנית.</div>}
+            {isLoginOrRegister && showWelcomeMessage && <div className="welcome-message">{name}<br />
+                ברוכה הבאה לפלומה!
+            </div>}
+            <div className="products-list">
+                {company && (
+                    <h3>
+                        מוצרים של המותג :{company}
 
-                </h3>
-            )}
-            <div className="image-carousel">
-                <img src={images[currentImageIndex]} alt="Carousel Image" className="bigImage" />
-            </div>
-            {/* <img className="bigImage" src="./baby.jpg" alt="Image 1" /> */}
-            <h3 className="productsTitle">מה עוד אפשר להציע לכם ? </h3>
-            <CategoriesCarousel />
-            <h3 className="productsTitle">מוצרים במבצע :</h3>
+                    </h3>
+                )}
+                <div className="image-carousel">
+                    <img src={images[currentImageIndex]} alt="Carousel Image" className="bigImage" />
+                </div>
+                {/* <img className="bigImage" src="./baby.jpg" alt="Image 1" /> */}
+                <h3 className="productsTitle">מה עוד אפשר להציע לכם ? </h3>
+                <CategoriesCarousel />
+                <h3 className="productsTitle">מוצרים במבצע :</h3>
 
-            {arrWordsSearch?.length < 1 && <div className="errorPage">נראה שאין מוצרים העונים על התנאי שלך, נסה לחפש חיפוש מורחב יותר.</div>}
-            <div className="products">
-                {arrWordsSearch.map(product => (
-                    product.inSale ? (
-                        <div className="single" key={product._id}>
-                            <Link to={`/public/${product.barcod}`} className="products-list-btn products-list-view">
-                                <img src={getFilePath(product.image)} alt="" className="products-list-product-image" />
-                                <div className="details">
-                                    <div>{product.company}</div>
-                                    <div>{product.name}</div>
-                                    <div>{product.itemDescription}</div>
-                                    <div className="price">{product.sellingPrice}<TbCurrencyShekel style={{ fontSize: 17 }} /></div>
-                                    {(product.amount === 0) && (
-                                        <div className="azal">
-                                            אזל מהמלאי
-                                        </div>
-                                    )}
-                                </div>
-                            </Link>
-                            <button className="products-list-btn-love" onClick={() => { isFavorite(product) ? removeFromFavorites(product) : addToFavourites(product) }}>
-                                {isFavorite(product) ? <BsFillHeartFill size={190} /> : <BsHeart size={100} />}
-                            </button>
-                        </div>
-                    ) : null
-                ))}
-                <Link to={"http://localhost:3000/categories/promotions"}>לכל המבצעים</Link>
-            </div>
+                {arrWordsSearch?.length < 1 && <div className="errorPage">נראה שאין מוצרים העונים על התנאי שלך, נסה לחפש חיפוש מורחב יותר.</div>}
+                <div className="products">
+                    {arrWordsSearch.map(product => (
+                        product.inSale ? (
+                            <div className="single" key={product._id}>
+                                <Link to={`/public/${product.barcod}`} className="products-list-btn products-list-view">
+                                    <img src={getFilePath(product.image)} alt="" className="products-list-product-image" />
+                                    <div className="details">
+                                        <div>{product.company}</div>
+                                        <div>{product.name}</div>
+                                        <div>{product.itemDescription}</div>
+                                        <div className="price">{product.sellingPrice}<TbCurrencyShekel style={{ fontSize: 17 }} /></div>
+                                        {(product.amount === 0) && (
+                                            <div className="azal">
+                                                אזל מהמלאי
+                                            </div>
+                                        )}
+                                    </div>
+                                </Link>
+                                <button className="products-list-btn-love" onClick={() => { isFavorite(product) ? removeFromFavorites(product) : addToFavourites(product) }}>
+                                    {isFavorite(product) ? <BsFillHeartFill size={190} /> : <BsHeart size={100} />}
+                                </button>
+                            </div>
+                        ) : null
+                    ))}
+                    <Link to={"http://localhost:3000/categories/promotions"}>לכל המבצעים</Link>
+                </div>
 
-            <h3 className="productsTitle">המותגים שלנו... </h3>
-            <CompaniesCarousel />
+                <h3 className="productsTitle">המותגים שלנו... </h3>
+                <CompaniesCarousel />
 
-        </div>
+            </div></>
     )
 }
 

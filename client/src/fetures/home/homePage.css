@@ -50,24 +50,24 @@
     background-color: white;
     border: 3.5px solid transparent;
     border-color: #f6a6c5;
-    ;
     color: black;
     padding: 20px;
     border-radius: 8px;
     min-width: 50vw;
     min-height: 50vh;
     text-align: center;
-    font-size: 80px;
+    font-size: 50px;
     align-items: center;
 
 }
 
 
 .bigImage {
-    min-width: 90vw;
-    min-height: 90vh;
+    min-width: 85vw;
+    min-height: 80vh;
     margin-top: 10vh;
-    margin-right: 3vw;
+    margin-right: 2%;
+    margin-left: 2%;
     object-fit: fill;
     /* object-fit: cover;
     object-position: center; */
@@ -78,7 +78,17 @@
 
 .bigImageNone{
     display: none;
+    min-width: 90vw;
+    min-height: 90vh;
+    border: 3.5px solid transparent;
+    border-color: #f6a6c5;
+    
 }
+
+/* .image-carousel{
+
+
+} */
 
 
 

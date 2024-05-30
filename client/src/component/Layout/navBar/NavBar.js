@@ -89,7 +89,7 @@ const NavBar = () => {
             {/* </div >} */}
             <div className={`navbar-menu ${showFixedMenu ? "fixed-menu" : ""}`}>
                 <Search className="navBarSearch" placeholder={"חיפוש כללי"} />
-                <NavLink className="homeLink" to='/'><MdHome size={20} className="home" />home</NavLink>
+                <NavLink className="homeLink" to='/'><MdHome size={20} className="home" />בית</NavLink>
                 {/* <MenuLink item={item}></MenuLink> */}
                 <NavLink to='/categories/clothing'><img src="./categories/clothing.png" alt="" /></NavLink>
                 <NavLink to='/categories/accessories'><img src="./categories/accessories.png" /></NavLink>
@@ -102,7 +102,7 @@ const NavBar = () => {
                 <NavLink to='/categories/hygine'><img src="./categories/hygine.png" /></NavLink>
                 <NavLink to='/categories/presents'><img src="./categories/presents.png" /></NavLink>
                 <NavLink className="aMotag" to='/categories/plumabrand'><img className="IMotag" src="/blackLogo.png"/>המותג</NavLink>
-                <NavLink className="aMotag"  to='/categories/promotions'><img className="IMotag" src="/logoK.png"/>מבצעים</NavLink>
+                <NavLink className="aMotag"  to='/categories/promotions'><img className="IMotag" src="./categories/promotions.png"/>מבצעים</NavLink>
             </div>
         </div >
     )
