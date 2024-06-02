@@ -121,8 +121,8 @@ const HomePage = () => {
         return favorites.some((item) => item._id === product._id);
     }
 
-    // if (isLoading) return <div className="errorPage">loading...</div>
-    // if (isError) return <div className="errorPage">מצטערים, שגיאה זמנית.</div>
+    if (isLoading) return <div className="errorPage">loading...</div>
+    if (isError) return <div className="errorPage">מצטערים, שגיאה זמנית.</div>
     // if (isLoginOrRegister && showWelcomeMessage) return <div className="welcome-message">{name}<br />
     //     ברוכה הבאה לפלומה!
     // </div>
@@ -130,8 +130,6 @@ const HomePage = () => {
 
     return (
         <>
-            {isLoading && <div className="errorPage">loading...</div>}
-            {isError && <div className="errorPage">מצטערים, שגיאה זמנית.</div>}
             {isLoginOrRegister && showWelcomeMessage && <div className="welcome-message">{name}<br />
                 ברוכה הבאה לפלומה!
             </div>}

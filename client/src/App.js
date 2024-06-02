@@ -17,8 +17,11 @@ import HomeMain from "./fetures/home/HomeMain"
 import FavouritesList from "./fetures/products/List/FavouritesList"
 import ProductListPublic from "./fetures/products/List/ProductsListPublic"
 import ScrollToTop from './ScrollToTop';
+import PlumaAbout from "./fetures/products/categories/PlumaAbout"
 
 import React, { useEffect ,useLocation } from 'react';
+import Regulation from "./fetures/products/categories/Regulations"
+import Posts from "./fetures/products/categories/Posts"
 
 
 const App = () => {
@@ -28,6 +31,9 @@ const App = () => {
             <Route path="/" element={<SiteLayout />} >
                 <Route index element={<HomePage/>} />
                 <Route path="/favouriets" element={<FavouritesList/>}/>
+                <Route path="/about" element={<PlumaAbout/>}/>
+                <Route path="/regulation" element={<Regulation/>}/>
+                <Route path="/posts" element={<Posts/>}/>
                 {/* <Route index element={<HomeMain/>} /> */}
                 <Route path="/categories/companies" element={<ProductListPublic  category="company"/>} />
                 <Route path="/categories/accessories" element={<ProductListPublic category="accessories"/>} />

@@ -1,0 +1,51 @@
+.textAbout{
+   text-align: right;
+    font-size: 2rem;
+}
+
+.about{
+    align-items: center;
+    justify-content: space-around;
+    color:var(--text);
+    border-radius: 10px;
+    min-height: 50vh;
+    min-width: 93%;
+    max-width: 93%;
+    background-color:var(--bgSoft);
+    background-color: #fff;
+    margin: 3vw;
+    padding: 8vw;
+
+}
+
+.storeImg{
+    min-width: 80vw;
+    min-height: 80vh;
+}
+
+.titleRegulation{
+    font-size:30px;
+    color: rgb(255, 146, 164);
+    font-weight: lighter;
+    text-align: right;
+
+}
+
+.postsTitle{
+    text-align: center;
+    font-size: 40px;
+    font-weight: lighter;
+    text-align: center;
+    font-style: oblique;
+    margin-bottom: 40px;
+    border-bottom: 2px solid #ff9d9d;
+    border-top: 2px solid #ff9d9d;
+    display: inline-block;
+    max-width: 400px;
+    margin-right: 40px;
+    min-height: 10vh;
+
+}
+
+
+

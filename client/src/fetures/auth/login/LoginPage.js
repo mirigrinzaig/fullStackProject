@@ -79,10 +79,14 @@ export const LoginPage = () => {
     login(userObj)
   }
 
+  const handleGoHome = () => {
+    navigate("/")
+  }
+
   return (
     <div className='login-page'>
       <form onSubmit={handleSubmit} className='login-page-form'>
-        <button className="exit"><Link to='/' />x</button>
+        <button onClick={handleGoHome} className="exit"><Link to='/' />x</button>
         <div className="logoP-login"><img src="/logo.png" className="logoP" style={{ minHeight: "30vh" }} /></div>
         <h1>כניסת משתמשים</h1>
         <input type='text' required name='userName' id='userName' placeholder="כתובת אימייל" />

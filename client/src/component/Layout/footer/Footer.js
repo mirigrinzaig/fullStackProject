@@ -40,30 +40,30 @@ const Footer = () => {
                 </div>
                 <div className="footerAbout">
                     <h3>כללי:</h3>
-                    <Link to="/" className="linkCompany linkAbout">תקנון החנות</Link>
-                    <Link to="/" className="linkCompany linkAbout">אודות</Link>
-                    <Link to="/" className="linkCompany linkAbout">המותג שלנו</Link>
-                    <Link to="/" className="linkCompany linkAbout">פוסטים</Link>
+                    <Link to="/regulation" className="linkCompany linkAbout">תקנון החנות</Link>
+                    <Link to="/about" className="linkCompany linkAbout">אודות</Link>
+                    <Link to="/categories/plumabrand" className="linkCompany linkAbout">המותג שלנו</Link>
+                    <Link to="/posts" className="linkCompany linkAbout">פוסטים</Link>
                 </div>
                 <div className="footerCantact">
                     <h3>צרו קשר:</h3>
-                    <div className="adress" style={{display:"flex",flexDirection:"row"}}>
-                        <Link to={"https://www.google.com/maps/place/%D7%A9%D7%A4%D7%A8%D7%99%D7%A0%D7%A6%D7%A7,+%D7%A6%D7%A4%D7%AA%E2%80%AD/@32.9582335,35.4970839,17z/data=!3m1!4b1!4m6!3m5!1s0x151c239bff83a463:0xc83d34d1118abae2!8m2!3d32.958229!4d35.494509!16s%2Fg%2F1ymw996nr?entry=ttu"}><MdLocationPin className="icon" /></Link>
+                    <div className="adress" style={{ display: "flex", flexDirection: "row" }}>
+                        <Link to={"https://www.google.com/maps/place/%D7%A9%D7%A4%D7%A8%D7%99%D7%A0%D7%A6%D7%A7+140,+%D7%A6%D7%A4%D7%AA%E2%80%AD/@32.9591562,35.4941859,19.68z/data=!4m6!3m5!1s0x151c239be5be36e9:0xa7db45a787aa7253!8m2!3d32.959169!4d35.494029!16s%2Fg%2F11c21bz02n?entry=ttu"} target="_blank"><MdLocationPin className="icon" /></Link>
                         <div>
                             <p>כתובת החנות:</p>
                             <p>רחוב שפרינצק צפת</p></div>
                     </div>
-                    <div className="phone" style={{display:"flex",flexDirection:"row"}}> 
+                    <div className="phone" style={{ display: "flex", flexDirection: "row" }}>
                         <a href="tel+:0527698642"><MdPhone className="icon" /></a>
                         <div>
                             <p>טלפון : </p>
                             <p>052-769-8642</p></div>
                     </div>
-                    <div className="email" style={{display:"flex",flexDirection:"row"}}>
-                    <a href="mailto:mirigrinzaig111@gmail.com"><MdAlternateEmail className="icon"  /></a>
-                    <div className="mailLink">
-                        <p>ליצירת קשר:</p> 
-                        <p>pluma.babyloves@gmail.com</p></div>
+                    <div className="email" style={{ display: "flex", flexDirection: "row" }}>
+                        <a href="mailto:mirigrinzaig111@gmail.com"><MdAlternateEmail className="icon" /></a>
+                        <div className="mailLink">
+                            <p>ליצירת קשר:</p>
+                            <p>pluma.babyloves@gmail.com</p></div>
                     </div>
                 </div>
                 <div className="footerStoreDetails">
