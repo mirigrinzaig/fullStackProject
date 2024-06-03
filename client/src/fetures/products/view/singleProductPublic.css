@@ -86,6 +86,9 @@
     font-family: var(--fontFamily);
     font-size: 15px;
     cursor: pointer;
+    margin: 10px;
+    background-color: none;
+    
 }
 .colorsBox button{
     height: 40px;

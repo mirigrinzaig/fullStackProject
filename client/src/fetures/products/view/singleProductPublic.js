@@ -124,7 +124,7 @@ const SingleProductPublic = () => {
                             </div>
                         )}
                     </div>
-                    <button id="moreInfo" onClick={displayMoreInfo}>למידע נוסף</button>
+                    <button id="moreInfo" onClick={displayMoreInfo}>למידע נוסף &#62;&gt;</button>
                     {moreInfo &&
                         <div className="moreInfo">
                             {info}

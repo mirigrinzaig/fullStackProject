@@ -3,12 +3,29 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    min-width: 90vw;
     /* position:fixed; */
 }
-.fixed-sideBar{
+/* .fixed-sideBar{
  position: fixed;
     top:130px;
+} */
+
+  
+.fixed-admin {
+  position: fixed;
+  top: 90px;
+  /* left: 0;
+  width: 100%;
+  min-height: 100px;
+  z-index: 999;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  background-color: var(--bgSoft);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+  transition: top 1s ease; /* זמן: 1 שנייה, אופן: ease */
 }
+
+
 
 /* .sidebar-user{
   display: flex;
@@ -32,13 +49,13 @@ color:var(--text);
     list-style: none;
     display: flex;
     /* flex-direction: row; */
-    justify-content: space-between;
+    justify-content: space-around;
 
 }
 .sidebar-menu-li{
   display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content:  space-around;
 }
 .sidebar-menu-cat{
 color: rgb(66, 63, 63);
@@ -52,7 +69,7 @@ margin: 10px 0px;
   justify-content: center;
   align-items: center;
   gap: 10px;
-  margin: 0px;
+  margin: 0;
   color: var(--text);
   width: 18vw;
   border-bottom-left-radius: 5px;
@@ -68,7 +85,8 @@ margin: 10px 0px;
     background-color:  var(--textSoft);
 }
 .sidebar-logout{
-  widows: 100%;
+  /* widows: 100%; */
+  margin-right: 0;
 
 }
 /* .sidebar-logout :hover{

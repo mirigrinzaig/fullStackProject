@@ -63,7 +63,8 @@
 
 
 .bigImage {
-    min-width: 85vw;
+    min-width: 80vw;
+    max-width: 80vw;
     min-height: 80vh;
     margin-top: 10vh;
     margin-right: 2%;

@@ -11,7 +11,7 @@ import {
 
 } from "react-icons/md"
 import {useSendLogoutMutation} from "../../../fetures/auth/authApiSlice"
-import { useEffect } from "react"
+import { useEffect,useState} from "react"
 import { useNavigate } from "react-router-dom"
 import useAuth from "../../../hooks/useAuth"
 
@@ -88,8 +88,24 @@ const SideBar = () => {
         logout()
         navigate("/")
     }
+
+
+    const [showFixedMenu, setShowFixedMenu] = useState(false);
+    useEffect(() => {
+        const handleScroll = () => {
+            const threshold = 120; // הגדרת סף הגלילה שבו ישתנה התפריט ל־position: fixed
+            const isScrolled = window.scrollY > threshold;
+
+            setShowFixedMenu(isScrolled);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
     return (
-        <div className="sidebar">
+        <div className={`"sidebar" ${showFixedMenu ? "fixed-admin" : ""}`}>
             {/* <div className="sidebar-user">
                 <img src={user.image || "/logo512.png"} alt="" width="50" height="50" className="sidebar-user-image"/>
                 <div className="sidebar-user-datails">
@@ -108,8 +124,9 @@ const SideBar = () => {
                     ))}
                 </li>
             ))}
+           <li className="sidebar-menu-li"><button onClick={logOutClick} className="sidebar-logout"><MdLogout/>יציאה</button></li> 
         </ul>
-        <button onClick={logOutClick} className="sidebar-logout"><MdLogout/>יציאה</button>
+        
         </div>
     )
 }

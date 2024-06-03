@@ -22,6 +22,7 @@ import PlumaAbout from "./fetures/products/categories/PlumaAbout"
 import React, { useEffect ,useLocation } from 'react';
 import Regulation from "./fetures/products/categories/Regulations"
 import Posts from "./fetures/products/categories/Posts"
+import FeedbackForm from "./fetures/pages/FeedbackForm"
 
 
 const App = () => {
@@ -34,6 +35,7 @@ const App = () => {
                 <Route path="/about" element={<PlumaAbout/>}/>
                 <Route path="/regulation" element={<Regulation/>}/>
                 <Route path="/posts" element={<Posts/>}/>
+                <Route path="/feedback" element={<FeedbackForm/>}/>
                 {/* <Route index element={<HomeMain/>} /> */}
                 <Route path="/categories/companies" element={<ProductListPublic  category="company"/>} />
                 <Route path="/categories/accessories" element={<ProductListPublic category="accessories"/>} />

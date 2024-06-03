@@ -19,7 +19,7 @@
 .footer-logo{
     font-weight: bold;
     max-height: 27vh;
-    margin-top: 5vh;
+    margin-top: 10px;
     margin-bottom: 0;
      object-fit: cover;
 }

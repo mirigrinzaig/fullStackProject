@@ -42,8 +42,11 @@ const ProductsListPublic = ({ category }) => {
     // בדיקה של קיום הנתונים והשמת ערכים בהתאם
     let filteredData = [...products];
 
-    if (category && category !== "company" &&category!=='promotions') {
+    if (category && category !== "company" &&category!=='promotions'&&category!=="pluma") {
         filteredData = filteredData.filter((product) => toLowerCase(product.category) === toLowerCase(category));
+    }
+    if (category && category === "pluma" ) {
+        filteredData = filteredData.filter((product) => toLowerCase(product.company) === toLowerCase("pluma"));
     }
 
     if (q) {
