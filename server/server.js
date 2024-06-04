@@ -19,6 +19,7 @@ app.use(cors(corsOptions))
 app.use(express.json())
 app.use(cookieParser())
 
+
 //routes
 app.use("/api/users",require("./routes/usersRoutes"))
 app.use("/api/auth",require("./routes/authRoutes"))
@@ -37,4 +38,5 @@ mongoose.connection.on('error',err=>{
     console.log("connection to db error");
     console.log(err);
 })
+
 

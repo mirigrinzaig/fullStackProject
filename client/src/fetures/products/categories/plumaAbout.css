@@ -2,6 +2,25 @@
    text-align: right;
     font-size: 1.5rem;
     font-weight: lighter;
+    margin: 0;
+    min-width: 40vw;
+}
+
+.aboutWrapper{
+    display: flex;
+    justify-content: space-between;
+}
+
+.leftImg{
+    min-width: 40vw;
+    min-height: 80vh;
+    margin-left: 0;
+    margin-right: 2vw;
+}
+
+.iconService{
+    max-width: 30px;
+    max-height: 30px;
 }
 
 .about{
@@ -62,5 +81,21 @@ li::marker {
     color: #ff9d9d;
     }
 
+h4{
+    color:palevioletred;
+    /* font-weight: lighter; */
+}
+
+
+    @media screen and (max-width: 908px) {
+
+        .aboutWrapper{
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+        }
+
+
+    }
 
 

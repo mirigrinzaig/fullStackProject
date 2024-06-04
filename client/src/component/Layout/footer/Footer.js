@@ -44,7 +44,7 @@ const Footer = () => {
                     <Link to="/about" className="linkCompany linkAbout">אודות</Link>
                     <Link to="/categories/plumabrand" className="linkCompany linkAbout">המותג שלנו</Link>
                     <Link to="/posts" className="linkCompany linkAbout">פוסטים</Link>
-                    <Link to="/feedback" className="linkCompany linkAbout">שליחת משוב</Link>
+                    {/* <Link to="/feedback" className="linkCompany linkAbout">שליחת משוב</Link> */}
                 </div>
                 <div className="footerCantact">
                     <h3>צרו קשר:</h3>
@@ -68,7 +68,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="footerStoreDetails">
-                    <h3>אפשרויות שירות</h3>
+                    <h3>אפשרויות שירות:</h3>
                     <div className="timeActive">
                         <p>שעות פעילות החנות:
                         </p>

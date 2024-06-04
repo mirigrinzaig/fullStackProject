@@ -3,11 +3,16 @@ import "./feedbackForm.css"
 import useAuth from "../../hooks/useAuth"
 import { useNavigate } from "react-router-dom"
 import emailjs from 'emailjs-com'
+// const nodemailer = require('nodemailer');
+
+
 // import 'dotenv/config'
 
 const FeedbackForm = () => {
 
   const navigate = useNavigate()
+
+ 
 
   const { _id, name: n, email: e} = useAuth()
   const [name, setName] = useState(n);

@@ -147,7 +147,7 @@ const HomePage = () => {
                 <h3 className="productsTitle">מה עוד אפשר להציע לכם ? </h3>
                 <CategoriesCarousel />
                 <h3 className="productsTitle">מוצרים במבצע :</h3>
-
+                <Link className="linkToPromotions" to={"http://localhost:3000/categories/promotions"}>לכל המבצעים &#62;&gt;</Link>
                 {arrWordsSearch?.length < 1 && <div className="errorPage">נראה שאין מוצרים העונים על התנאי שלך, נסה לחפש חיפוש מורחב יותר.</div>}
                 <div className="products">
                     {arrWordsSearch.map(product => (
@@ -173,7 +173,7 @@ const HomePage = () => {
                             </div>
                         ) : null
                     ))}
-                    <Link to={"http://localhost:3000/categories/promotions"}>לכל המבצעים</Link>
+                   
                 </div>
 
                 <h3 className="productsTitle">המותגים שלנו... </h3>

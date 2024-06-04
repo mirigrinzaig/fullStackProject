@@ -86,10 +86,32 @@
     
 }
 
-/* .image-carousel{
-
-
+/* .linkToPromotions{
+    font-weight: lighter;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-right: 80vw;
+    margin-top: 0;
+    position:static;
+    top: 0;
 } */
+
+.linkToPromotions {
+    font-weight: lighter;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-right: 80vw;
+    position: static;
+    top: 0;
+    vertical-align: middle; /* הוסף שורה זו */
+    max-width: 150px;
+  }
+
+  .linkToPromotions:hover{
+    border-bottom: solid 1.5px rgb(255, 112, 136);
+    color: rgb(255, 112, 136);
+  }
+  
 
 
 

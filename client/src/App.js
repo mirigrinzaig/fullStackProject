@@ -23,6 +23,7 @@ import React, { useEffect ,useLocation } from 'react';
 import Regulation from "./fetures/products/categories/Regulations"
 import Posts from "./fetures/products/categories/Posts"
 import FeedbackForm from "./fetures/pages/FeedbackForm"
+import ContactForm from "./fetures/pages/ContactForm"
 
 
 const App = () => {
@@ -35,7 +36,7 @@ const App = () => {
                 <Route path="/about" element={<PlumaAbout/>}/>
                 <Route path="/regulation" element={<Regulation/>}/>
                 <Route path="/posts" element={<Posts/>}/>
-                <Route path="/feedback" element={<FeedbackForm/>}/>
+                {/* <Route path="/feedback" element={<ContactForm/>}/> */}
                 {/* <Route index element={<HomeMain/>} /> */}
                 <Route path="/categories/companies" element={<ProductListPublic  category="company"/>} />
                 <Route path="/categories/accessories" element={<ProductListPublic category="accessories"/>} />
