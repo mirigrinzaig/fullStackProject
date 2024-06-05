@@ -63,13 +63,14 @@
 
 
 .bigImage {
-    min-width: 80vw;
-    max-width: 80vw;
+    min-width: 89vw;
+    max-width: 89vw;
     min-height: 80vh;
     margin-top: 10vh;
     margin-right: 2%;
     margin-left: 2%;
-    object-fit: fill;
+    object-fit: cover;
+
     /* object-fit: cover;
     object-position: center; */
     transition: opacity 1000s ease-in-out;

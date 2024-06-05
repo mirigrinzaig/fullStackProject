@@ -1,4 +1,4 @@
-import "./plumaAbout.css"
+import "../about/plumaAbout.css"
 
 const Regulation = () => {
 

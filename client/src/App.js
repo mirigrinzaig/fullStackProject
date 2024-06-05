@@ -17,13 +17,17 @@ import HomeMain from "./fetures/home/HomeMain"
 import FavouritesList from "./fetures/products/List/FavouritesList"
 import ProductListPublic from "./fetures/products/List/ProductsListPublic"
 import ScrollToTop from './ScrollToTop';
-import PlumaAbout from "./fetures/products/categories/PlumaAbout"
+import PlumaAbout from "./fetures/about/PlumaAbout"
+import Regulation from "./fetures/regulation/Regulations"
+import Posts from "./fetures/posts/Posts"
+import SportLinePost from "./fetures/posts/CarriagePost"
+import WinterPost from "./fetures/posts/WinterPost"
+import SafePost from "./fetures/posts/SafePost"
+import CarriagePost from "./fetures/posts/CarriagePost"
+import BadPost from "./fetures/posts/BadPost"
 
-import React, { useEffect ,useLocation } from 'react';
-import Regulation from "./fetures/products/categories/Regulations"
-import Posts from "./fetures/products/categories/Posts"
-import FeedbackForm from "./fetures/pages/FeedbackForm"
-import ContactForm from "./fetures/pages/ContactForm"
+// import FeedbackForm from "./fetures/pages/FeedbackForm"
+// import ContactForm from "./fetures/pages/ContactForm"
 
 
 const App = () => {
@@ -31,33 +35,38 @@ const App = () => {
         <ScrollToTop />
         <Routes>
             <Route path="/" element={<SiteLayout />} >
-                <Route index element={<HomePage/>} />
-                <Route path="/favouriets" element={<FavouritesList/>}/>
-                <Route path="/about" element={<PlumaAbout/>}/>
-                <Route path="/regulation" element={<Regulation/>}/>
-                <Route path="/posts" element={<Posts/>}/>
+                <Route index element={<HomePage />} />
+                <Route path="/favouriets" element={<FavouritesList />} />
+                <Route path="/about" element={<PlumaAbout />} />
+                <Route path="/regulation" element={<Regulation />} />
+                <Route path="/posts" element={<Posts />} />
+                <Route path="/posts/sportLinePost" element={<SportLinePost />} />
+                <Route path="/posts/winterPost" element={<WinterPost />} />
+                <Route path="/posts/safePost" element={<SafePost />} />
+                <Route path="/posts/carriagePost" element={<CarriagePost />} />
+                <Route path="/posts/badPost" element={<BadPost />} />
                 {/* <Route path="/feedback" element={<ContactForm/>}/> */}
                 {/* <Route index element={<HomeMain/>} /> */}
-                <Route path="/categories/companies" element={<ProductListPublic  category="company"/>} />
-                <Route path="/categories/accessories" element={<ProductListPublic category="accessories"/>} />
-                <Route path="/categories/bath" element={<ProductListPublic category="bath"/>} />
-                <Route path="/categories/clothing" element={<ProductListPublic category="clothing"/>} />
-                <Route path="/categories/feed" element={<ProductListPublic category="feed"/>}  />
-                <Route path="/categories/hygine" element={<ProductListPublic category="hygine"/>} />
-                <Route path="/categories/play"element={<ProductListPublic category="play"/>}  />
-                <Route path="/categories/presents" element={<ProductListPublic category="presents"/>}  />
-                <Route path="/categories/safe" element={<ProductListPublic category="safe"/>}  />
-                <Route path="/categories/sleep" element={<ProductListPublic category="sleep"/>} />
-                <Route path="/categories/walk" element={<ProductListPublic category="walk"/>}  />
-                <Route path="/categories/plumabrand" element={<ProductListPublic category="pluma"/>}  />
-                <Route path="/categories/promotions"element={<ProductListPublic category="promotions"/>}  />
+                <Route path="/categories/companies" element={<ProductListPublic category="company" />} />
+                <Route path="/categories/accessories" element={<ProductListPublic category="accessories" />} />
+                <Route path="/categories/bath" element={<ProductListPublic category="bath" />} />
+                <Route path="/categories/clothing" element={<ProductListPublic category="clothing" />} />
+                <Route path="/categories/feed" element={<ProductListPublic category="feed" />} />
+                <Route path="/categories/hygine" element={<ProductListPublic category="hygine" />} />
+                <Route path="/categories/play" element={<ProductListPublic category="play" />} />
+                <Route path="/categories/presents" element={<ProductListPublic category="presents" />} />
+                <Route path="/categories/safe" element={<ProductListPublic category="safe" />} />
+                <Route path="/categories/sleep" element={<ProductListPublic category="sleep" />} />
+                <Route path="/categories/walk" element={<ProductListPublic category="walk" />} />
+                <Route path="/categories/plumabrand" element={<ProductListPublic category="pluma" />} />
+                <Route path="/categories/promotions" element={<ProductListPublic category="promotions" />} />
                 <Route path="login" element={<LoginPage />} />
                 <Route path="regist" element={<RegistPage />} />
                 <Route path="/public/:productBarcod" element={<SingleProductPublic />} />
                 <Route element={<PersistsLogin />}>
                     <Route element={<RequireAuth allowRoles={['admin', 'user']} />}>
                         <Route path="/dash" element={<DashLayout />}>
-                            <Route index element={<HomePage/>} />
+                            <Route index element={<HomePage />} />
                             <Route element={<RequireAuth allowRoles={['admin']} />}>
                                 <Route path="users" element={<Outlet />}>
                                     <Route index element={<UsersList />} />
@@ -76,7 +85,7 @@ const App = () => {
                     </Route>
                 </Route>
             </Route>
-            
+
         </Routes>
     </Router>
 }

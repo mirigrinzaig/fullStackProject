@@ -15,7 +15,7 @@ import { BsFillHeartFill } from "react-icons/bs";
 import { BsHeart } from "react-icons/bs";
 import useAuth from "../../hooks/useAuth"
 
-const images = ["./baby.jpg", "./promotions-img.png", "./imgs/nice.jpg", "./imgs/nice1.jpg", "./imgs/pluma2.jpg", "./imgs/pluma3.jpg", "./imgs/pluma4.jpg", "./imgs/pluma5.jpg", "./imgs/pluma6.jpg", "./imgs/pluma7.jpg","./imgs/pluma8.jpg"];
+const images = ["./baby.jpg","./imgs/sale.jpg", "./imgs/sale2.jpg","./imgs/sale6.jpg","./imgs/nice.jpg", "./imgs/nice1.jpg", "./imgs/pluma2.jpg", "./imgs/pluma3.jpg", "./imgs/pluma4.jpg", "./imgs/pluma5.jpg", "./imgs/pluma6.jpg", "./imgs/pluma7.jpg","./imgs/pluma8.jpg"];
 
 
 const HomePage = () => {
@@ -88,11 +88,11 @@ const HomePage = () => {
         const interval = setInterval(() => {
             const newIndex = (currentImageIndex + 1) % images.length;
             const imageElement = document.querySelector('.image-carousel img.bigImage');
-            imageElement.classList.remove('bigImage');
-            imageElement.classList.add('bigImageNone');
+            // imageElement.classList.remove('bigImage');
+            // imageElement.classList.add('bigImageNone');
             setTimeout(() => {
-                imageElement.classList.remove('bigImageNone');
-                imageElement.classList.add('bigImage');
+                // imageElement.classList.remove('bigImageNone');
+                // imageElement.classList.add('bigImage');
                 setCurrentImageIndex(newIndex);
             }, 100);
         }, 8000);

@@ -32,7 +32,7 @@
   text-align: center;
   max-width: 7vw;
   min-height: 7vw;
-  margin: 0 auto;
+  margin: 0;
 }
 
 .carouselWrapper {
@@ -128,6 +128,12 @@
 
 .slick-next {
   right: 0px; 
+}
+
+.companyImg{
+  min-height: 10vh;
+  max-height: 10vh;
+  margin-top: 0px;
 }
 
 @media screen and (max-width: 908px) {

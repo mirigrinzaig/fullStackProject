@@ -1,0 +1,14 @@
+.singlePost{
+    display: flex;
+    flex-direction: column;
+    max-width: 80vw;
+    margin-right: 8%;
+}
+
+.postImgSingle{
+    min-width: 80vw ;
+    min-height: 80vh ;
+    max-width: 80vw ;
+    max-height: 80vh ;
+    margin-top: 10px;
+}

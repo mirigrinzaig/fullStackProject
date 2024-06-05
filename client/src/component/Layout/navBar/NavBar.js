@@ -6,6 +6,9 @@ import {
     MdHome,
     MdHomeFilled
 } from "react-icons/md"
+import { LiaGrinStarsSolid } from "react-icons/lia";
+import { CiHome } from "react-icons/ci";
+import { RiHomeSmileLine } from "react-icons/ri";
 import { Link, NavLink } from "react-router-dom"
 import MenuLink from "../sidebar/MenuLink"
 import useAuth from "../../../hooks/useAuth"
@@ -89,7 +92,8 @@ const NavBar = () => {
             {/* </div >} */}
             <div className={`navbar-menu ${showFixedMenu ? "fixed-menu" : ""}`}>
                 <Search className="navBarSearch" placeholder={"חיפוש כללי"} />
-                <NavLink className="homeLink" to='/'><MdHome size={20} className="home" />בית</NavLink>
+                {/* <NavLink className="homeLink" to='/'><MdHome size={20} className="home" />בית</NavLink> */}
+                <NavLink className="homeLink" to='/'><CiHome size={30} className="home" />בית</NavLink>
                 {/* <MenuLink item={item}></MenuLink> */}
                 <NavLink to='/categories/clothing'><img src="./categories/clothing.png" alt="" /></NavLink>
                 <NavLink to='/categories/accessories'><img src="./categories/accessories.png" /></NavLink>
@@ -102,7 +106,8 @@ const NavBar = () => {
                 <NavLink to='/categories/hygine'><img src="./categories/hygine.png" /></NavLink>
                 <NavLink to='/categories/presents'><img src="./categories/presents.png" /></NavLink>
                 <NavLink className="aMotag" to='/categories/plumabrand'><img className="IMotag" src="/blackLogo.png"/>המותג</NavLink>
-                <NavLink className="aMotag"  to='/categories/promotions'><img className="IMotag" src="./categories/promotions.png"/>מבצעים</NavLink>
+                {/* <NavLink className="aMotag"  to='/categories/promotions'><img className="IMotag" src="./categories/promotions.png"/>מבצעים</NavLink> */}
+                <NavLink className="aMotag"  to='/categories/promotions'><LiaGrinStarsSolid size={50}/>מבצעים</NavLink>
             </div>
         </div >
     )

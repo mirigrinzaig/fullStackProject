@@ -221,7 +221,7 @@
         cursor: pointer;
         color: rgb(87, 84, 84);
         background-color: none;
-        font-size: 4rem;
+        /* font-size: 4rem; */
         font-weight: lighter;
 
     }

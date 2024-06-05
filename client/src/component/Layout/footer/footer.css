@@ -35,8 +35,9 @@
     justify-content: space-around;
 }
 .logoP{
-    min-width: 20vw;
-    min-height: 39vh;
+    min-width: 25vw;
+    /* min-height: 39vh; */
+    max-height: 31vh;
 }
 .footerInfo{
     display: flex;
@@ -110,7 +111,8 @@ link:active:hover{
          object-fit: cover;
     }
     .logoP{
-        max-height: 5vh;
+        /* max-height: 5vh; */
+        margin: 0;
     }
     .footerCategories, .footerCategories div,.categoryLinkFooter,.categoriesTitle{
         display:none;
