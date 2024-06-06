@@ -24,6 +24,8 @@ app.use(cookieParser())
 app.use("/api/users",require("./routes/usersRoutes"))
 app.use("/api/auth",require("./routes/authRoutes"))
 app.use("/api/products",require("./routes/productsRoutes"))
+app.use("/api/posts",require("./routes/postsRoutes"))
+
 app.get("/",(req,res)=>{
 res.send("this is the home page")
 })
