@@ -1,14 +1,26 @@
 .singlePost{
+    margin: 40px;
     display: flex;
     flex-direction: column;
     max-width: 80vw;
     margin-right: 8%;
+    text-align: right ;
+    font-size: large;
+    background-color: white;
+    border-radius: 20px;
+    padding: 40px;
 }
 
 .postImgSingle{
-    min-width: 80vw ;
+    min-width: 70vw ;
     min-height: 80vh ;
-    max-width: 80vw ;
-    max-height: 80vh ;
+    max-width: 70vw ;
+    max-height: 89vh ;
     margin-top: 10px;
+    margin-right: 5%;
+}
+
+.littleTitle,.postTitle{
+    text-align: right ;
+   
 }

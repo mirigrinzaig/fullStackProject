@@ -93,7 +93,7 @@ const NavBar = () => {
             <div className={`navbar-menu ${showFixedMenu ? "fixed-menu" : ""}`}>
                 <Search className="navBarSearch" placeholder={"חיפוש כללי"} />
                 {/* <NavLink className="homeLink" to='/'><MdHome size={20} className="home" />בית</NavLink> */}
-                <NavLink className="homeLink" to='/'><CiHome size={30} className="home" />בית</NavLink>
+                <NavLink className="homeLink" to='/'><CiHome size={37} className="home" />בית</NavLink>
                 {/* <MenuLink item={item}></MenuLink> */}
                 <NavLink to='/categories/clothing'><img src="./categories/clothing.png" alt="" /></NavLink>
                 <NavLink to='/categories/accessories'><img src="./categories/accessories.png" /></NavLink>

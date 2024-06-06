@@ -56,7 +56,10 @@
     text-align: right;
     margin-top: 0;
 }
-.footerInfo div :hover{
+/* .footerInfo div :hover{
+    color: rgb(255, 155, 171);
+} */
+.linkCompany:hover{
     color: rgb(255, 155, 171);
 }
 .timeActive {

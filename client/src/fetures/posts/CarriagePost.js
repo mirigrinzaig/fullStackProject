@@ -2,7 +2,8 @@ import "./post.css"
 
 const CarriagePost = () => {
     return <div className="singlePost" >
-        <img src="/imgs/stroller.png" className="postImgSingle" alt="" />
+        <img src="/imgs/stroller-removebg-preview.png" className="postImgSingle" alt="" />
+        {/* <img src="/imgs/stroller2.jfif" className="postImgSingle" alt="" /> */}
         <h2> "איך לבחור עגלת תינוק?",</h2>
         <p>
             בחירת עגלה לתינוק היא פעולה חשובה שדורשת התייעצות, מחשבה והבנה של צרכי התינוק וההורים. הנה מדריך לבחירת עגלה:

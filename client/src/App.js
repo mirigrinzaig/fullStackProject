@@ -20,7 +20,7 @@ import ScrollToTop from './ScrollToTop';
 import PlumaAbout from "./fetures/about/PlumaAbout"
 import Regulation from "./fetures/regulation/Regulations"
 import Posts from "./fetures/posts/Posts"
-import SportLinePost from "./fetures/posts/CarriagePost"
+import SportLinePost from "./fetures/posts/SportLinePost"
 import WinterPost from "./fetures/posts/WinterPost"
 import SafePost from "./fetures/posts/SafePost"
 import CarriagePost from "./fetures/posts/CarriagePost"
