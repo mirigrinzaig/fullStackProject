@@ -37,6 +37,7 @@ const PlumaBrand = () => {
                 </Link>
             </div>
             <div className="products-list-table">
+            <Link to={"https://drive.google.com/file/d/1LzT3w1EYq0bjlFY34rFeLDlkQWIH2PVk/view"} target="_blank">להורדת הקטלוג שלנו</Link>
                 <div className="products">
                     {filteredData.map(product => (
                         <div className="single" key={product._id}>
