@@ -1,7 +1,7 @@
 
-import React from "react";
 import "./posts.css";
 import { NavLink } from "react-router-dom/dist/umd/react-router-dom.development"
+import useAuth from "../../hooks/useAuth"
 
 const posts = [
     {
@@ -48,10 +48,12 @@ const posts = [
 
 
 const Posts = () => {
+    const { _id, userName, name, email,roles } = useAuth()
     return (
         <div className="posts-container">
             <div className="post-header">
                 <h3 className="postsTitle">פוסטים אחרונים : </h3>
+                {roles==="admin"&&<button className="addPostAdmin">להוספת פוסט</button>}
             </div>
             <div className="posts-list">
                 {posts.map((post) => (

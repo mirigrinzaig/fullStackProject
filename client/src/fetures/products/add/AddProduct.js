@@ -52,13 +52,14 @@ const AddProduct = () => {
     return (
         <div className="add-product-container">
             <form onSubmit={formSubmit} className="add-product-form">
+                <h2 className="addTitle">הוספת מוצר לחנות</h2>
                 <input type="text" name="name" placeholder="שם המוצר" required />
                 <input type="text" name="barcod" placeholder="ברקוד" required />
                 <input type="text" name="company" placeholder="חברה" required />
                 <input type="text" name="category" placeholder="קטגוריה" onChange={(e) => { setCategory(e.target.value) }} />
                 <input type="text" name="itemDescription" placeholder="תיאור המוצר" />
                 {/* only if is a cloth there is a size! */}
-                {(category.toLowerCase() === "clothing" || category === "ביגוד") && <input type="text" name="size" placeholder="גודל" />}
+                {(category.toLowerCase() === "clothing" || category === "ביגוד") && <input type="text" name="size" placeholder="מידה" />}
                 <input type="text" name="amount" placeholder="כמות יחידות" required />
                 <input type="number" name="amountColors" placeholder="כמות צבעים במלאי" onChange={handleAmountChange} />
                 <div className="colors">
@@ -80,7 +81,7 @@ const AddProduct = () => {
                 </div>
 
                 {/* <input list="browsers" name="browser"/> */}
-                <input type="file" name="image" />
+                <input type="file" name="image" placeholder="תמונת  המוצר"/>
                 <input type="text" name="agent" placeholder="שם סוכן" />
                 <input type="text" name="agentPrice" placeholder="מחיר מהסוכן" />
                 <input type="text" name="sellingPrice" placeholder="מחיר למכירה" />

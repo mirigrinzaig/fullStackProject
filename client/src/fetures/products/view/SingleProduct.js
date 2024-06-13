@@ -38,28 +38,36 @@ const SingleProduct = () => {
     return (
         <div className="single-product-container" style={{ flexDirection: 'column' }}>
             <div className="single-product-info">
+            <h2>{product.name}</h2>
                 <div className="single-product-img-container">
                     <img src={getFilePath(product.image)} alt="" />
                 </div>
-                {product.name}
             </div>
             <div className="single-product-form-container">
                 <form className="single-product-form" onSubmit={formSubmit}>
                     <label>שם מוצר</label>
                     <input defaultValue={product.name} type="text" name="name" placeholder="שם המוצר" />
+                    <label>ברקוד</label>
                     <input defaultValue={product.barcod} type="text" name="barcod" placeholder="ברקוד" required />
                     {/* //do select for company name? */}
+                    <label>חברה</label>
                     <input defaultValue={product.company} type="text" name="company" placeholder="חברה" required />
+                    <label>קטגוריה</label>
                     <input defaultValue={product.category} type="text" name="category" placeholder="קטגוריה" />
-                    <input defaultValue={product.size} type="number" name="size" placeholder="גודל" />
+                    {(product.category.toLowerCase() === "clothing" || product.category === "ביגוד") && <label>מידה</label>}
+                    {(product.category.toLowerCase() === "clothing" || product.category === "ביגוד") && <input type="text" name="size" placeholder="מידה" />}
+                    <label>כמות</label>
                     <input defaultValue={product.amount} type="text" name="amount" placeholder="כמות יחידות" required />
                     {/* //do select for colors? we need many and not only one! */}
                     {/* <input list="browsers" name="browser"/> */}
                     {/* defaultValue={product.image}  for image */}
-                    <label>תמונת מוצר</label>
+                    <label>שינוי תמונת מוצר</label>
                     <input type="file" name="image" />
+                    <label>שם הסוכן</label>
                     <input defaultValue={product.agent} type="text" name="agent" placeholder="שם סוכן" />
+                    <label>מחיר מהסוכן</label>
                     <input defaultValue={product.agentPrice} type="number" name="agentPrice" placeholder="מחיר מהסוכן" />
+                    <label>מחיר למכירה</label>
                     <input defaultValue={product.sellingPrice} type="number" name="sellingPrice" placeholder="מחיר למכירה" />
                     <label>
                         <input type="radio" name="inSale" value="true" checked /> במבצע

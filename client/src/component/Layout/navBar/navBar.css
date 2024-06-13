@@ -142,9 +142,16 @@
         flex-direction: column;
         min-height: 50px;
         max-height: 50px;
-        margin-bottom: 10px;
         color: var(--text);
-        font-size: 13.5px;
+        font-size: 13.8px;
+    }
+    .brand{
+        margin-bottom: 9px;
+
+    }
+    .sale{
+        margin-bottom: 0px;
+
     }
     .navbar-input {
         background-color: transparent;
@@ -229,7 +236,9 @@
     .homeLink {
         display: flex;
         flex-direction: column;
-        color: #505151
+        color: #595b5b;
+        margin-bottom: 3px;
+        font-size: 1.1rem;
     }
 
 

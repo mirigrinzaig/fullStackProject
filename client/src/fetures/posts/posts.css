@@ -110,6 +110,17 @@
     font-size: 17px;
   }
 
+  .addPostAdmin{
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #ff9090;
+    color: #fff;
+    text-decoration: none;
+    margin-top: 0;
+    margin-right: 80vw;
+    border-radius: 20px;
+  }
+
   @media screen and (max-width: 900px) {
     .post{
         min-width: 90vw;

@@ -1,5 +1,4 @@
 .sidebar{
-   
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -49,7 +48,11 @@ color:var(--text);
     list-style: none;
     display: flex;
     /* flex-direction: row; */
-    justify-content: space-around;
+    justify-content: center;
+    gap: 5px;
+    max-width: 70vw;
+    margin-right: 15vw;
+    margin-left: 15vw;
 
 }
 .sidebar-menu-li{
@@ -61,7 +64,7 @@ color:var(--text);
 color: rgb(66, 63, 63);
 font-weight: bold;
 font-size: 13px;
-margin: 10px 0px;
+margin: 0px;
 }
 .sidebar-menu-link, .sidebar-logout {
   padding: 20px;
@@ -86,7 +89,8 @@ margin: 10px 0px;
 }
 .sidebar-logout{
   /* widows: 100%; */
-  margin-right: 0;
+  margin: 0;
+ 
 
 }
 /* .sidebar-logout :hover{

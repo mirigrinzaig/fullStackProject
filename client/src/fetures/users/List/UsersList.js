@@ -25,6 +25,7 @@ const UsersList = () => {
 
     return (
         <div className="users-list">
+             <h2 className="users-title">משתמשים במערכת</h2>
             <div className="users-list-top">
                 <Search placeholder={"חיפוש לפי שם משתמש"} />
                 <Link to="/dash/users/add" className="users-list-add-btn">
@@ -32,9 +33,9 @@ const UsersList = () => {
                 </Link>
             </div>
             <table className="users-list-table">
-                <thead>
+                <thead className="tHeads">
                     <tr>
-                        <td>id</td>
+                        <td>שם</td>
                         <td>שם משתמש</td>
                         <td>אימייל</td>
                         <td>טלפון</td>
@@ -46,7 +47,6 @@ const UsersList = () => {
                         <tr key={user._id}>
                             <td>
                                 <div className="users-list-user">
-                                    <img src={"/logo512.png"} alt="" width={40} height={40} className="users-list-user-image" />
                                     {user.name}
                                 </div>
                             </td>

@@ -104,11 +104,11 @@ const SingleProductPublic = () => {
     if (!product)
         return <h1>not found!!!</h1>
     return (
-        <div className="single-product-container">
+        <div className="single-product-container-public">
             {/* <div className="single-product-img-container">
                 <img src={getFilePath(product.image)} alt="" />
             </div> */}
-            <div className="single-product-img" style={{ backgroundImage: `url(${getFilePath(product.image)})` }}>
+            <div className="single-product-img-public" style={{ backgroundImage: `url(${getFilePath(product.image)})` }}>
             </div>
             {/* `url(${getFilePath(product.image)})` */}
             <div className="single-product-left-side">

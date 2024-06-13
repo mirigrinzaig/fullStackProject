@@ -1,4 +1,4 @@
-.single-product-container {
+.single-product-container-public{
     display: flex;
     /* flex-direction: column; */
     flex-direction: row;
@@ -12,13 +12,13 @@
     align-items: center;
 }
 
-.single-product-img-container {
+.single-product-img-container-public{
     position: relative;
     border-radius: 100px;
     overflow: hidden;
 
 }
-.single-product-img-container img{
+.single-product-img-container-public img{
     /* width: 100% important; */
     /* object-fit: contain; */
     max-width: 75vw;
@@ -42,7 +42,7 @@
 #productName{
     font-size: 60px;
 }
-.single-product-img{
+.single-product-img-public{
     max-width: 50vw;
     max-height:85vh;
     min-width: 50vw;

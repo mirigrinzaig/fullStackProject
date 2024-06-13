@@ -10,15 +10,15 @@ import {
     MdLogout
 
 } from "react-icons/md"
-import {useSendLogoutMutation} from "../../../fetures/auth/authApiSlice"
-import { useEffect,useState} from "react"
+import { useSendLogoutMutation } from "../../../fetures/auth/authApiSlice"
+import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import useAuth from "../../../hooks/useAuth"
 
 const SideBar = () => {
-    const {_id,userName,name,email,roles}=useAuth()
-    const navigate=useNavigate()
-    const [logout,{isSuccess}]=useSendLogoutMutation()
+    const { _id, userName, name, email, roles } = useAuth()
+    const navigate = useNavigate()
+    const [logout, { isSuccess }] = useSendLogoutMutation()
     const adminMenuItem = [
         {
             // title: "דפים",
@@ -42,7 +42,7 @@ const SideBar = () => {
                     title: "פעולות",
                     path: "/dash/actions",
                     icon: <MdPendingActions />
-                },
+                }
                 // {
                 //     title: "הגדרות",
                 //     path: "/dash/settings",
@@ -55,20 +55,21 @@ const SideBar = () => {
                 // }
             ],
         }]
-        const userMenuItem=[{
-            title: "משתמש",
-            list: [
-                {
-                    title: "הגדרות",
-                    path: "/dash/settings",
-                    icon: <MdOutlineSettings />
-                },
-                {
-                    title: "עזרה",
-                    path: "/dash/help",
-                    icon: <MdHelpCenter />
-                }
-            ],}]
+    const userMenuItem = [{
+        title: "משתמש",
+        list: [
+            {
+                title: "הגדרות",
+                path: "/dash/settings",
+                icon: <MdOutlineSettings />
+            },
+            {
+                title: "עזרה",
+                path: "/dash/help",
+                icon: <MdHelpCenter />
+            }
+        ],
+    }]
 
     const user = {
         username: "username",
@@ -76,15 +77,15 @@ const SideBar = () => {
         //we dond need picture, but i want to see how can i put it
         image: ""
     }
-    const menuItem=roles==='admin'?adminMenuItem:userMenuItem
+    const menuItem = roles === 'admin' ? adminMenuItem : userMenuItem
     //when success logout:
-    useEffect(()=>{
-        if(isSuccess){
+    useEffect(() => {
+        if (isSuccess) {
             navigate("/login")
         }
-    },[isSuccess])
+    }, [isSuccess])
 
-    const logOutClick=()=>{
+    const logOutClick = () => {
         logout()
         navigate("/")
     }
@@ -116,17 +117,17 @@ const SideBar = () => {
                 </div>
             </div> */}
             <ul className="sidebar-menu-list">
-            {menuItem.map(cat => (
-                <li className="sidebar-menu-li" key={cat.title}>
-                    <span className="sidebar-menu-cat">{cat.title}</span>
-                    {cat.list.map(item => (
-                        <MenuLink item={item}>{item.title}</MenuLink>
-                    ))}
-                </li>
-            ))}
-           <li className="sidebar-menu-li"><button onClick={logOutClick} className="sidebar-logout"><MdLogout/>יציאה</button></li> 
-        </ul>
-        
+                {menuItem.map(cat => (
+                    <li className="sidebar-menu-li" key={cat.title}>
+                        <span className="sidebar-menu-cat">{cat.title}</span>
+                        {cat.list.map(item => (
+                            <MenuLink item={item}>{item.title}</MenuLink>
+                        ))}
+                    </li>
+                ))}
+                <li className="sidebar-menu-li" key="exit"><button onClick={logOutClick} className="sidebar-logout"><MdLogout />יציאה</button></li>
+            </ul>
+
         </div>
     )
 }

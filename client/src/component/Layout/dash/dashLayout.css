@@ -4,6 +4,7 @@ body{
 .container{
     display: flex;
     flex-direction: column;
+    min-width: 100vw;
 }
 .menu {
     /* background-color: #5d7b88bd; */
@@ -12,9 +13,8 @@ body{
     min-width: 100vw;
 }
 .content{
-    flex:4;
     padding: 20px;
-    max-width: 80vw;
+    min-width: 90vw;
     align-items: center;
     justify-content: center;
     

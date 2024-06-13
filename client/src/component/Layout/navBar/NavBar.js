@@ -105,9 +105,9 @@ const NavBar = () => {
                 <NavLink to='/categories/safe'><img src="./categories/safe.png" /></NavLink>
                 <NavLink to='/categories/hygine'><img src="./categories/hygine.png" /></NavLink>
                 <NavLink to='/categories/presents'><img src="./categories/presents.png" /></NavLink>
-                <NavLink className="aMotag" to='/categories/plumabrand'><img className="IMotag" src="/blackLogo.png"/>המותג</NavLink>
+                <NavLink className="aMotag brand" to='/categories/plumabrand'><img className="IMotag" src="/blackLogo.png"/>המותג</NavLink>
                 {/* <NavLink className="aMotag"  to='/categories/promotions'><img className="IMotag" src="./categories/promotions.png"/>מבצעים</NavLink> */}
-                <NavLink className="aMotag"  to='/categories/promotions'><LiaGrinStarsSolid size={50}/>מבצעים</NavLink>
+                <NavLink className="aMotag sale"  to='/categories/promotions'><LiaGrinStarsSolid size={50}/>מבצעים</NavLink>
             </div>
         </div >
     )

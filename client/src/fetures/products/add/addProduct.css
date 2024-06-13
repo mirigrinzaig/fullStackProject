@@ -1,8 +1,15 @@
 .add-product-container{
-border-color: var(--bgSoft);
+background-color: white;
 padding: 20px;
 border-radius: 10px;
 margin-top: 10px;
+border-style: solid;
+border-color: pink;
+margin-right: 15vw;
+}
+
+.addTitle{
+  min-width: 100%;
 }
 .add-product-form{
 display: flex;
