@@ -1,29 +1,27 @@
 .users-list {
-    border-color: var(--bgSoft);
+    color: var(--text);
     padding: 20px;
-    border-radius: 10px;
     margin-top: 20px;
     max-width: 90vw;
     align-self: center;
     margin-right: 3vw;
 }
-
 .users-list-top {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #fff;
-    border-radius: 0px 0px 20px 20px;
-    padding-bottom: 20px;
+    background-color: white;
+    padding: 20px;
+    padding-top: 0;
 }
+
 
 .users-list-add-btn {
     padding: 10px;
     background-color: white;
-    color: rgb(255, 127, 127);
-    border-style: solid;
-    border-color: #6dcbce;
+    color: var(--bgPink);
     border-radius: 10px;
+    border: solid 2px var(--bgPink);
     cursor: pointer;
 }
 
@@ -32,18 +30,24 @@
     background-color: white;
     max-width: 90vw;
     align-self: center;
-   border-radius: 20px;
-   margin-top: 10px;
-   padding: 30px;
+    border-radius: 0 0 20px 20px;
+    margin-top: 10px;
+    padding: 20px;
+    font-family: var(--fontFamily);
 }
 
-.tHeads{
-    color: rgb(255, 142, 142);
-    font-size: larger;
+.tHeads {
+    color: var(--bgPink);
+    font-size: x-large;
 }
 
 .users-list-table td {
     padding: 10px;
+    border: solid 1px var(--bgSoft);
+    border-radius: 3px;
+}
+.users-list-table .td-no-border{
+    border: none;
 }
 
 .users-list-user {
@@ -67,22 +71,23 @@ cursor: pointer;
 font-size: 14px;
 }
 .users-list-view {
-    background-color: teal;
+    background-color: var(--bgSoft);
 }
 .users-list-delete{
-    background-color: crimson;
+    background-color: var(--bgPink);
 }
 .users-list-btns{
     display: flex;
     gap: 10px;
 }
 
-.users-title{
+.users-title {
     font-size: 2rem;
     font-weight: lighter;
     min-height: 10vh;
-    color:rgb(252, 134, 154);
+    color: var(--bgPink);
     background-color: #fff;
     padding-top: 20px;
+    font-family: var(--fontFamily);
     border-radius: 20px 20px 0px 0;
 }

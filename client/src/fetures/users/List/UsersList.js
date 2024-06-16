@@ -35,11 +35,11 @@ const UsersList = () => {
             <table className="users-list-table">
                 <thead className="tHeads">
                     <tr>
-                        <td>שם</td>
-                        <td>שם משתמש</td>
-                        <td>אימייל</td>
-                        <td>טלפון</td>
-                        <td>הרשאה</td>
+                        <td className="td-no-border">שם</td>
+                        <td className="td-no-border">שם משתמש</td>
+                        <td className="td-no-border">אימייל</td>
+                        <td className="td-no-border">טלפון</td>
+                        <td className="td-no-border">הרשאה</td>
                     </tr>
                 </thead>
                 <tbody>
@@ -62,7 +62,7 @@ const UsersList = () => {
                             <td>
                                 {user.roles}
                             </td>
-                            <td>
+                            <td className="td-no-border">
                                 <div className="users-list-btns">
                                 <Link to={`/dash/users/${user._id}`} className="users-list-btn users-list-view">view</Link>
                                 <button onClick={()=>{deleteClick(user)}} className="users-list-btn users-list-delete">delete</button></div>
