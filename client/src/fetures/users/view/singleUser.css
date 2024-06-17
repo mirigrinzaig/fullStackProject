@@ -2,6 +2,13 @@
 display: flex;
 gap: 50pX;
 margin-top: 20px;
+margin-left: 2%;
+margin-right: 2%;
+background-color: white;
+border-radius: 10px;
+max-width: 91vw;
+justify-content: center;
+text-align: right;
 }
 .single-user-info{
 border-color: var(--bgSoft);
@@ -11,37 +18,32 @@ font-weight: bold;
 color: var(--textSoft);
 height: max-content;
 }
-.single-user-img-container{
-flex: 1;
-width: 100%;
-height: 300px;
-position: relative; 
- border-radius: 10px; 
-overflow: hidden;
-margin-bottom: 20px;
-max-width: 25vw;
-}
-.single-user-img-container img{
-width: 100% important;
-object-fit: contain;
-}
+
+
 .single-user-form-container{
 border-color: var(--bgSoft);
 padding: 20px;
 border-radius: 10px;
 }
 .single-user-form{
-flex: 5;
-min-width: 40vw;
+min-width: 80vw;
+max-width: 60vw !important;
 display: flex;
-flex-direction: column;
+flex-wrap: wrap !important;
+/* margin-right: 2%; */
+gap: 20px;
+flex-direction: row;
+/* justify-content: center; */
+padding: 20px;
 }
 .single-user-form input{
     padding: 20px;
     border: solid 2px #2e374a;
     background-color:var(--bg);
     color: var(--text);
-    margin: 10px 0px;
+    /* margin: 10px 0px; */
+    min-width: 35vw;
+    max-width: 35vw;
 }
 .single-user-form label{
     font-size: 12px;
@@ -49,10 +51,33 @@ flex-direction: column;
 .single-user-form button{
 width: 100%;
 padding: 20px;
-background-color: teal;
+background-color:var(--bgSoft);
 color: var(--text);
 border: none;
 border-radius:5px;
 cursor: pointer;
 margin-top: 20px;
 }
+
+.single-user-title{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: lighter;
+    color: var(--bgSoft);
+}
+.single-user-input-wrapper{
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin:0px 30px 0px 30px;
+}
+
+@media screen and (max-width: 788px) {
+    .single-user-input-wrapper{
+        min-width: 500px !important;
+    }
+
+}
+
+
+

@@ -2,6 +2,8 @@ import "./usersList.css"
 import Search from "../../../component/search/Search"
 import {useGetAllUsersQuery,useDeleteUserMutation} from "../UsersApiSlice"
 import { Link, useSearchParams } from "react-router-dom"
+import { MdDelete,MdDeleteOutline,MdViewList,MdViewColumn} from "react-icons/md"
+import { GrView } from "react-icons/gr";
 
 const UsersList = () => {
     // const users = [{ _id: 1, name: "name", userName: "userName", email: "email", phone: "phone", roles: "roles" }
@@ -40,6 +42,8 @@ const UsersList = () => {
                         <td className="td-no-border">אימייל</td>
                         <td className="td-no-border">טלפון</td>
                         <td className="td-no-border">הרשאה</td>
+                        <td className="td-no-border">צפייה</td>
+                        <td className="td-no-border">מחיקה</td>
                     </tr>
                 </thead>
                 <tbody>
@@ -62,11 +66,18 @@ const UsersList = () => {
                             <td>
                                 {user.roles}
                             </td>
-                            <td className="td-no-border">
-                                <div className="users-list-btns">
-                                <Link to={`/dash/users/${user._id}`} className="users-list-btn users-list-view">view</Link>
-                                <button onClick={()=>{deleteClick(user)}} className="users-list-btn users-list-delete">delete</button></div>
+                            <td className="btn-user-list">
+                            <Link to={`/dash/users/${user._id}`} className="users-list-btn users-list-view"><GrView  size={20} color="black"/></Link>
                             </td>
+                            <td className="btn-user-list delete-byn-list" onClick={()=>{deleteClick(user)}}>
+                            <MdDelete size={20} color="black"/>
+                            </td>
+
+                            {/* <td className="td-no-border">
+                                <div className="users-list-btns">
+                                <Link to={`/dash/users/${user._id}`} className="users-list-btn users-list-view">תצוגה</Link>
+                                <button onClick={()=>{deleteClick(user)}} className="users-list-btn users-list-delete">מחיקה</button></div>
+                            </td> */}
                         </tr>
                     ))}
                 </tbody>

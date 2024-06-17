@@ -6,6 +6,7 @@
     align-self: center;
     margin-right: 3vw;
 }
+
 .users-list-top {
     display: flex;
     align-items: center;
@@ -30,30 +31,40 @@
     background-color: white;
     max-width: 90vw;
     align-self: center;
-    border-radius: 0 0 20px 20px;
+    /* border-radius: 0 0 20px 20px; */
     margin-top: 10px;
     padding: 20px;
     font-family: var(--fontFamily);
+    border-collapse: collapse;
 }
 
 .tHeads {
-    color: var(--bgPink);
-    font-size: x-large;
+    color: black;
+    /* font-size: 30px; */
+    font-weight: bolder;
+    
+}
+.tHeads tr{
+    /* background-color:pink; */
+    border-bottom: solid 1px pink; 
 }
 
 .users-list-table td {
     padding: 10px;
-    border: solid 1px var(--bgSoft);
-    border-radius: 3px;
+    /* border: solid 1px pink; */
+    /* border-radius: 3px; */
+    border-bottom: 1px solid pink;
+    /* border:none; */
 }
-.users-list-table .td-no-border{
+
+.users-list-table .td-no-border {
     border: none;
 }
 
 .users-list-user {
     display: flex;
     align-items: center;
-    gap: 10px;
+    /* gap: 10px; */
 }
 
 .users-list-user-image {
@@ -63,22 +74,43 @@
 }
 
 .users-list-btn {
-padding: 5px 10px;
-border-radius: 5px;
-color: var(--text);
-border: none;
-cursor: pointer;
-font-size: 14px;
+    padding: 10px;
+    border-radius: 5px;
+    /* color: var(--text); */
+    border: none;
+    /* border: 1px solid transparent; */
+    cursor: pointer;
+    font-size: 14px;
+    margin: 0;
+    min-height: 60px;
+    max-height: 60px;
+    min-width: 80px;
 }
+
+.users-list-btn:hover {
+    background-color: rgba(255, 148, 166, 0.808);
+}
+
 .users-list-view {
-    background-color: var(--bgSoft);
+    background-color:none;
+    border-color: var(--bgSoft);
+    color: var(--bgSoft);
+    min-height: 60px;
+    max-height: 60px;
 }
-.users-list-delete{
-    background-color: var(--bgPink);
+.users-list-view:hover{
+    background-color: none;
 }
-.users-list-btns{
-    display: flex;
-    gap: 10px;
+
+.users-list-delete {
+    background-color: white;
+    border-color: red;
+    color: red;
+}
+
+.users-list-btns {
+    /* display: flex;
+    gap: 10px; */
 }
 
 .users-title {
@@ -91,3 +123,23 @@ font-size: 14px;
     font-family: var(--fontFamily);
     border-radius: 20px 20px 0px 0;
 }
+
+.btn-user-list:hover {
+    background-color: rgba(255, 148, 166, 0.648);
+    cursor: pointer;
+}
+
+.delete-btn-list:hover {
+    cursor: pointer;
+}
+
+.users-list-table tr:hover {
+    background-color: #f4f4f4;
+    
+}
+.tHeads tr:hover{
+    background-color:white;
+    cursor: text;
+}
+
+

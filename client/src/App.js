@@ -25,6 +25,7 @@ import WinterPost from "./fetures/posts/WinterPost"
 import SafePost from "./fetures/posts/SafePost"
 import CarriagePost from "./fetures/posts/CarriagePost"
 import BadPost from "./fetures/posts/BadPost"
+import UsersListDemo from "./fetures/users/List/UsersListDemo"
 
 // import FeedbackForm from "./fetures/pages/FeedbackForm"
 // import ContactForm from "./fetures/pages/ContactForm"
