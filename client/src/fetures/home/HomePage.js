@@ -15,7 +15,10 @@ import { BsFillHeartFill } from "react-icons/bs";
 import { BsHeart } from "react-icons/bs";
 import useAuth from "../../hooks/useAuth"
 
-const images = ["./baby.jpg","./imgs/sale.jpg", "./imgs/sale2.jpg","./imgs/sale6.jpg","./imgs/nice.jpg", "./imgs/nice1.jpg", "./imgs/pluma2.jpg", "./imgs/pluma3.jpg", "./imgs/pluma4.jpg", "./imgs/pluma5.jpg", "./imgs/pluma6.jpg", "./imgs/pluma7.jpg","./imgs/pluma8.jpg"];
+import { Bounce, toast } from 'react-toastify';
+import { FiDownload } from "react-icons/fi";
+
+const images = ["./baby.jpg", "./imgs/sale.jpg", "./imgs/sale2.jpg", "./imgs/sale6.jpg", "./imgs/nice.jpg", "./imgs/nice1.jpg", "./imgs/pluma2.jpg", "./imgs/pluma3.jpg", "./imgs/pluma4.jpg", "./imgs/pluma5.jpg", "./imgs/pluma6.jpg", "./imgs/pluma7.jpg", "./imgs/pluma8.jpg"];
 
 
 const HomePage = () => {
@@ -100,6 +103,14 @@ const HomePage = () => {
         return () => clearInterval(interval);
     }, [currentImageIndex]);
 
+    useEffect(() => {
+        const timer = setTimeout(() => {
+        notify()
+        }, 3000); // 3000 milliseconds = 3 seconds
+    
+        return () => clearTimeout(timer);
+      }, []);
+
 
     // const favouritesList = JSON.parse(localStorage.getItem("favouritesList")) || [];
     const [favorites, setFavorites] = useState(JSON.parse(localStorage.getItem("favouritesList")) || []);
@@ -120,6 +131,26 @@ const HomePage = () => {
     const isFavorite = (product) => {
         return favorites.some((item) => item._id === product._id);
     }
+
+    const notify = () => toast(
+    <>
+    <br/>
+    <h2>!היי מהראשונות להתעדכן</h2>
+    <h3> קטלוג קיץ 2024<br/>🦄 עלה לאתר</h3>
+    <br/>
+   <h2 className="pop-up-link"><Link to="/catalog.pdf" target="_blank" download><FiDownload/> להורדה</Link></h2>
+
+    </>, {
+        position: "bottom-left",
+        autoClose: false,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+        });
 
     if (isLoading) return <div className="errorPage">loading...</div>
     if (isError) return <div className="errorPage">מצטערים, שגיאה זמנית.</div>
@@ -173,7 +204,7 @@ const HomePage = () => {
                             </div>
                         ) : null
                     ))}
-                   
+
                 </div>
 
                 <h3 className="productsTitle">המותגים שלנו... </h3>

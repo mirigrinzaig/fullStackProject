@@ -1,3 +1,11 @@
+.pop-up-link{
+font-family:var(--fontFamily)
+}
+.pop-up-link:hover {
+/* color:var(--bgPink); */
+transform: scale3d(110%, 110%, 110%);
+}
+
 .carouselDiv {
     min-width: 200px;
     max-width: 400px;
@@ -78,13 +86,13 @@
 }
 
 
-.bigImageNone{
+.bigImageNone {
     display: none;
     min-width: 90vw;
     min-height: 90vh;
     border: 3.5px solid transparent;
     border-color: #f6a6c5;
-    
+
 }
 
 /* .linkToPromotions{
@@ -104,15 +112,16 @@
     margin-right: 80vw;
     position: static;
     top: 0;
-    vertical-align: middle; /* הוסף שורה זו */
+    vertical-align: middle;
+    /* הוסף שורה זו */
     max-width: 150px;
-  }
+}
 
-  .linkToPromotions:hover{
+.linkToPromotions:hover {
     border-bottom: solid 1.5px rgb(255, 112, 136);
     color: rgb(255, 112, 136);
-  }
-  
+}
+
 
 
 

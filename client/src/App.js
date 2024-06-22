@@ -27,6 +27,8 @@ import CarriagePost from "./fetures/posts/CarriagePost"
 import BadPost from "./fetures/posts/BadPost"
 import UsersListDemo from "./fetures/users/List/UsersListDemo"
 
+import {ToastContainer} from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css';
 // import FeedbackForm from "./fetures/pages/FeedbackForm"
 // import ContactForm from "./fetures/pages/ContactForm"
 
@@ -86,8 +88,8 @@ const App = () => {
                     </Route>
                 </Route>
             </Route>
-
         </Routes>
+        <ToastContainer/>
     </Router>
 }
 export default App
