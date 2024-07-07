@@ -42,6 +42,18 @@
 
 }
 
+
+.productsTitle {
+    display: inline-block; /* כדי לקבוע את רוחב הרקע על פי אורך התוכן בלבד */
+    position: relative; /* כדי להציב את הקו במיקום נכון */
+}
+
+.productsTitle::after {
+    content: ''; /* ליצור את הקו */
+    position: absolute; /* להציב את הקו במיקום נכון */
+    left: 0; 
+}
+
 .welcome-message {
     position: fixed;
     top: 60%;
@@ -112,6 +124,9 @@
     border-bottom: solid 1.5px rgb(255, 112, 136);
     color: rgb(255, 112, 136);
   }
+
+
+  
   
 
 

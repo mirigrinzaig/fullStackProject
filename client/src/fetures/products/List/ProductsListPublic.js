@@ -78,8 +78,9 @@ const ProductsListPublic = ({ category }) => {
                                     <div>{product.company}</div>
                                     <div>{product.name}</div>
                                     <div>{product.itemDescription}</div>
-                                    {product.inSale}
-                                    <div className="price">{product.sellingPrice}<TbCurrencyShekel style={{ fontSize: 17 }} /></div>
+                                    {/* {product.inSale} */}
+                                    <div className="price">
+                                        {category&&category==='promotions'?product.salePrice:product.sellingPrice}<TbCurrencyShekel style={{ fontSize: 17 }} /></div>
                                     {(product.amount === 0) && (
                                         <div className="azal">
                                             אזל מהמלאי

@@ -144,7 +144,7 @@ const HomePage = () => {
                     <img src={images[currentImageIndex]} alt="Carousel Image" className="bigImage" />
                 </div>
                 {/* <img className="bigImage" src="./baby.jpg" alt="Image 1" /> */}
-                <h3 className="productsTitle">מה עוד אפשר להציע לכם ? </h3>
+                <h3 >מה עוד אפשר להציע לכם ? </h3>
                 <CategoriesCarousel />
                 <h3 className="productsTitle">מוצרים במבצע :</h3>
                 <Link className="linkToPromotions" to={"http://localhost:3000/categories/promotions"}>לכל המבצעים &#62;&gt;</Link>
@@ -159,7 +159,7 @@ const HomePage = () => {
                                         <div>{product.company}</div>
                                         <div>{product.name}</div>
                                         <div>{product.itemDescription}</div>
-                                        <div className="price">{product.sellingPrice}<TbCurrencyShekel style={{ fontSize: 17 }} /></div>
+                                        <div className="price">{product.salePrice}<TbCurrencyShekel style={{ fontSize: 17 }} /></div>
                                         {(product.amount === 0) && (
                                             <div className="azal">
                                                 אזל מהמלאי
