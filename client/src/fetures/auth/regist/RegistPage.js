@@ -66,7 +66,7 @@ export const RegistPage = () => {
     <div className='regist-page'>
       <form onChange={checkFull} onSubmit={handleSubmit} className='regist-page-form'>
         <button onClick={handleGoHome} className="exit"><Link to='/' />x</button>
-        <div className="logoP-regist"><img src="/logo.png" className="logoP" style={{ minHeight: "30vh" }} /></div>
+        <div className="logoP-regist"><img src="/logoWithOutWords.png" className="logoP" style={{ maxHeight: "30vh" }} /></div>
         <h1>כמה פרטים ואת בפנים...</h1>
         <input type='text' required name='name' id='name' onChange={(e) => setName(e.target.value)} placeholder="שם מלא" />
         <input type='email' required name='userName' onChange={(e) => setUserName(e.target.value)} id='userName' placeholder="אימייל" />

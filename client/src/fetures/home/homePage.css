@@ -5,7 +5,10 @@ font-family:var(--fontFamily)
 /* color:var(--bgPink); */
 transform: scale3d(110%, 110%, 110%);
 }
-
+.pop-up-message{
+    /* border: 1.5px solid transparent;
+    border-color: #f6a6c5; */
+}
 .carouselDiv {
     min-width: 200px;
     max-width: 400px;

@@ -3,11 +3,17 @@
     display: flex;
     flex-direction:column;
     /* min-width: 70vw; */
-    margin-right: 15vw !important;
+    margin-right: 12vw !important;
     border-style: solid;
     border-color: pink;
     justify-content: center;
     align-items: center;
+    color: var(--text);
+    padding: 20px;
+    margin-top: 20px;
+    max-width: 70vw;
+    align-self: center;
+    margin-right: 3vw;
 
     /* flex-direction: row; */
     /* gap: 0;

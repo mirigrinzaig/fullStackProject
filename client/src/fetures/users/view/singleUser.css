@@ -72,12 +72,37 @@ margin-top: 20px;
     margin:0px 30px 0px 30px;
 }
 
-@media screen and (max-width: 788px) {
+@media screen and (max-width: 600px) {
     .single-user-input-wrapper{
         min-width: 500px !important;
     }
+    .single-user-input-wrapper {
+        width: 100%; /* Make inputs full width on small screens */
+      }
 
 }
+
+@media screen and (max-width: 700px) {
+    .single-user-form {
+      flex-direction: column; /* Stack form fields vertically on small screens */
+    }
+  
+    .single-user-input-wrapper {
+      min-width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 0 20px 0; /* Adjust margin for spacing */
+    }
+  
+    .single-user-form input {
+      min-width: 100% !important;
+      max-width: 100% !important;
+    }
+  
+    .single-user-form button {
+      width: 100%;
+    }
+  }
+
 
 
 

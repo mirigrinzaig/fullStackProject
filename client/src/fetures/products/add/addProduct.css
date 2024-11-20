@@ -1,11 +1,21 @@
-.add-product-container{
+/* .add-product-container{
 background-color: white;
 padding: 20px;
 border-radius: 10px;
 margin-top: 10px;
 border-style: solid;
 border-color: pink;
-margin-right: 15vw;
+margin-right: 0vw;
+margin:0;
+padding-left: 5vw;
+max-width: 80vw;
+align-items: center;
+justify-content: center;
+padding: 20px;
+    margin-top: 20px;
+    max-width: 90vw;
+    align-self: center;
+    margin-right: 3vw;
 }
 
 .addTitle{
@@ -34,13 +44,7 @@ width: 45%;
    border-radius: 5px;
    cursor: pointer;
 }
-/* .colorInput{
-  border-radius: 800px;
-  background-color: aquamarine;
-  min-height: 60px;
-  max-height: 60px;
 
-} */
 .colorSelect{
   border-radius: 50%;
   background-color: rgb(34, 32, 32);
@@ -73,4 +77,118 @@ width: 45%;
   
 }
 
+ */
+ .add-product-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  border-style: solid;
+  border-color: pink;
+  margin-right: 3vw;
+  padding-left: 5vw;
+  max-width: 90vw;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+}
 
+.addTitle {
+  min-width: 100%;
+  text-align: center; /* Center-align the title */
+  margin-bottom: 20px; /* Add some space below the title */
+}
+
+.add-product-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.add-product-form input {
+  padding: 20px; /* Reduced padding for better layout */
+  border-color: var(--bg);
+  color: var(--text);
+  border-radius: 5px;
+  margin-bottom: 20px;
+  width: 45%;
+  box-sizing: border-box; /* Ensure proper box sizing */
+}
+
+.add-product-form button {
+  width: 100%;
+  padding: 20px; /* Reduced padding for better layout */
+  border-color: teal;
+  color: var(--text);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.colorSelect {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: rgb(34, 32, 32);
+  min-height: 65px;
+  max-height: 65px;
+  min-width: 65px;
+  max-width: 65px;
+}
+
+.colorSelect input {
+  border-radius: 50%;
+  min-height: 60px;
+  max-height: 60px;
+  min-width: 60px;
+  max-width: 60px;
+  background-color: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.colors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 20px;
+  min-width: 60vw;
+  max-width: 60vw;
+}
+
+/* Add styles for sale selection buttons */
+.sale-options {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.sale-options button {
+  width: 48%; /* Adjust width to fit two buttons in one row */
+  padding: 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: lightgrey; /* Example background color */
+  color: var(--text);
+}
+
+
+/* Media query for small screens */
+@media (max-width: 600px) {
+  .add-product-form input {
+    width: 100%; /* Make inputs full width on small screens */
+  }
+
+  .sale-options button {
+    width: 100%; /* Make sale buttons full width on small screens */
+    margin-bottom: 10px; /* Add margin between buttons */
+  }
+
+  .sale-options {
+    flex-direction: column; /* Stack sale buttons vertically on small screens */
+  }
+}

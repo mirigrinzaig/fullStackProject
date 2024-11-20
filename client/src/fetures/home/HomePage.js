@@ -103,13 +103,13 @@ const HomePage = () => {
         return () => clearInterval(interval);
     }, [currentImageIndex]);
 
-    useEffect(() => {
-        const timer = setTimeout(() => {
-        notify()
-        }, 3000); // 3000 milliseconds = 3 seconds
+    // useEffect(() => {
+    //     const timer = setTimeout(() => {
+    //     notify()
+    //     }, 3000); // 3000 milliseconds = 3 seconds
     
-        return () => clearTimeout(timer);
-      }, []);
+    //     return () => clearTimeout(timer);
+    //   }, []);
 
 
     // const favouritesList = JSON.parse(localStorage.getItem("favouritesList")) || [];
@@ -132,25 +132,25 @@ const HomePage = () => {
         return favorites.some((item) => item._id === product._id);
     }
 
-    const notify = () => toast(
-    <>
-    <br/>
-    <h2>!היי מהראשונות להתעדכן</h2>
-    <h3> קטלוג קיץ 2024<br/>🦄 עלה לאתר</h3>
-    <br/>
-   <h2 className="pop-up-link"><Link to="/catalog.pdf" target="_blank" download><FiDownload/> להורדה</Link></h2>
+//     const notify = () => toast(
+//     <div className="pop-up-message">
+//     <br/>
+//     <h2>!היי מהראשונות להתעדכן</h2>
+//     <h3> קטלוג קיץ 2024<br/> עלה לאתר</h3>
+//     <br/>
+//    <h2 className="pop-up-link"><Link to="/catalog.pdf" target="_blank" download><FiDownload/> להורדה</Link></h2>
 
-    </>, {
-        position: "bottom-left",
-        autoClose: false,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-        transition: Bounce,
-        });
+//     </div>, {
+//         position: "bottom-left",
+//         autoClose: false,
+//         hideProgressBar: false,
+//         closeOnClick: true,
+//         pauseOnHover: false,
+//         draggable: true,
+//         progress: undefined,
+//         theme: "light",
+//         transition: Bounce,
+//         });
 
     if (isLoading) return <div className="errorPage">loading...</div>
     if (isError) return <div className="errorPage">מצטערים, שגיאה זמנית.</div>
@@ -190,7 +190,7 @@ const HomePage = () => {
                                         <div>{product.company}</div>
                                         <div>{product.name}</div>
                                         <div>{product.itemDescription}</div>
-                                        <div className="price">{product.salePrice}<TbCurrencyShekel style={{ fontSize: 17 }} /></div>
+                                        <div className="price">{product.salePrice}11<TbCurrencyShekel style={{ fontSize: 17 }} /></div>
                                         {(product.amount === 0) && (
                                             <div className="azal">
                                                 אזל מהמלאי
